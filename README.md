@@ -1,8 +1,6 @@
 # Agentic
 
-**Prompt to get data
-**
-Prompt:
+**Prompt**:
 "Generate a realistic daily call volume dataset for a banking client (e.g., Citi) from January 1, 2024, to December 31, 2025. The dataset should reflect:
 
 Trends & Seasonality:
