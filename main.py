@@ -4,7 +4,7 @@ import yaml
 
 logger = get_logger()
 
-#Write data into server
+# Write data into server
 # try:
 #     df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv")
 #     write_data_db(df,"ACD_VOLUME")
@@ -16,7 +16,8 @@ logger = get_logger()
 #read data into server
 try:
     query = "SELECT * FROM ACD_VOLUME"
-    read_df = read_data_db(query)
+    df = read_data_db(query)
+    df['Date'] = pd.to_datetime(df['Date'])
     logger.info(f"Data is read into DF FROM  DB")
 except Exception as e:
     logger.error(f"Failed to read data from DB becasue of {e}")
@@ -28,3 +29,10 @@ with open(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\config.yaml","r") as f
 forecast_days = config['forecast_days']
 logger.info(f"Forecast days are read and set to {forecast_days}")
 print(forecast_days)
+
+print(df.head())
+print(df.tail())
+
+train_df = df[df['Date']<= '2024-03-11']
+test_df  = df[df['Date']> '2024-03-11']
+
