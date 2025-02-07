@@ -34,11 +34,14 @@ logger.info(f"Forecast days are read and set to {forecast_days}")
 logger.info(f"Training data till {train_date}")
 print(forecast_days)
 
+#SCENARIO BASE: CREATE A MODEL TRAIN TILL NOV 3 and SAVE Weights
+
 train_date = '2024-11-03'
+test_date = '2024-11-04'
 train_df = df[df['Date']<= train_date ]
 test_df  = df[df['Date']> train_date]
 
-print(test_df.shape[0])
 
 forecast_obj =  Forecasting_models(train_df,test_df,forecast_days)
+XGB_PRED = forecast_obj.forecast_acd_call_volume(test_date)
 

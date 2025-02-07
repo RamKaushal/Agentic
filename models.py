@@ -9,7 +9,7 @@ class Forecasting_models:
         self.forecast_days = forecast_days
         return None
 
-    def forecast_acd_call_volume(self, prediction_start_date, next_days):
+    def forecast_acd_call_volume(self,prediction_start_date):
         # Ensure the data is sorted by date
         data = self.train_df.copy()
         data['Date'] = pd.to_datetime(data['Date'])
