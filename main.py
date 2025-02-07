@@ -1,7 +1,7 @@
 import pandas as pd
 from utils import write_data_db,read_data_db,get_logger
 import yaml 
-from models import Forecasting_models
+from models import ForecastingModels
 
 logger = get_logger()
 
@@ -42,6 +42,13 @@ train_df = df[df['Date']<= train_date ]
 test_df  = df[df['Date']> train_date]
 
 
-forecast_obj =  Forecasting_models(train_df,test_df,forecast_days)
-XGB_PRED = forecast_obj.forecast_acd_call_volume(test_date)
+forecast_obj =  ForecastingModels(train_df,test_df,forecast_days)
+try:
+    XGB_PRED = forecast_obj.forecast_acd_call_volume()
+    logger.info(f"XGB predcition is {XGB_PRED}")
+except Exception as e:
+    logger.error(f"Model building failed becasue of {e}")
 
+
+
+print(XGB_PRED.head())
