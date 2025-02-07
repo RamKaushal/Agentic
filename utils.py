@@ -4,7 +4,7 @@ import logging
 
 def write_data_db(df,table_name):
     conn = sqlite3.connect("calls.db")
-    df.to_sql(table_name, conn, if_exists="append", index=False)
+    df.to_sql(table_name, conn, if_exists="replace", index=False)
     return None 
 
 def read_data_db(query):

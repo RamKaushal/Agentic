@@ -1,3 +1,25 @@
-2025-02-07 17:51:48,882 - INFO - Data is pushed into DB
-2025-02-07 17:51:48,916 - INFO - Data is read into DF FROM  DB
-2025-02-07 17:51:48,917 - INFO - Forecast days are read and set to 14
+2025-02-07 19:57:57,832 - INFO - Data is pushed into DB
+2025-02-07 19:57:57,832 - ERROR - Failed to read data from DB becasue of time data "13-01-2023" doesn't match format "%m-%d-%Y", at position 12. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-02-07 19:57:57,859 - INFO - Forecast days are read and set to 14
+2025-02-07 19:57:57,860 - INFO - Training data till 2024-11-03
+2025-02-07 19:59:46,706 - INFO - Data is pushed into DB
+2025-02-07 19:59:46,706 - ERROR - Failed to read data from DB becasue of time data "13-01-2023" doesn't match format "%m-%d-%Y", at position 12. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-02-07 19:59:46,717 - INFO - Forecast days are read and set to 14
+2025-02-07 19:59:46,717 - INFO - Training data till 2024-11-03
+2025-02-07 20:00:05,853 - INFO - Data is pushed into DB
+2025-02-07 20:00:05,854 - ERROR - Failed to read data from DB becasue of time data "13-01-2023" doesn't match format "%m-%d-%Y", at position 12. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-02-07 20:00:05,859 - INFO - Forecast days are read and set to 14
+2025-02-07 20:00:05,859 - INFO - Training data till 2024-11-03
+2025-02-07 20:01:22,996 - INFO - Data is pushed into DB
+2025-02-07 20:01:23,011 - INFO - Data is read into DF FROM  DB
+2025-02-07 20:01:23,012 - INFO - Forecast days are read and set to 14
+2025-02-07 20:01:23,012 - INFO - Training data till 2024-11-03
