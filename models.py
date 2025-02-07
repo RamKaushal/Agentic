@@ -7,4 +7,3 @@ class Forecasting_models:
         self.test_df = test_df
         self.forecast_days = forecast_days
         return None
-  
