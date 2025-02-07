@@ -5,12 +5,12 @@ import yaml
 logger = get_logger()
 
 #Write data into server
-try:
-    df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv")
-    write_data_db(df,"ACD_VOLUME")
-    logger.info(f"Data is pushed into DB")
-except Exception as e:
-    logger.error(f"Failed to pushed data into server becasue of {e}")
+# try:
+#     df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv")
+#     write_data_db(df,"ACD_VOLUME")
+#     logger.info(f"Data is pushed into DB")
+# except Exception as e:
+#     logger.error(f"Failed to pushed data into server becasue of {e}")
 
 
 #read data into server
