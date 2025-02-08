@@ -41,7 +41,8 @@ try:
     df_read['Date'] = pd.to_datetime(df_read['Date'])
     max_date = df_read['Date'].max()
     min_date = df_read['Date'].min()
-    logger.info(f"Data is read into DF from {min_date} to {max_date}")
+
+    logger.info(f"Data is read into DF from {min_date} to {max_date}") 
 except Exception as e:
     logger.error(f"Failed to read data from DB because of {e}")
 
@@ -73,10 +74,10 @@ try:
     min_date_r = df_read['Date'].min()
     write_data_db(df_read, "ACD_VOLUME_TRAIN","append")
     write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append")
-
+    plot_line_chart(df_read,x='Date',y='Call Volume',label1="Call Volume Train",df1 = forecast_df,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted")
     logger.info(f"Forecasting for next {forecast_days} days completed from {min_date} to {max_date}")
     logger.info(f"FORECAST Data is pushed into DB")
-    logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r} ")
+    logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r}")
 
 
 except Exception as e:
@@ -93,7 +94,7 @@ try:
         LIMIT 7
         ),
         cte2 AS (
-            SELECT Date, "Call Volume" FROM ACD_VOLUME  -- Keep only required columns
+            SELECT Date, "Call Volume" FROM ACD_VOLUME  
         )
         SELECT a.Date,a.Predicted_Call_Volume, b."Call Volume"
         FROM cte1 a
@@ -150,6 +151,8 @@ try:
     # Forecast for the next `forecast_days`
     forecast_df = forecast_obj.forecast_xgb_model(retrained_model)
     forecast_df['Date'] = pd.to_datetime(forecast_df['Date'])
+
+    plot_line_chart(df_retrain,x='Date',y='Call Volume',label1="Call Volume Train",df1 = forecast_df,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted")
     max_date = forecast_df['Date'].max()
     min_date = forecast_df['Date'].min()
 

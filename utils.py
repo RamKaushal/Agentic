@@ -34,35 +34,34 @@ def get_logger():
 
 
 
-import matplotlib.pyplot as plt
-import seaborn as sns
 
-def plot_line_chart(df, x, y, df1, x1, x2, 
+def plot_line_chart(df, x, y, df1=None, x1=None, x2=None, 
                     label1="Dataset 1", label2="Dataset 2", 
                     title="Line Plot", xlabel="X-Axis", ylabel="Y-Axis"):
     """
-    Plots a line chart with two datasets and custom labels for each dataset.
-    
+    Plots a line chart with one or two datasets and custom labels.
+
     Parameters:
-    df (DataFrame): First dataset
+    df (DataFrame): First dataset (required)
     x (str): X-axis column for first dataset
     y (str): Y-axis column for first dataset
-    df1 (DataFrame): Second dataset
-    x1 (str): X-axis column for second dataset
-    x2 (str): Y-axis column for second dataset
-    label1 (str): Label for first dataset
-    label2 (str): Label for second dataset
-    title (str): Chart title
-    xlabel (str): X-axis label
-    ylabel (str): Y-axis label
+    df1 (DataFrame, optional): Second dataset (default: None)
+    x1 (str, optional): X-axis column for second dataset (default: None)
+    x2 (str, optional): Y-axis column for second dataset (default: None)
+    label1 (str, optional): Label for first dataset (default: "Dataset 1")
+    label2 (str, optional): Label for second dataset (default: "Dataset 2")
+    title (str, optional): Chart title (default: "Line Plot")
+    xlabel (str, optional): X-axis label (default: "X-Axis")
+    ylabel (str, optional): Y-axis label (default: "Y-Axis")
     """
     plt.figure(figsize=(12, 6))
 
-    # Plot the first line with a custom label
+    # Plot first dataset
     sns.lineplot(data=df, x=x, y=y, label=label1, marker="o")
 
-    # Plot the second line with a custom label
-    sns.lineplot(data=df1, x=x1, y=x2, label=label2, marker="s")
+    # Plot second dataset only if provided
+    if df1 is not None and x1 is not None and x2 is not None:
+        sns.lineplot(data=df1, x=x1, y=x2, label=label2, marker="o", linestyle="-")
 
     # Add labels and title
     plt.xlabel(xlabel)
@@ -72,15 +71,11 @@ def plot_line_chart(df, x, y, df1, x1, x2,
     # Rotate x-axis labels
     plt.xticks(rotation=90)
     
+    # Show grid for better readability
+    plt.grid(True)
+
     # Show the legend
     plt.legend()
 
     # Show the plot
     plt.show()
-
-
-
-
-
-
-
