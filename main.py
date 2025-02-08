@@ -65,7 +65,7 @@ def total_data_push():
         write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append")
         plot_line_chart(df_read,x='Date',y='Call Volume',label1="Call Volume Train",df1 = forecast_df,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted")
         logger.info(f"Forecasting for next {forecast_days} days completed from {min_date} to {max_date}")
-        logger.info(f"FORECAST Data is pushed into DB")
+        logger.info(f"FORECAST Data is pushed into DB and forecast is {forecast_df}")
         logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r}")
 
 
@@ -148,7 +148,7 @@ def retrain_actuals():
         max_date = forecast_df['Date'].max()
         min_date = forecast_df['Date'].min()
 
-        logger.info(f"Forecasting for next {forecast_days} days completed and forecasted for {min_date} to {max_date}")
+        logger.info(f"Forecasting for next {forecast_days} days completed and forecasted for {min_date} to {max_date} and forecast is {forecast_df}")
         
         
         # Add timestamp
