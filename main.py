@@ -55,14 +55,17 @@ except Exception as e:
 try:
     XGB_LOADED = joblib.load("xgb_model.pkl")
     logger.info(f"XGB model successfully loaded")
-
     # Use the trained model to make future predictions
     forecast_df = forecast_obj.forecast_xgb_model(XGB_LOADED)
     logger.info(f"Forecasting for next {forecast_days} days completed")
     forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y")
     forecast_df['Timestamp'] = datetime.now()
+    df_read['Timestamp'] = datetime.now()
+    df_read['Date'] = pd.to_datetime(df_read['Date'], format="%d-%m-%Y")
+    write_data_db(df_read, "ACD_VOLUME_TRAIN")
     write_data_db(forecast_df, "ACD_VOLUME_FORECAST")
     logger.info(f"FORECAST Data is pushed into DB")
+    logger.info(f"TRAIN Data is pushed into DB")
 
 
 except Exception as e:
@@ -71,16 +74,7 @@ except Exception as e:
 #SCENARIO 2: Next mondays run load the model, get the actual data retrained and forecast the model
 
 try:
-    XGB_LOADED = joblib.load("xgb_model.pkl")
-    logger.info(f"XGB model successfully loaded")
     #compare actuals vs forecast (as we are in next weeek)
-    query = f"""
-       SELECT * FROM ACD_VOLUME_FORECAST 
-        WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_FORECAST);
-    """
-    df_pred = read_data_db(query)
-    df_pred['Date'] = pd.to_datetime(df_pred['Date'])
-
     actual_query = query = f"""
         WITH cte1 AS (
         SELECT * FROM ACD_VOLUME_FORECAST 
@@ -97,6 +91,17 @@ try:
     """
     df_actual = read_data_db(actual_query)
     plot_line_chart(df_actual,x='Date',y='Call Volume',df1=df_actual,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume", label2="Predicted_Call_Volume")
+
+    #retrain data
+    df_actual_retrain  = df_actual.iloc[0,7][['Date','Call Volume']]
+    XGB_LOADED = joblib.load("xgb_model.pkl")
+    logger.info(f"XGB model successfully loaded")
+
+
+
+
+
+
 
 
 except Exception as e:
