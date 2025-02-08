@@ -23,8 +23,10 @@ logger.info(f"Training data till {train_date}")
 try:
     df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv")
     df['Date'] = pd.to_datetime(df['Date'], format="%d-%m-%Y")
+    max_date = df['Date'].max()
+    min_date = df['Date'].min()
     write_data_db(df, "ACD_VOLUME","replace")
-    logger.info(f"Data is pushed into DB")
+    logger.info(f"Data is pushed into DB from {min_date} to {max_date}")
 except Exception as e:
     logger.error(f"Failed to push data into server because of {e}")
 
@@ -37,7 +39,9 @@ try:
     """
     df_read = read_data_db(query)
     df_read['Date'] = pd.to_datetime(df_read['Date'])
-    logger.info("Data is read into DF FROM DB")
+    max_date = df_read['Date'].max()
+    min_date = df_read['Date'].min()
+    logger.info(f"Data is read into DF from {min_date} to {max_date}")
 except Exception as e:
     logger.error(f"Failed to read data from DB because of {e}")
 
@@ -56,17 +60,23 @@ except Exception as e:
 try:
     XGB_LOADED = joblib.load("xgb_model.pkl")
     logger.info(f"XGB model successfully loaded")
+
     # Use the trained model to make future predictions
     forecast_df = forecast_obj.forecast_xgb_model(XGB_LOADED)
-    logger.info(f"Forecasting for next {forecast_days} days completed")
     forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y")
+    max_date = forecast_df['Date'].max()
+    min_date = forecast_df['Date'].min()
     forecast_df['Timestamp'] = datetime.now()
     df_read['Timestamp'] = datetime.now()
     df_read['Date'] = pd.to_datetime(df_read['Date'], format="%d-%m-%Y")
+    max_date_r = df_read['Date'].max()
+    min_date_r = df_read['Date'].min()
     write_data_db(df_read, "ACD_VOLUME_TRAIN","append")
     write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append")
+
+    logger.info(f"Forecasting for next {forecast_days} days completed from {min_date} to {max_date}")
     logger.info(f"FORECAST Data is pushed into DB")
-    logger.info(f"TRAIN Data is pushed into DB")
+    logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r} ")
 
 
 except Exception as e:
@@ -91,13 +101,15 @@ try:
         ON a.Date = b.Date
     """
     df_actual = read_data_db(actual_query)
+    max_date = df_actual['Date'].max()
+    min_date = df_actual['Date'].min()
+    logger.info(f"ACTAUL VS PRED OF {min_date} to {max_date}")
     plot_line_chart(df_actual,x='Date',y='Call Volume',df1=df_actual,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume", label2="Predicted_Call_Volume")
 except Exception as e:
     logger.error(f"plot failed: {e}")
 
     # retrain data
 try:
-    logger.info(f"XGB model successfully loaded")
     query = f"""
         SELECT * FROM ACD_VOLUME_TRAIN 
         WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) 
@@ -105,7 +117,7 @@ try:
     df_train = read_data_db(query)
     df_train = df_train[['Date', 'Call Volume', 'U.S. Holiday Indicator', 'Call Volume Impact', 'Day of Week', 'Day of Month', 'Day of Year', 'Week of Year', 'Month', 'Quarter', 'Is Weekend']]
     df_train['Date'] = pd.to_datetime(df_train['Date'])
-  
+    
     df_actual_retrain_query =  f"""
        WITH cte1 AS (
         SELECT * FROM ACD_VOLUME_FORECAST 
@@ -121,8 +133,14 @@ try:
         ON a.Date = b.Date
     """
     df_actual_retrain = read_data_db(df_actual_retrain_query)
+    max_date = df_actual_retrain['Date'].max()
+    min_date = df_actual_retrain['Date'].min()
+    logger.info(f"Actuals of  {min_date} to {max_date} are added and are being retrained")
     df_retrain = pd.concat([df_train, df_actual_retrain], ignore_index=True)
     df_retrain['Date'] = pd.to_datetime(df_retrain['Date'])
+    max_date_r = df_retrain['Date'].max()
+    min_date_r = df_retrain['Date'].min()
+    logger.info(f"New training is happening on {min_date_r} to {max_date_r}")
     forecast_obj = ForecastingModels(df_retrain, forecast_days)
     retrained_model = forecast_obj.train_xgb_model()
     # Save the retrained model
@@ -131,18 +149,22 @@ try:
 
     # Forecast for the next `forecast_days`
     forecast_df = forecast_obj.forecast_xgb_model(retrained_model)
-    logger.info(f"Forecasting for next {forecast_days} days completed")
+    forecast_df['Date'] = pd.to_datetime(forecast_df['Date'])
+    max_date = forecast_df['Date'].max()
+    min_date = forecast_df['Date'].min()
+
+    logger.info(f"Forecasting for next {forecast_days} days completed and forecasted for {min_date} to {max_date}")
+    
     
     # Add timestamp
     forecast_df['Timestamp'] = datetime.now()
     
     # Store the forecast results into DB
     write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append")
-    logger.info(f"Updated FORECAST Data pushed into DB")
+    logger.info(f"Updated FORECAST Data pushed into DB from  {min_date} to {max_date}")
     write_data_db(df_retrain, "ACD_VOLUME_TRAIN","append")
-    logger.info(f"Updated Train data Data pushed into DB")
+    logger.info(f"Updated Train data Data pushed into DB from  {min_date_r} to {max_date_r}")
 except Exception as e:
     logger.error(f"retrain failed: {e}")
-
 
 

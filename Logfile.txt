@@ -1,687 +1,111 @@
-2025-02-07 19:57:57,832 - INFO - Data is pushed into DB
-2025-02-07 19:57:57,832 - ERROR - Failed to read data from DB becasue of time data "13-01-2023" doesn't match format "%m-%d-%Y", at position 12. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-07 19:57:57,859 - INFO - Forecast days are read and set to 14
-2025-02-07 19:57:57,860 - INFO - Training data till 2024-11-03
-2025-02-07 19:59:46,706 - INFO - Data is pushed into DB
-2025-02-07 19:59:46,706 - ERROR - Failed to read data from DB becasue of time data "13-01-2023" doesn't match format "%m-%d-%Y", at position 12. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-07 19:59:46,717 - INFO - Forecast days are read and set to 14
-2025-02-07 19:59:46,717 - INFO - Training data till 2024-11-03
-2025-02-07 20:00:05,853 - INFO - Data is pushed into DB
-2025-02-07 20:00:05,854 - ERROR - Failed to read data from DB becasue of time data "13-01-2023" doesn't match format "%m-%d-%Y", at position 12. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-07 20:00:05,859 - INFO - Forecast days are read and set to 14
-2025-02-07 20:00:05,859 - INFO - Training data till 2024-11-03
-2025-02-07 20:01:22,996 - INFO - Data is pushed into DB
-2025-02-07 20:01:23,011 - INFO - Data is read into DF FROM  DB
-2025-02-07 20:01:23,012 - INFO - Forecast days are read and set to 14
-2025-02-07 20:01:23,012 - INFO - Training data till 2024-11-03
-2025-02-07 20:06:33,083 - INFO - Data is pushed into DB
-2025-02-07 20:06:33,085 - INFO - Data is read into DF FROM  DB
-2025-02-07 20:06:33,085 - INFO - Forecast days are read and set to 14
-2025-02-07 20:06:33,085 - INFO - Training data till 2024-11-03
-2025-02-07 20:07:55,468 - INFO - Data is pushed into DB
-2025-02-07 20:07:55,474 - INFO - Data is read into DF FROM  DB
-2025-02-07 20:07:55,474 - INFO - Forecast days are read and set to 14
-2025-02-07 20:07:55,477 - INFO - Training data till 2024-11-03
-2025-02-07 21:43:11,967 - INFO - Data is pushed into DB
-2025-02-07 21:43:11,967 - INFO - Data is read into DF FROM  DB
-2025-02-07 21:43:11,973 - INFO - Forecast days are read and set to 14
-2025-02-07 21:43:11,973 - INFO - Training data till 2024-11-03
-2025-02-07 21:46:31,351 - INFO - Data is pushed into DB
-2025-02-07 21:46:31,351 - INFO - Data is read into DF FROM  DB
-2025-02-07 21:46:31,351 - INFO - Forecast days are read and set to 14
-2025-02-07 21:46:31,351 - INFO - Training data till 2024-11-03
-2025-02-07 21:47:02,595 - INFO - Data is pushed into DB
-2025-02-07 21:47:02,602 - INFO - Data is read into DF FROM  DB
-2025-02-07 21:47:02,602 - INFO - Forecast days are read and set to 14
-2025-02-07 21:47:02,604 - INFO - Training data till 2024-11-03
-2025-02-07 21:49:20,562 - INFO - Data is pushed into DB
-2025-02-07 21:49:20,569 - INFO - Data is read into DF FROM  DB
-2025-02-07 21:49:20,572 - INFO - Forecast days are read and set to 14
-2025-02-07 21:49:20,572 - INFO - Training data till 2024-11-03
-2025-02-07 21:52:51,643 - INFO - Data is pushed into DB
-2025-02-07 21:52:51,644 - INFO - Data is read into DF FROM  DB
-2025-02-07 21:52:51,644 - INFO - Forecast days are read and set to 14
-2025-02-07 21:52:51,651 - INFO - Training data till 2024-11-03
-2025-02-07 21:55:02,285 - INFO - Data is pushed into DB
-2025-02-07 21:55:02,293 - INFO - Data is read into DF FROM  DB
-2025-02-07 21:55:02,294 - INFO - Forecast days are read and set to 14
-2025-02-07 21:55:02,294 - INFO - Training data till 2024-11-03
-2025-02-07 21:55:56,536 - INFO - Data is pushed into DB
-2025-02-07 21:55:56,541 - INFO - Data is read into DF FROM  DB
-2025-02-07 21:55:56,542 - INFO - Forecast days are read and set to 14
-2025-02-07 21:55:56,542 - INFO - Training data till 2024-11-03
-2025-02-08 11:03:13,606 - INFO - Data is pushed into DB
-2025-02-08 11:03:13,613 - INFO - Data is read into DF FROM  DB
-2025-02-08 11:03:13,613 - INFO - Forecast days are read and set to 14
-2025-02-08 11:03:13,613 - INFO - Training data till 2024-11-03
-2025-02-08 11:03:37,141 - INFO - Data is pushed into DB
-2025-02-08 11:03:37,147 - INFO - Data is read into DF FROM  DB
-2025-02-08 11:03:37,167 - INFO - Forecast days are read and set to 14
-2025-02-08 11:03:37,167 - INFO - Training data till 2024-11-03
-2025-02-08 11:03:37,359 - INFO - XGB predcition is           Date  Predicted Call Volume
-680 2024-11-11             526.588501
-681 2024-11-12             546.837585
-682 2024-11-13             543.507812
-683 2024-11-14             570.901367
-684 2024-11-15             562.981323
-685 2024-11-16             569.519775
-686 2024-11-17             550.406128
-687 2024-11-18             545.645325
-688 2024-11-19             546.011719
-689 2024-11-20             544.457275
-690 2024-11-21             543.868652
-691 2024-11-22             562.981323
-692 2024-11-23             569.519775
-693 2024-11-24             550.406128
-694 2024-11-25             490.743347
-695 2024-11-26             489.205536
-696 2024-11-27             483.778564
-697 2024-11-28             534.486755
-698 2024-11-29             569.757324
-699 2024-11-30             555.934204
-700 2024-12-01             548.056641
-701 2024-12-02             542.781921
-702 2024-12-03             537.372009
-703 2024-12-04             546.522156
-704 2024-12-05             572.004272
-705 2024-12-06             560.663818
-706 2024-12-07             571.341003
-707 2024-12-08             549.587402
-708 2024-12-09             545.509033
-709 2024-12-10             546.289978
-710 2024-12-11             545.725708
-711 2024-12-12             539.849243
-712 2024-12-13             562.016907
-713 2024-12-14             652.276001
-714 2024-12-15             550.406128
-715 2024-12-16             545.645325
-716 2024-12-17             546.011719
-717 2024-12-18             544.457275
-718 2024-12-19             543.868652
-719 2024-12-20             562.981323
-720 2024-12-21             569.519775
-721 2024-12-22             550.406128
-722 2024-12-23             545.645325
-723 2024-12-24             546.011719
-724 2024-12-25             480.291779
-725 2024-12-26             516.136108
-726 2024-12-27             564.834534
-727 2024-12-28             584.387390
-728 2024-12-29             553.402832
-729 2024-12-30             543.912292
-730 2024-12-31             543.264282
-2025-02-08 11:03:37,359 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 11:07:44,730 - INFO - Data is pushed into DB
-2025-02-08 11:07:44,740 - INFO - Data is read into DF FROM  DB
-2025-02-08 11:07:44,740 - INFO - Forecast days are read and set to 14
-2025-02-08 11:07:44,744 - INFO - Training data till 2024-11-03
-2025-02-08 11:07:45,076 - INFO - XGB predcition is           Date  Predicted Call Volume
-680 2024-11-11             526.588501
-681 2024-11-12             546.837585
-682 2024-11-13             543.507812
-683 2024-11-14             570.901367
-684 2024-11-15             562.981323
-685 2024-11-16             569.519775
-686 2024-11-17             550.406128
-2025-02-08 11:07:45,080 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 11:09:15,628 - INFO - Data is pushed into DB
-2025-02-08 11:09:15,633 - INFO - Data is read into DF FROM  DB
-2025-02-08 11:09:15,633 - INFO - Forecast days are read and set to 14
-2025-02-08 11:09:15,634 - INFO - Training data till 2024-11-03
-2025-02-08 11:09:15,846 - INFO - XGB predcition is           Date  Predicted Call Volume
-680 2024-11-11             526.588501
-681 2024-11-12             546.837585
-682 2024-11-13             543.507812
-683 2024-11-14             570.901367
-684 2024-11-15             562.981323
-685 2024-11-16             569.519775
-686 2024-11-17             550.406128
-2025-02-08 11:09:15,848 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 12:41:19,791 - INFO - Data is pushed into DB
-2025-02-08 12:41:19,794 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:41:19,794 - INFO - Forecast days are read and set to 14
-2025-02-08 12:41:19,794 - INFO - Training data till 2024-11-03
-2025-02-08 12:41:20,049 - ERROR - Model building failed becasue of Length of values (1) does not match length of index (14)
-2025-02-08 12:41:20,049 - ERROR - Model saving failed becasue of name 'XGB_PRED' is not defined
-2025-02-08 12:41:20,067 - INFO - XGB model loaded
-2025-02-08 12:41:51,661 - INFO - Data is pushed into DB
-2025-02-08 12:41:51,663 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:41:51,663 - INFO - Forecast days are read and set to 14
-2025-02-08 12:41:51,663 - INFO - Training data till 2024-11-03
-2025-02-08 12:41:51,846 - ERROR - Model building failed becasue of Length of values (1) does not match length of index (14)
-2025-02-08 12:41:51,846 - ERROR - Model saving failed becasue of name 'XGB_PRED' is not defined
-2025-02-08 12:44:10,822 - INFO - Data is pushed into DB
-2025-02-08 12:44:10,833 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:44:10,833 - INFO - Forecast days are read and set to 14
-2025-02-08 12:44:10,833 - INFO - Training data till 2024-11-03
-2025-02-08 12:44:11,094 - INFO - XGB predcition is          Date  Predicted Call Volume
-0  2024-12-21             579.665649
-1  2024-12-22             545.447388
-2  2024-12-23             546.848389
-3  2024-12-24             546.848389
-4  2024-12-25             546.848389
-5  2024-12-26             572.603638
-6  2024-12-27             655.594543
-7  2024-12-28             579.665649
-8  2024-12-29             545.447388
-9  2024-12-30             546.848389
-10 2024-12-31             546.848389
-11 2025-01-01             535.710388
-12 2025-01-02             604.988831
-13 2025-01-03             620.425720
-2025-02-08 12:44:11,096 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 12:48:35,461 - INFO - Data is pushed into DB
-2025-02-08 12:48:35,463 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:48:35,463 - INFO - Forecast days are read and set to 14
-2025-02-08 12:48:35,463 - INFO - Training data till 2024-11-03
-2025-02-08 12:49:25,674 - INFO - Data is pushed into DB
-2025-02-08 12:49:25,674 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:49:25,674 - INFO - Forecast days are read and set to 14
-2025-02-08 12:49:25,674 - INFO - Training data till 2024-11-03
-2025-02-08 12:49:26,283 - INFO - XGB predcition is          Date  Predicted Call Volume
-0  2024-12-21             526.772461
-1  2024-12-22             516.632874
-2  2024-12-23             515.862122
-3  2024-12-24             520.586182
-4  2024-12-25             529.036682
-5  2024-12-26             531.216309
-6  2024-12-27             529.582336
-7  2024-12-28             545.038879
-8  2024-12-29             534.222778
-9  2024-12-30             533.161926
-10 2024-12-31             542.234192
-11 2025-01-01             556.742737
-12 2025-01-02             539.165710
-13 2025-01-03             627.886902
-2025-02-08 12:49:26,286 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 12:50:16,659 - INFO - Data is pushed into DB
-2025-02-08 12:50:16,667 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:50:16,676 - INFO - Forecast days are read and set to 14
-2025-02-08 12:50:16,676 - INFO - Training data till 2024-11-03
-2025-02-08 12:50:17,276 - INFO - XGB predcition is          Date  Predicted Call Volume
-0  2024-12-21             526.772461
-1  2024-12-22             516.632874
-2  2024-12-23             515.862122
-3  2024-12-24             520.586182
-4  2024-12-25             529.036682
-5  2024-12-26             531.216309
-6  2024-12-27             529.582336
-7  2024-12-28             545.038879
-8  2024-12-29             534.222778
-9  2024-12-30             533.161926
-10 2024-12-31             542.234192
-11 2025-01-01             556.742737
-12 2025-01-02             539.165710
-13 2025-01-03             627.886902
-2025-02-08 12:50:17,278 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 12:50:54,463 - INFO - Data is pushed into DB
-2025-02-08 12:50:54,473 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:51:57,372 - INFO - Data is pushed into DB
-2025-02-08 12:51:57,382 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:52:17,365 - INFO - Data is pushed into DB
-2025-02-08 12:52:17,365 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:53:47,903 - INFO - Data is pushed into DB
-2025-02-08 12:53:47,913 - INFO - Data is read into DF FROM  DB
-2025-02-08 12:54:13,348 - INFO - Data is pushed into DB
-2025-02-08 12:54:13,358 - INFO - Data is read into DF FROM  DB
-2025-02-08 13:06:35,881 - INFO - Data is pushed into DB
-2025-02-08 13:06:35,883 - INFO - Data is read into DF FROM  DB
-2025-02-08 13:07:35,139 - INFO - Data is pushed into DB
-2025-02-08 13:07:35,139 - INFO - Data is read into DF FROM  DB
-2025-02-08 13:07:49,410 - INFO - Data is pushed into DB
-2025-02-08 13:07:49,419 - INFO - Data is read into DF FROM  DB
-2025-02-08 13:09:43,848 - INFO - Data is pushed into DB
-2025-02-08 13:09:43,848 - INFO - Data is read into DF FROM DB
-2025-02-08 13:10:46,686 - INFO - Data is pushed into DB
-2025-02-08 13:10:46,687 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 13:11:57,160 - INFO - Data is pushed into DB
-2025-02-08 13:11:57,160 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 13:11:57,160 - INFO - Forecast days are read and set to 14
-2025-02-08 13:11:57,169 - INFO - Training data till 2024-11-03
-2025-02-08 13:11:57,790 - INFO - XGB predcition is          Date  Predicted Call Volume
-0  2025-01-01             524.278992
-1  2025-01-02             522.143677
-2  2025-01-03             523.962952
-3  2025-01-04             523.784790
-4  2025-01-05             518.750488
-5  2025-01-06             513.551941
-6  2025-01-07             519.006226
-7  2025-01-08             525.311890
-8  2025-01-09             525.834473
-9  2025-01-10             532.895020
-10 2025-01-11             525.783325
-11 2025-01-12             522.154419
-12 2025-01-13             628.224304
-13 2025-01-14             624.260071
-2025-02-08 13:11:57,792 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:12:31,321 - INFO - Data is pushed into DB
-2025-02-08 13:12:31,321 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 13:12:31,321 - INFO - Forecast days are read and set to 14
-2025-02-08 13:12:31,321 - INFO - Training data till 2024-11-03
-2025-02-08 13:12:31,822 - INFO - XGB predcition is          Date  Predicted Call Volume
-0  2025-01-01             524.278992
-1  2025-01-02             522.143677
-2  2025-01-03             523.962952
-3  2025-01-04             523.784790
-4  2025-01-05             518.750488
-5  2025-01-06             513.551941
-6  2025-01-07             519.006226
-7  2025-01-08             525.311890
-8  2025-01-09             525.834473
-9  2025-01-10             532.895020
-10 2025-01-11             525.783325
-11 2025-01-12             522.154419
-12 2025-01-13             628.224304
-13 2025-01-14             624.260071
-2025-02-08 13:12:31,822 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:12:52,345 - INFO - Data is pushed into DB
-2025-02-08 13:12:52,348 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 13:12:52,348 - INFO - Forecast days are read and set to 14
-2025-02-08 13:12:52,348 - INFO - Training data till 2024-11-03
-2025-02-08 13:12:52,772 - INFO - XGB predcition is          Date  Predicted Call Volume
-0  2024-11-04             509.240112
-1  2024-11-05             521.542542
-2  2024-11-06             518.616577
-3  2024-11-07             519.645508
-4  2024-11-08             515.292725
-5  2024-11-09             515.613892
-6  2024-11-10             521.088623
-7  2024-11-11             514.605957
-8  2024-11-12             544.973999
-9  2024-11-13             558.223938
-10 2024-11-14             549.356384
-11 2024-11-15             531.810364
-12 2024-11-16             529.346130
-13 2024-11-17             534.846863
-2025-02-08 13:12:52,782 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:15:21,501 - INFO - Data is pushed into DB
-2025-02-08 13:15:21,506 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 13:15:21,506 - INFO - Forecast days are read and set to 14
-2025-02-08 13:15:21,506 - INFO - Training data till 2024-11-03
-2025-02-08 13:15:22,004 - INFO - XGB predcition is          Date  Predicted Call Volume
-0  2024-11-04             509.240112
-1  2024-11-05             521.542542
-2  2024-11-06             518.616577
-3  2024-11-07             519.645508
-4  2024-11-08             515.292725
-5  2024-11-09             515.613892
-6  2024-11-10             521.088623
-7  2024-11-11             514.605957
-8  2024-11-12             544.973999
-9  2024-11-13             558.223938
-10 2024-11-14             549.356384
-11 2024-11-15             531.810364
-12 2024-11-16             529.346130
-13 2024-11-17             534.846863
-2025-02-08 13:15:22,011 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:16:21,363 - INFO - Data is pushed into DB
-2025-02-08 13:16:21,363 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 13:16:21,363 - INFO - Forecast days are read and set to 14
-2025-02-08 13:16:21,363 - INFO - Training data till 2024-11-03
-2025-02-08 13:16:21,802 - INFO - XGB predcition is          Date  Call Volume
-0  2024-11-04   509.240112
-1  2024-11-05   521.542542
-2  2024-11-06   518.616577
-3  2024-11-07   519.645508
-4  2024-11-08   515.292725
-5  2024-11-09   515.613892
-6  2024-11-10   521.088623
-7  2024-11-11   514.605957
-8  2024-11-12   544.973999
-9  2024-11-13   558.223938
-10 2024-11-14   549.356384
-11 2024-11-15   531.810364
-12 2024-11-16   529.346130
-13 2024-11-17   534.846863
-2025-02-08 13:16:21,806 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:19:04,972 - INFO - Data is pushed into DB
-2025-02-08 13:19:04,972 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 13:19:04,972 - INFO - Forecast days are read and set to 14
-2025-02-08 13:19:04,972 - INFO - Training data till 2024-11-03
-2025-02-08 13:19:05,550 - INFO - Prediciton data is pushed into DB
-2025-02-08 13:19:05,557 - INFO - XGB predcition is           Date  Call Volume            Timestamp
-0   2024-11-04   509.240112  2025-02-08 13:19:05
-1   2024-11-05   521.542542  2025-02-08 13:19:05
-2   2024-11-06   518.616577  2025-02-08 13:19:05
-3   2024-11-07   519.645508  2025-02-08 13:19:05
-4   2024-11-08   515.292725  2025-02-08 13:19:05
-5   2024-11-09   515.613892  2025-02-08 13:19:05
-6   2024-11-10   521.088623  2025-02-08 13:19:05
-7   2024-11-11   514.605957  2025-02-08 13:19:05
-8   2024-11-12   544.973999  2025-02-08 13:19:05
-9   2024-11-13   558.223938  2025-02-08 13:19:05
-10  2024-11-14   549.356384  2025-02-08 13:19:05
-11  2024-11-15   531.810364  2025-02-08 13:19:05
-12  2024-11-16   529.346130  2025-02-08 13:19:05
-13  2024-11-17   534.846863  2025-02-08 13:19:05
-2025-02-08 13:19:05,559 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:19:43,539 - INFO - Data is pushed into DB
-2025-02-08 13:19:43,539 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 13:19:43,539 - INFO - Forecast days are read and set to 14
-2025-02-08 13:19:43,539 - INFO - Training data till 2024-11-03
-2025-02-08 13:19:44,240 - INFO - Prediciton data is pushed into DB
-2025-02-08 13:19:44,250 - INFO - XGB predcition is           Date  Call Volume            Timestamp
-0   2024-11-04   509.240112  2025-02-08 13:19:44
-1   2024-11-05   521.542542  2025-02-08 13:19:44
-2   2024-11-06   518.616577  2025-02-08 13:19:44
-3   2024-11-07   519.645508  2025-02-08 13:19:44
-4   2024-11-08   515.292725  2025-02-08 13:19:44
-5   2024-11-09   515.613892  2025-02-08 13:19:44
-6   2024-11-10   521.088623  2025-02-08 13:19:44
-7   2024-11-11   514.605957  2025-02-08 13:19:44
-8   2024-11-12   544.973999  2025-02-08 13:19:44
-9   2024-11-13   558.223938  2025-02-08 13:19:44
-10  2024-11-14   549.356384  2025-02-08 13:19:44
-11  2024-11-15   531.810364  2025-02-08 13:19:44
-12  2024-11-16   529.346130  2025-02-08 13:19:44
-13  2024-11-17   534.846863  2025-02-08 13:19:44
-2025-02-08 13:19:44,250 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:21:15,262 - INFO - Data is pushed into DB
-2025-02-08 13:21:15,272 - INFO - Data is read into DF FROM DB
-2025-02-08 13:21:15,272 - INFO - Forecast days are read and set to 14
-2025-02-08 13:21:15,272 - INFO - Training data till 2024-11-03
-2025-02-08 13:21:15,710 - INFO - Prediciton data is pushed into DB
-2025-02-08 13:21:15,718 - INFO - XGB predcition is           Date  Call Volume            Timestamp
-0   2024-11-04   509.240112  2025-02-08 13:21:15
-1   2024-11-05   521.542542  2025-02-08 13:21:15
-2   2024-11-06   518.616577  2025-02-08 13:21:15
-3   2024-11-07   519.645508  2025-02-08 13:21:15
-4   2024-11-08   515.292725  2025-02-08 13:21:15
-5   2024-11-09   515.613892  2025-02-08 13:21:15
-6   2024-11-10   521.088623  2025-02-08 13:21:15
-7   2024-11-11   514.605957  2025-02-08 13:21:15
-8   2024-11-12   544.973999  2025-02-08 13:21:15
-9   2024-11-13   558.223938  2025-02-08 13:21:15
-10  2024-11-14   549.356384  2025-02-08 13:21:15
-11  2024-11-15   531.810364  2025-02-08 13:21:15
-12  2024-11-16   529.346130  2025-02-08 13:21:15
-13  2024-11-17   534.846863  2025-02-08 13:21:15
-2025-02-08 13:21:15,720 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:33:34,471 - INFO - Data is pushed into DB
-2025-02-08 13:33:34,471 - INFO - Data is read into DF FROM DB
-2025-02-08 13:33:34,471 - INFO - Forecast days are read and set to 14
-2025-02-08 13:33:34,471 - INFO - Training data till 2024-11-03
-2025-02-08 13:33:34,943 - INFO - XGB base model weights are created
-2025-02-08 13:33:34,953 - INFO - XGB model saved to xgb_model.pkl
-2025-02-08 13:33:34,964 - INFO - XGB model loaded
-2025-02-08 13:33:34,965 - ERROR - Prediction failed: 'DataFrame' object has no attribute 'predict'
-2025-02-08 13:38:01,604 - INFO - Data is pushed into DB
-2025-02-08 13:38:01,619 - INFO - Data is read into DF FROM DB
-2025-02-08 13:38:01,619 - INFO - Forecast days are read and set to 14
-2025-02-08 13:38:01,619 - INFO - Training data till 2024-11-03
-2025-02-08 13:38:01,997 - INFO - XGB model trained and saved successfully
-2025-02-08 13:38:02,034 - INFO - XGB model successfully loaded
-2025-02-08 13:38:02,243 - INFO - Forecasting for next 14 days completed
-2025-02-08 13:38:02,265 - INFO - Forecasted data saved as CSV
-2025-02-08 13:39:22,376 - INFO - Data is pushed into DB
-2025-02-08 13:39:22,387 - INFO - Data is read into DF FROM DB
-2025-02-08 13:39:22,388 - INFO - Forecast days are read and set to 14
-2025-02-08 13:39:22,388 - INFO - Training data till 2024-11-03
-2025-02-08 13:39:22,730 - INFO - XGB model trained and saved successfully
-2025-02-08 13:39:22,746 - INFO - XGB model successfully loaded
-2025-02-08 13:39:22,953 - INFO - Forecasting for next 14 days completed
-2025-02-08 13:42:21,301 - INFO - Data is pushed into DB
-2025-02-08 13:42:21,301 - INFO - Data is read into DF FROM DB
-2025-02-08 13:42:21,301 - INFO - Forecast days are read and set to 14
-2025-02-08 13:42:21,301 - INFO - Training data till 2024-11-03
-2025-02-08 13:42:21,820 - INFO - XGB model trained and saved successfully
-2025-02-08 13:42:21,833 - INFO - XGB model successfully loaded
-2025-02-08 13:42:22,042 - INFO - Forecasting for next 14 days completed
-2025-02-08 13:49:10,173 - INFO - Data is pushed into DB
-2025-02-08 13:49:10,185 - INFO - Data is read into DF FROM DB
-2025-02-08 13:49:10,185 - INFO - Forecast days are read and set to 14
-2025-02-08 13:49:10,185 - INFO - Training data till 2024-11-03
-2025-02-08 13:49:10,588 - INFO - XGB model trained and saved successfully
-2025-02-08 13:49:10,598 - INFO - XGB model successfully loaded
-2025-02-08 13:49:10,816 - INFO - Forecasting for next 14 days completed
-2025-02-08 13:49:10,827 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:07:13,374 - ERROR - Failed to push data into server because of time data "01-01-2023" doesn't match format "%Y-%m-%d", at position 0. You might want to try:
-    - passing `format` if your strings have a consistent format;
-    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
-    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
-2025-02-08 14:07:13,384 - INFO - Data is read into DF FROM DB
-2025-02-08 14:07:13,384 - INFO - Forecast days are read and set to 14
-2025-02-08 14:07:13,384 - INFO - Training data till 2024-11-03
-2025-02-08 14:07:13,663 - INFO - XGB model trained and saved successfully
-2025-02-08 14:07:13,678 - INFO - XGB model successfully loaded
-2025-02-08 14:07:13,887 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:07:13,904 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:07:13,908 - INFO - XGB model successfully loaded
-2025-02-08 14:10:48,076 - INFO - Data is pushed into DB
-2025-02-08 14:10:48,081 - INFO - Data is read into DF FROM DB
-2025-02-08 14:10:48,081 - INFO - Forecast days are read and set to 14
-2025-02-08 14:10:48,081 - INFO - Training data till 2024-11-03
-2025-02-08 14:10:48,516 - INFO - XGB model trained and saved successfully
-2025-02-08 14:10:48,526 - INFO - XGB model successfully loaded
-2025-02-08 14:10:48,736 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:10:48,752 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:10:48,759 - INFO - XGB model successfully loaded
-2025-02-08 14:27:18,410 - INFO - Data is pushed into DB
-2025-02-08 14:27:18,415 - INFO - Data is read into DF FROM DB
-2025-02-08 14:27:18,415 - INFO - Forecast days are read and set to 14
-2025-02-08 14:27:18,415 - INFO - Training data till 2024-11-03
-2025-02-08 14:27:18,690 - INFO - XGB model trained and saved successfully
-2025-02-08 14:27:18,706 - INFO - XGB model successfully loaded
-2025-02-08 14:27:18,922 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:27:18,925 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:27:18,931 - INFO - XGB model successfully loaded
-2025-02-08 14:28:19,374 - INFO - Data is pushed into DB
-2025-02-08 14:28:19,380 - INFO - Data is read into DF FROM DB
-2025-02-08 14:28:19,380 - INFO - Forecast days are read and set to 14
-2025-02-08 14:28:19,380 - INFO - Training data till 2024-11-03
-2025-02-08 14:28:19,820 - INFO - XGB model trained and saved successfully
-2025-02-08 14:28:19,836 - INFO - XGB model successfully loaded
-2025-02-08 14:28:20,042 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:28:20,066 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:28:20,071 - INFO - XGB model successfully loaded
-2025-02-08 14:34:17,576 - INFO - Data is pushed into DB
-2025-02-08 14:34:17,583 - INFO - Data is read into DF FROM DB
-2025-02-08 14:34:17,584 - INFO - Forecast days are read and set to 14
-2025-02-08 14:34:17,584 - INFO - Training data till 2024-11-03
-2025-02-08 14:34:17,846 - INFO - XGB model trained and saved successfully
-2025-02-08 14:34:17,858 - INFO - XGB model successfully loaded
-2025-02-08 14:34:18,073 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:34:18,081 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:34:18,084 - INFO - XGB model successfully loaded
-2025-02-08 14:34:18,088 - ERROR - Prediction failed: plot_line_chart() got an unexpected keyword argument 'y1'
-2025-02-08 14:35:04,282 - INFO - Data is pushed into DB
-2025-02-08 14:35:04,289 - INFO - Data is read into DF FROM DB
-2025-02-08 14:35:04,289 - INFO - Forecast days are read and set to 14
-2025-02-08 14:35:04,289 - INFO - Training data till 2024-11-03
-2025-02-08 14:35:04,691 - INFO - XGB model trained and saved successfully
-2025-02-08 14:35:04,703 - INFO - XGB model successfully loaded
-2025-02-08 14:35:04,914 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:35:04,932 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:35:04,935 - INFO - XGB model successfully loaded
-2025-02-08 14:35:04,938 - ERROR - Prediction failed: plot_line_chart() missing 1 required positional argument: 'df1'
-2025-02-08 14:36:23,355 - INFO - Data is pushed into DB
-2025-02-08 14:36:23,361 - INFO - Data is read into DF FROM DB
-2025-02-08 14:36:23,361 - INFO - Forecast days are read and set to 14
-2025-02-08 14:36:23,362 - INFO - Training data till 2024-11-03
-2025-02-08 14:36:23,667 - INFO - XGB model trained and saved successfully
-2025-02-08 14:36:23,679 - INFO - XGB model successfully loaded
-2025-02-08 14:36:23,889 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:36:23,896 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:36:23,902 - INFO - XGB model successfully loaded
-2025-02-08 14:38:51,357 - INFO - Data is pushed into DB
-2025-02-08 14:38:51,360 - INFO - Data is read into DF FROM DB
-2025-02-08 14:38:51,364 - INFO - Forecast days are read and set to 14
-2025-02-08 14:38:51,365 - INFO - Training data till 2024-11-03
-2025-02-08 14:38:51,805 - INFO - XGB model trained and saved successfully
-2025-02-08 14:38:51,819 - INFO - XGB model successfully loaded
-2025-02-08 14:38:52,030 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:38:52,042 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:38:52,045 - INFO - XGB model successfully loaded
-2025-02-08 14:49:24,513 - INFO - Data is pushed into DB
-2025-02-08 14:49:24,519 - INFO - Data is read into DF FROM DB
-2025-02-08 14:49:24,519 - INFO - Forecast days are read and set to 14
-2025-02-08 14:49:24,519 - INFO - Training data till 2024-11-03
-2025-02-08 14:49:24,839 - INFO - XGB model trained and saved successfully
-2025-02-08 14:49:24,851 - INFO - XGB model successfully loaded
-2025-02-08 14:49:25,059 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:49:25,077 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:49:27,051 - ERROR - Prediction failed: index 7 is out of bounds for axis 0 with size 3
-2025-02-08 14:54:23,413 - INFO - Data is pushed into DB
-2025-02-08 14:54:23,413 - INFO - Data is read into DF FROM DB
-2025-02-08 14:54:23,413 - INFO - Forecast days are read and set to 14
-2025-02-08 14:54:23,413 - INFO - Training data till 2024-11-03
-2025-02-08 14:54:23,797 - INFO - XGB model trained and saved successfully
-2025-02-08 14:54:23,808 - INFO - XGB model successfully loaded
-2025-02-08 14:54:24,026 - INFO - Forecasting for next 14 days completed
-2025-02-08 14:54:24,043 - INFO - FORECAST Data is pushed into DB
-2025-02-08 14:54:24,043 - INFO - TRAIN Data is pushed into DB
-2025-02-08 14:54:26,649 - ERROR - Prediction failed: index 7 is out of bounds for axis 0 with size 3
-2025-02-08 15:01:47,139 - INFO - Data is pushed into DB
-2025-02-08 15:01:47,146 - INFO - Data is read into DF FROM DB
-2025-02-08 15:01:47,146 - INFO - Forecast days are read and set to 14
-2025-02-08 15:01:47,147 - INFO - Training data till 2024-11-03
-2025-02-08 15:01:47,534 - INFO - XGB model trained and saved successfully
-2025-02-08 15:01:47,543 - INFO - XGB model successfully loaded
-2025-02-08 15:01:47,758 - INFO - Forecasting for next 14 days completed
-2025-02-08 15:01:47,779 - INFO - FORECAST Data is pushed into DB
-2025-02-08 15:01:47,779 - INFO - TRAIN Data is pushed into DB
-2025-02-08 15:01:49,839 - ERROR - Prediction failed: index 7 is out of bounds for axis 0 with size 3
-2025-02-08 15:03:12,653 - INFO - Data is pushed into DB
-2025-02-08 15:03:12,660 - INFO - Data is read into DF FROM DB
-2025-02-08 15:03:12,660 - INFO - Forecast days are read and set to 14
-2025-02-08 15:03:12,660 - INFO - Training data till 2024-11-03
-2025-02-08 15:03:13,089 - INFO - XGB model trained and saved successfully
-2025-02-08 15:03:13,102 - INFO - XGB model successfully loaded
-2025-02-08 15:03:13,309 - INFO - Forecasting for next 14 days completed
-2025-02-08 15:03:13,330 - INFO - FORECAST Data is pushed into DB
-2025-02-08 15:03:13,330 - INFO - TRAIN Data is pushed into DB
-2025-02-08 15:03:15,670 - ERROR - retrain failed: index 7 is out of bounds for axis 0 with size 3
-2025-02-08 15:03:42,193 - INFO - Data is pushed into DB
-2025-02-08 15:03:42,199 - INFO - Data is read into DF FROM DB
-2025-02-08 15:03:42,200 - INFO - Forecast days are read and set to 14
-2025-02-08 15:03:42,200 - INFO - Training data till 2024-11-03
-2025-02-08 15:03:42,644 - INFO - XGB model trained and saved successfully
-2025-02-08 15:03:42,658 - INFO - XGB model successfully loaded
-2025-02-08 15:03:42,874 - INFO - Forecasting for next 14 days completed
-2025-02-08 15:03:42,893 - INFO - FORECAST Data is pushed into DB
-2025-02-08 15:03:42,893 - INFO - TRAIN Data is pushed into DB
-2025-02-08 15:03:44,660 - INFO - XGB model successfully loaded
-2025-02-08 16:50:51,333 - INFO - Data is pushed into DB
-2025-02-08 16:50:51,345 - INFO - Data is read into DF FROM DB
-2025-02-08 16:50:51,345 - INFO - Forecast days are read and set to 14
-2025-02-08 16:50:51,345 - INFO - Training data till 2024-11-03
-2025-02-08 16:50:51,729 - INFO - XGB model trained and saved successfully
-2025-02-08 16:50:51,759 - INFO - XGB model successfully loaded
-2025-02-08 16:50:51,979 - INFO - Forecasting for next 14 days completed
-2025-02-08 16:50:52,005 - INFO - FORECAST Data is pushed into DB
-2025-02-08 16:50:52,005 - INFO - TRAIN Data is pushed into DB
-2025-02-08 16:50:57,557 - INFO - XGB model successfully loaded
-2025-02-08 16:51:24,957 - INFO - Data is pushed into DB
-2025-02-08 16:51:24,967 - INFO - Data is read into DF FROM DB
-2025-02-08 16:51:24,967 - INFO - Forecast days are read and set to 14
-2025-02-08 16:51:24,967 - INFO - Training data till 2024-11-03
-2025-02-08 16:51:25,235 - INFO - XGB model trained and saved successfully
-2025-02-08 16:51:25,251 - INFO - XGB model successfully loaded
-2025-02-08 16:51:25,483 - INFO - Forecasting for next 14 days completed
-2025-02-08 16:51:25,508 - INFO - FORECAST Data is pushed into DB
-2025-02-08 16:51:25,508 - INFO - TRAIN Data is pushed into DB
-2025-02-08 16:51:27,696 - INFO - XGB model successfully loaded
-2025-02-08 16:52:14,552 - INFO - Data is pushed into DB
-2025-02-08 16:52:14,562 - INFO - Data is read into DF FROM DB
-2025-02-08 16:52:14,562 - INFO - Forecast days are read and set to 14
-2025-02-08 16:52:14,562 - INFO - Training data till 2024-11-03
-2025-02-08 16:52:14,878 - INFO - XGB model trained and saved successfully
-2025-02-08 16:52:14,902 - INFO - XGB model successfully loaded
-2025-02-08 16:52:15,116 - INFO - Forecasting for next 14 days completed
-2025-02-08 16:52:15,150 - INFO - FORECAST Data is pushed into DB
-2025-02-08 16:52:15,150 - INFO - TRAIN Data is pushed into DB
-2025-02-08 16:52:19,265 - INFO - XGB model successfully loaded
-2025-02-08 16:54:00,945 - INFO - Data is pushed into DB
-2025-02-08 16:54:00,945 - INFO - Data is read into DF FROM DB
-2025-02-08 16:54:00,945 - INFO - Forecast days are read and set to 14
-2025-02-08 16:54:00,945 - INFO - Training data till 2024-11-03
-2025-02-08 16:54:01,197 - INFO - XGB model trained and saved successfully
-2025-02-08 16:54:01,208 - INFO - XGB model successfully loaded
-2025-02-08 16:54:01,421 - INFO - Forecasting for next 14 days completed
-2025-02-08 16:54:01,450 - INFO - FORECAST Data is pushed into DB
-2025-02-08 16:54:01,450 - INFO - TRAIN Data is pushed into DB
-2025-02-08 16:54:03,521 - INFO - XGB model successfully loaded
-2025-02-08 16:54:03,692 - INFO - XGB model retrained and saved successfully
-2025-02-08 16:54:03,692 - ERROR - retrain failed: '>=' not supported between instances of 'Timestamp' and 'str'
-2025-02-08 16:54:56,851 - INFO - Data is pushed into DB
-2025-02-08 16:54:56,861 - INFO - Data is read into DF FROM DB
-2025-02-08 16:54:56,861 - INFO - Forecast days are read and set to 14
-2025-02-08 16:54:56,861 - INFO - Training data till 2024-11-03
-2025-02-08 16:54:57,128 - INFO - XGB model trained and saved successfully
-2025-02-08 16:54:57,140 - INFO - XGB model successfully loaded
-2025-02-08 16:54:57,344 - INFO - Forecasting for next 14 days completed
-2025-02-08 16:54:57,380 - INFO - FORECAST Data is pushed into DB
-2025-02-08 16:54:57,380 - INFO - TRAIN Data is pushed into DB
-2025-02-08 16:54:59,050 - INFO - XGB model successfully loaded
-2025-02-08 16:54:59,201 - INFO - XGB model retrained and saved successfully
-2025-02-08 16:54:59,224 - ERROR - retrain failed: Could not convert string '2025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.3446972025-02-08 16:54:57.344697' to numeric
-2025-02-08 16:56:26,257 - INFO - Data is pushed into DB
-2025-02-08 16:56:26,263 - INFO - Data is read into DF FROM DB
-2025-02-08 16:56:26,263 - INFO - Forecast days are read and set to 14
-2025-02-08 16:56:26,263 - INFO - Training data till 2024-11-03
-2025-02-08 16:56:26,516 - INFO - XGB model trained and saved successfully
-2025-02-08 16:56:26,526 - INFO - XGB model successfully loaded
-2025-02-08 16:56:26,743 - INFO - Forecasting for next 14 days completed
-2025-02-08 16:56:26,753 - INFO - FORECAST Data is pushed into DB
-2025-02-08 16:56:26,763 - INFO - TRAIN Data is pushed into DB
-2025-02-08 16:56:28,529 - INFO - XGB model successfully loaded
-2025-02-08 16:57:08,069 - INFO - Data is pushed into DB
-2025-02-08 16:57:08,069 - INFO - Data is read into DF FROM DB
-2025-02-08 16:57:08,069 - INFO - Forecast days are read and set to 14
-2025-02-08 16:57:08,069 - INFO - Training data till 2024-11-03
-2025-02-08 16:57:08,318 - INFO - XGB model trained and saved successfully
-2025-02-08 16:57:08,330 - INFO - XGB model successfully loaded
-2025-02-08 16:57:08,530 - INFO - Forecasting for next 14 days completed
-2025-02-08 16:57:08,568 - INFO - FORECAST Data is pushed into DB
-2025-02-08 16:57:08,568 - INFO - TRAIN Data is pushed into DB
-2025-02-08 16:57:10,416 - INFO - XGB model successfully loaded
-2025-02-08 16:57:10,566 - INFO - XGB model retrained and saved successfully
-2025-02-08 16:57:10,782 - INFO - Forecasting for next 14 days completed
-2025-02-08 16:57:10,792 - INFO - Updated FORECAST Data pushed into DB
-2025-02-08 17:17:50,801 - INFO - Data is pushed into DB
-2025-02-08 17:17:50,806 - INFO - Data is read into DF FROM DB
-2025-02-08 17:17:50,806 - INFO - Forecast days are read and set to 14
-2025-02-08 17:17:50,806 - INFO - Training data till 2024-11-03
-2025-02-08 17:17:51,056 - INFO - XGB model trained and saved successfully
-2025-02-08 17:17:51,075 - INFO - XGB model successfully loaded
-2025-02-08 17:17:51,286 - INFO - Forecasting for next 14 days completed
-2025-02-08 17:17:51,310 - INFO - FORECAST Data is pushed into DB
-2025-02-08 17:17:51,310 - INFO - TRAIN Data is pushed into DB
-2025-02-08 17:17:53,395 - INFO - XGB model successfully loaded
-2025-02-08 17:17:53,566 - INFO - XGB model retrained and saved successfully
-2025-02-08 17:17:53,792 - INFO - Forecasting for next 14 days completed
-2025-02-08 17:17:53,801 - INFO - Updated FORECAST Data pushed into DB
-2025-02-08 17:17:53,808 - INFO - Updated Train data Data pushed into DB
+2025-02-08 17:45:40,535 - INFO - Data is pushed into DB
+2025-02-08 17:46:12,677 - INFO - Forecast days are read and set to 14
+2025-02-08 17:46:12,677 - INFO - Training data till 2024-11-03
+2025-02-08 17:46:12,695 - INFO - Data is pushed into DB
+2025-02-08 17:46:12,708 - INFO - Data is read into DF FROM DB
+2025-02-08 17:46:38,137 - INFO - Forecast days are read and set to 14
+2025-02-08 17:46:38,137 - INFO - Training data till 2024-11-03
+2025-02-08 17:46:38,158 - INFO - Data is pushed into DB
+2025-02-08 17:46:38,164 - INFO - Data is read into DF FROM DB
+2025-02-08 17:46:38,419 - INFO - XGB model trained and saved successfully
+2025-02-08 17:47:32,049 - INFO - Forecast days are read and set to 14
+2025-02-08 17:47:32,049 - INFO - Training data till 2024-11-03
+2025-02-08 17:47:32,065 - INFO - Data is pushed into DB
+2025-02-08 17:47:32,067 - INFO - Data is read into DF FROM DB
+2025-02-08 17:47:32,294 - INFO - XGB model trained and saved successfully
+2025-02-08 17:48:09,017 - INFO - Forecast days are read and set to 14
+2025-02-08 17:48:09,017 - INFO - Training data till 2024-11-03
+2025-02-08 17:48:09,027 - INFO - Data is pushed into DB
+2025-02-08 17:48:09,042 - INFO - Data is read into DF FROM DB
+2025-02-08 17:48:09,199 - INFO - XGB model trained and saved successfully
+2025-02-08 17:48:09,209 - INFO - XGB model successfully loaded
+2025-02-08 17:48:09,431 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:48:09,435 - INFO - FORECAST Data is pushed into DB
+2025-02-08 17:48:09,435 - INFO - TRAIN Data is pushed into DB
+2025-02-08 17:48:38,745 - INFO - Forecast days are read and set to 14
+2025-02-08 17:48:38,745 - INFO - Training data till 2024-11-03
+2025-02-08 17:48:38,759 - INFO - Data is pushed into DB
+2025-02-08 17:48:38,768 - INFO - Data is read into DF FROM DB
+2025-02-08 17:48:38,991 - INFO - XGB model trained and saved successfully
+2025-02-08 17:48:39,001 - INFO - XGB model successfully loaded
+2025-02-08 17:48:39,221 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:48:39,244 - INFO - FORECAST Data is pushed into DB
+2025-02-08 17:48:39,244 - INFO - TRAIN Data is pushed into DB
+2025-02-08 17:48:41,688 - INFO - XGB model successfully loaded
+2025-02-08 17:48:41,858 - INFO - XGB model retrained and saved successfully
+2025-02-08 17:48:42,081 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:48:42,096 - INFO - Updated FORECAST Data pushed into DB
+2025-02-08 17:48:42,102 - INFO - Updated Train data Data pushed into DB
+2025-02-08 17:55:30,125 - INFO - Forecast days are read and set to 14
+2025-02-08 17:55:30,125 - INFO - Training data till 2024-11-03
+2025-02-08 17:55:30,144 - INFO - Data is pushed into DB
+2025-02-08 17:55:30,144 - INFO - Data is read into DF FROM DB
+2025-02-08 17:55:30,361 - INFO - XGB model trained and saved successfully
+2025-02-08 17:55:30,375 - INFO - XGB model successfully loaded
+2025-02-08 17:55:30,583 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:55:30,594 - INFO - FORECAST Data is pushed into DB
+2025-02-08 17:55:30,594 - INFO - TRAIN Data is pushed into DB
+2025-02-08 17:55:32,532 - INFO - XGB model successfully loaded
+2025-02-08 17:55:32,680 - INFO - XGB model retrained and saved successfully
+2025-02-08 17:55:32,900 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:55:32,915 - INFO - Updated FORECAST Data pushed into DB
+2025-02-08 17:55:32,922 - INFO - Updated Train data Data pushed into DB
+2025-02-08 17:57:59,804 - INFO - Forecast days are read and set to 14
+2025-02-08 17:57:59,804 - INFO - Training data till 2024-11-03
+2025-02-08 17:57:59,804 - INFO - XGB model successfully loaded
+2025-02-08 17:58:00,063 - INFO - XGB model retrained and saved successfully
+2025-02-08 17:58:00,274 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:58:00,286 - INFO - Updated FORECAST Data pushed into DB
+2025-02-08 17:58:00,295 - INFO - Updated Train data Data pushed into DB
+2025-02-08 17:58:53,809 - INFO - Forecast days are read and set to 14
+2025-02-08 17:58:53,809 - INFO - Training data till 2024-11-03
+2025-02-08 17:58:53,809 - INFO - XGB model successfully loaded
+2025-02-08 17:58:54,047 - INFO - XGB model retrained and saved successfully
+2025-02-08 17:58:54,258 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:58:54,279 - INFO - Updated FORECAST Data pushed into DB
+2025-02-08 17:58:54,285 - INFO - Updated Train data Data pushed into DB
+2025-02-08 17:59:53,090 - INFO - Forecast days are read and set to 14
+2025-02-08 17:59:53,090 - INFO - Training data till 2024-11-03
+2025-02-08 17:59:53,090 - INFO - XGB model successfully loaded
+2025-02-08 17:59:53,340 - INFO - XGB model retrained and saved successfully
+2025-02-08 17:59:53,546 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:59:53,553 - INFO - Updated FORECAST Data pushed into DB
+2025-02-08 17:59:53,559 - INFO - Updated Train data Data pushed into DB
+2025-02-08 18:00:47,126 - INFO - Forecast days are read and set to 14
+2025-02-08 18:00:47,126 - INFO - Training data till 2024-11-03
+2025-02-08 18:00:47,126 - INFO - XGB model successfully loaded
+2025-02-08 18:00:47,300 - INFO - XGB model retrained and saved successfully
+2025-02-08 18:00:47,528 - INFO - Forecasting for next 14 days completed
+2025-02-08 18:00:47,532 - INFO - Updated FORECAST Data pushed into DB
+2025-02-08 18:00:47,538 - INFO - Updated Train data Data pushed into DB
+2025-02-08 18:06:23,123 - INFO - Forecast days are read and set to 14
+2025-02-08 18:06:23,123 - INFO - Training data till 2024-11-03
+2025-02-08 18:06:23,140 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-08 18:06:23,148 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-08 18:09:26,209 - INFO - Forecast days are read and set to 14
+2025-02-08 18:09:26,209 - INFO - Training data till 2024-11-03
+2025-02-08 18:09:26,230 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-08 18:09:26,235 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-08 18:09:26,449 - INFO - XGB model trained and saved successfully
+2025-02-08 18:09:26,469 - INFO - XGB model successfully loaded
+2025-02-08 18:09:26,695 - INFO - Forecasting for next 14 days completed from 2024-11-04 00:00:00 to 2024-11-17 00:00:00
+2025-02-08 18:09:26,695 - INFO - FORECAST Data is pushed into DB
+2025-02-08 18:09:26,695 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-03 00:00:00 
+2025-02-08 18:11:54,361 - INFO - Forecast days are read and set to 14
+2025-02-08 18:11:54,361 - INFO - Training data till 2024-11-03
+2025-02-08 18:11:54,383 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-08 18:11:54,393 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-08 18:11:54,607 - INFO - XGB model trained and saved successfully
+2025-02-08 18:11:54,630 - INFO - XGB model successfully loaded
+2025-02-08 18:11:54,863 - INFO - Forecasting for next 14 days completed from 2024-11-04 00:00:00 to 2024-11-17 00:00:00
+2025-02-08 18:11:54,863 - INFO - FORECAST Data is pushed into DB
+2025-02-08 18:11:54,863 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-03 00:00:00 
+2025-02-08 18:11:54,863 - INFO - ACTAUL VS PRED OF 2024-11-04 00:00:00 to 2024-11-10 00:00:00
+2025-02-08 18:17:42,017 - INFO - Forecast days are read and set to 14
+2025-02-08 18:17:42,017 - INFO - Training data till 2024-11-03
+2025-02-08 18:17:42,028 - INFO - Actuals of  2024-11-10 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-08 18:17:42,029 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-08 18:17:42,252 - INFO - XGB model retrained and saved successfully
+2025-02-08 18:17:42,461 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-08 18:17:42,461 - INFO - Updated FORECAST Data pushed into DB from  2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-08 18:17:42,471 - INFO - Updated Train data Data pushed into DB from  2023-01-01 00:00:00 to 2024-11-10 00:00:00
