@@ -1,5 +1,5 @@
 import pandas as pd
-from utils import write_data_db, read_data_db, get_logger
+from utils import write_data_db, read_data_db, get_logger,plot_line_chart
 import yaml
 from models import ForecastingModels  # Ensure this imports the correct ForecastingModels class
 import joblib
@@ -69,3 +69,36 @@ except Exception as e:
     logger.error(f"Prediction failed: {e}")
 
 #SCENARIO 2: Next mondays run load the model, get the actual data retrained and forecast the model
+
+try:
+    XGB_LOADED = joblib.load("xgb_model.pkl")
+    logger.info(f"XGB model successfully loaded")
+    #compare actuals vs forecast (as we are in next weeek)
+    query = f"""
+       SELECT * FROM ACD_VOLUME_FORECAST 
+        WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_FORECAST);
+    """
+    df_pred = read_data_db(query)
+    df_pred['Date'] = pd.to_datetime(df_pred['Date'])
+
+    actual_query = query = f"""
+        WITH cte1 AS (
+        SELECT * FROM ACD_VOLUME_FORECAST 
+        WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_FORECAST) 
+        LIMIT 7
+        ),
+        cte2 AS (
+            SELECT Date, "Call Volume" FROM ACD_VOLUME  -- Keep only required columns
+        )
+        SELECT a.Date,a.Predicted_Call_Volume, b."Call Volume"
+        FROM cte1 a
+        JOIN cte2 b
+        ON a.Date = b.Date
+    """
+    df_actual = read_data_db(actual_query)
+    plot_line_chart(df_actual,x='Date',y='Call Volume',df1=df_actual,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume", label2="Predicted_Call_Volume")
+
+
+except Exception as e:
+    logger.error(f"Prediction failed: {e}")
+

@@ -468,3 +468,80 @@
 2025-02-08 13:49:10,598 - INFO - XGB model successfully loaded
 2025-02-08 13:49:10,816 - INFO - Forecasting for next 14 days completed
 2025-02-08 13:49:10,827 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:07:13,374 - ERROR - Failed to push data into server because of time data "01-01-2023" doesn't match format "%Y-%m-%d", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-02-08 14:07:13,384 - INFO - Data is read into DF FROM DB
+2025-02-08 14:07:13,384 - INFO - Forecast days are read and set to 14
+2025-02-08 14:07:13,384 - INFO - Training data till 2024-11-03
+2025-02-08 14:07:13,663 - INFO - XGB model trained and saved successfully
+2025-02-08 14:07:13,678 - INFO - XGB model successfully loaded
+2025-02-08 14:07:13,887 - INFO - Forecasting for next 14 days completed
+2025-02-08 14:07:13,904 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:07:13,908 - INFO - XGB model successfully loaded
+2025-02-08 14:10:48,076 - INFO - Data is pushed into DB
+2025-02-08 14:10:48,081 - INFO - Data is read into DF FROM DB
+2025-02-08 14:10:48,081 - INFO - Forecast days are read and set to 14
+2025-02-08 14:10:48,081 - INFO - Training data till 2024-11-03
+2025-02-08 14:10:48,516 - INFO - XGB model trained and saved successfully
+2025-02-08 14:10:48,526 - INFO - XGB model successfully loaded
+2025-02-08 14:10:48,736 - INFO - Forecasting for next 14 days completed
+2025-02-08 14:10:48,752 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:10:48,759 - INFO - XGB model successfully loaded
+2025-02-08 14:27:18,410 - INFO - Data is pushed into DB
+2025-02-08 14:27:18,415 - INFO - Data is read into DF FROM DB
+2025-02-08 14:27:18,415 - INFO - Forecast days are read and set to 14
+2025-02-08 14:27:18,415 - INFO - Training data till 2024-11-03
+2025-02-08 14:27:18,690 - INFO - XGB model trained and saved successfully
+2025-02-08 14:27:18,706 - INFO - XGB model successfully loaded
+2025-02-08 14:27:18,922 - INFO - Forecasting for next 14 days completed
+2025-02-08 14:27:18,925 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:27:18,931 - INFO - XGB model successfully loaded
+2025-02-08 14:28:19,374 - INFO - Data is pushed into DB
+2025-02-08 14:28:19,380 - INFO - Data is read into DF FROM DB
+2025-02-08 14:28:19,380 - INFO - Forecast days are read and set to 14
+2025-02-08 14:28:19,380 - INFO - Training data till 2024-11-03
+2025-02-08 14:28:19,820 - INFO - XGB model trained and saved successfully
+2025-02-08 14:28:19,836 - INFO - XGB model successfully loaded
+2025-02-08 14:28:20,042 - INFO - Forecasting for next 14 days completed
+2025-02-08 14:28:20,066 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:28:20,071 - INFO - XGB model successfully loaded
+2025-02-08 14:34:17,576 - INFO - Data is pushed into DB
+2025-02-08 14:34:17,583 - INFO - Data is read into DF FROM DB
+2025-02-08 14:34:17,584 - INFO - Forecast days are read and set to 14
+2025-02-08 14:34:17,584 - INFO - Training data till 2024-11-03
+2025-02-08 14:34:17,846 - INFO - XGB model trained and saved successfully
+2025-02-08 14:34:17,858 - INFO - XGB model successfully loaded
+2025-02-08 14:34:18,073 - INFO - Forecasting for next 14 days completed
+2025-02-08 14:34:18,081 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:34:18,084 - INFO - XGB model successfully loaded
+2025-02-08 14:34:18,088 - ERROR - Prediction failed: plot_line_chart() got an unexpected keyword argument 'y1'
+2025-02-08 14:35:04,282 - INFO - Data is pushed into DB
+2025-02-08 14:35:04,289 - INFO - Data is read into DF FROM DB
+2025-02-08 14:35:04,289 - INFO - Forecast days are read and set to 14
+2025-02-08 14:35:04,289 - INFO - Training data till 2024-11-03
+2025-02-08 14:35:04,691 - INFO - XGB model trained and saved successfully
+2025-02-08 14:35:04,703 - INFO - XGB model successfully loaded
+2025-02-08 14:35:04,914 - INFO - Forecasting for next 14 days completed
+2025-02-08 14:35:04,932 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:35:04,935 - INFO - XGB model successfully loaded
+2025-02-08 14:35:04,938 - ERROR - Prediction failed: plot_line_chart() missing 1 required positional argument: 'df1'
+2025-02-08 14:36:23,355 - INFO - Data is pushed into DB
+2025-02-08 14:36:23,361 - INFO - Data is read into DF FROM DB
+2025-02-08 14:36:23,361 - INFO - Forecast days are read and set to 14
+2025-02-08 14:36:23,362 - INFO - Training data till 2024-11-03
+2025-02-08 14:36:23,667 - INFO - XGB model trained and saved successfully
+2025-02-08 14:36:23,679 - INFO - XGB model successfully loaded
+2025-02-08 14:36:23,889 - INFO - Forecasting for next 14 days completed
+2025-02-08 14:36:23,896 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:36:23,902 - INFO - XGB model successfully loaded
+2025-02-08 14:38:51,357 - INFO - Data is pushed into DB
+2025-02-08 14:38:51,360 - INFO - Data is read into DF FROM DB
+2025-02-08 14:38:51,364 - INFO - Forecast days are read and set to 14
+2025-02-08 14:38:51,365 - INFO - Training data till 2024-11-03
+2025-02-08 14:38:51,805 - INFO - XGB model trained and saved successfully
+2025-02-08 14:38:51,819 - INFO - XGB model successfully loaded
+2025-02-08 14:38:52,030 - INFO - Forecasting for next 14 days completed
+2025-02-08 14:38:52,042 - INFO - FORECAST Data is pushed into DB
+2025-02-08 14:38:52,045 - INFO - XGB model successfully loaded
