@@ -2,6 +2,7 @@ import pandas as pd
 from utils import write_data_db,read_data_db,get_logger
 import yaml 
 from models import ForecastingModels
+import joblib
 
 logger = get_logger()
 
@@ -32,12 +33,9 @@ train_date = config['train_date']
 
 logger.info(f"Forecast days are read and set to {forecast_days}")
 logger.info(f"Training data till {train_date}")
-print(forecast_days)
+
 
 #SCENARIO BASE: CREATE A MODEL TRAIN TILL NOV 3 and SAVE Weights
-
-train_date = '2024-11-03'
-test_date = '2024-11-04'
 train_df = df[df['Date']<= train_date ]
 test_df  = df[df['Date']> train_date]
 
@@ -50,5 +48,13 @@ except Exception as e:
     logger.error(f"Model building failed becasue of {e}")
 
 
+try:
+    model_file = "xgb_model.pkl"
+    joblib.dump(XGB_PRED,model_file)
+    logger.info(f"XGB model saved to {model_file}")
+except Exception as e:
+    logger.error(f"Model saving failed becasue of {e}")
 
-print(XGB_PRED.head() ) 
+
+#Sceanrio 1: Load the model and 
+

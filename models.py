@@ -45,7 +45,7 @@ class ForecastingModels:
         return data
 
     def forecast_acd_call_volume(self):
-        """ Train the XGBoost model and forecast call volume for test dataset """
+        """ Train the XGBoost model and forecast call volume for the next 14 days after training """
 
         # Preprocess both train and test datasets
         train_data = self.preprocess_data(self.train_df)
@@ -60,23 +60,20 @@ class ForecastingModels:
         X_train.fillna(0, inplace=True)  # Handle missing values
         y_train = train_data[target]
 
-        # Prepare test data
-        X_test = test_data[features].apply(pd.to_numeric, errors='coerce')
-        X_test.fillna(0, inplace=True)
-
         # Train the XGBoost model
         xgb_model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=5, random_state=42)
         xgb_model.fit(X_train, y_train)
 
-        # Predict call volume for test data
-        test_data['Predicted Call Volume'] = xgb_model.predict(X_test)
+        # Select only the next 14 days after the last training date
+        last_train_date = train_data['Date'].max()
+        prediction_dates = pd.date_range(start=last_train_date + pd.Timedelta(days=1), periods=self.forecast_days, freq='D')
+        test_subset = test_data[test_data['Date'].isin(prediction_dates)]
 
-        return test_data[['Date', 'Predicted Call Volume']]
+        # Prepare test data
+        X_test = test_subset[features].apply(pd.to_numeric, errors='coerce')
+        X_test.fillna(0, inplace=True)
 
-# Example usage:
-# train_df = pd.read_csv('train_data.csv')  # Load your training dataset
-# test_df = pd.read_csv('test_data.csv')    # Load your test dataset
-# forecast_days = 7  # Number of days to forecast
-# model = ForecastingModels(train_df, test_df, forecast_days)
-# forecast_output = model.forecast_acd_call_volume()
-# print(forecast_output)
+        # Predict call volume for the next 14 days
+        test_subset['Predicted Call Volume'] = xgb_model.predict(X_test)
+
+        return test_subset[['Date', 'Predicted Call Volume']]

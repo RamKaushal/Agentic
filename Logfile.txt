@@ -31,3 +31,118 @@
 2025-02-07 20:07:55,474 - INFO - Data is read into DF FROM  DB
 2025-02-07 20:07:55,474 - INFO - Forecast days are read and set to 14
 2025-02-07 20:07:55,477 - INFO - Training data till 2024-11-03
+2025-02-07 21:43:11,967 - INFO - Data is pushed into DB
+2025-02-07 21:43:11,967 - INFO - Data is read into DF FROM  DB
+2025-02-07 21:43:11,973 - INFO - Forecast days are read and set to 14
+2025-02-07 21:43:11,973 - INFO - Training data till 2024-11-03
+2025-02-07 21:46:31,351 - INFO - Data is pushed into DB
+2025-02-07 21:46:31,351 - INFO - Data is read into DF FROM  DB
+2025-02-07 21:46:31,351 - INFO - Forecast days are read and set to 14
+2025-02-07 21:46:31,351 - INFO - Training data till 2024-11-03
+2025-02-07 21:47:02,595 - INFO - Data is pushed into DB
+2025-02-07 21:47:02,602 - INFO - Data is read into DF FROM  DB
+2025-02-07 21:47:02,602 - INFO - Forecast days are read and set to 14
+2025-02-07 21:47:02,604 - INFO - Training data till 2024-11-03
+2025-02-07 21:49:20,562 - INFO - Data is pushed into DB
+2025-02-07 21:49:20,569 - INFO - Data is read into DF FROM  DB
+2025-02-07 21:49:20,572 - INFO - Forecast days are read and set to 14
+2025-02-07 21:49:20,572 - INFO - Training data till 2024-11-03
+2025-02-07 21:52:51,643 - INFO - Data is pushed into DB
+2025-02-07 21:52:51,644 - INFO - Data is read into DF FROM  DB
+2025-02-07 21:52:51,644 - INFO - Forecast days are read and set to 14
+2025-02-07 21:52:51,651 - INFO - Training data till 2024-11-03
+2025-02-07 21:55:02,285 - INFO - Data is pushed into DB
+2025-02-07 21:55:02,293 - INFO - Data is read into DF FROM  DB
+2025-02-07 21:55:02,294 - INFO - Forecast days are read and set to 14
+2025-02-07 21:55:02,294 - INFO - Training data till 2024-11-03
+2025-02-07 21:55:56,536 - INFO - Data is pushed into DB
+2025-02-07 21:55:56,541 - INFO - Data is read into DF FROM  DB
+2025-02-07 21:55:56,542 - INFO - Forecast days are read and set to 14
+2025-02-07 21:55:56,542 - INFO - Training data till 2024-11-03
+2025-02-08 11:03:13,606 - INFO - Data is pushed into DB
+2025-02-08 11:03:13,613 - INFO - Data is read into DF FROM  DB
+2025-02-08 11:03:13,613 - INFO - Forecast days are read and set to 14
+2025-02-08 11:03:13,613 - INFO - Training data till 2024-11-03
+2025-02-08 11:03:37,141 - INFO - Data is pushed into DB
+2025-02-08 11:03:37,147 - INFO - Data is read into DF FROM  DB
+2025-02-08 11:03:37,167 - INFO - Forecast days are read and set to 14
+2025-02-08 11:03:37,167 - INFO - Training data till 2024-11-03
+2025-02-08 11:03:37,359 - INFO - XGB predcition is           Date  Predicted Call Volume
+680 2024-11-11             526.588501
+681 2024-11-12             546.837585
+682 2024-11-13             543.507812
+683 2024-11-14             570.901367
+684 2024-11-15             562.981323
+685 2024-11-16             569.519775
+686 2024-11-17             550.406128
+687 2024-11-18             545.645325
+688 2024-11-19             546.011719
+689 2024-11-20             544.457275
+690 2024-11-21             543.868652
+691 2024-11-22             562.981323
+692 2024-11-23             569.519775
+693 2024-11-24             550.406128
+694 2024-11-25             490.743347
+695 2024-11-26             489.205536
+696 2024-11-27             483.778564
+697 2024-11-28             534.486755
+698 2024-11-29             569.757324
+699 2024-11-30             555.934204
+700 2024-12-01             548.056641
+701 2024-12-02             542.781921
+702 2024-12-03             537.372009
+703 2024-12-04             546.522156
+704 2024-12-05             572.004272
+705 2024-12-06             560.663818
+706 2024-12-07             571.341003
+707 2024-12-08             549.587402
+708 2024-12-09             545.509033
+709 2024-12-10             546.289978
+710 2024-12-11             545.725708
+711 2024-12-12             539.849243
+712 2024-12-13             562.016907
+713 2024-12-14             652.276001
+714 2024-12-15             550.406128
+715 2024-12-16             545.645325
+716 2024-12-17             546.011719
+717 2024-12-18             544.457275
+718 2024-12-19             543.868652
+719 2024-12-20             562.981323
+720 2024-12-21             569.519775
+721 2024-12-22             550.406128
+722 2024-12-23             545.645325
+723 2024-12-24             546.011719
+724 2024-12-25             480.291779
+725 2024-12-26             516.136108
+726 2024-12-27             564.834534
+727 2024-12-28             584.387390
+728 2024-12-29             553.402832
+729 2024-12-30             543.912292
+730 2024-12-31             543.264282
+2025-02-08 11:03:37,359 - INFO - XGB model saved to xgb_model.pkl
+2025-02-08 11:07:44,730 - INFO - Data is pushed into DB
+2025-02-08 11:07:44,740 - INFO - Data is read into DF FROM  DB
+2025-02-08 11:07:44,740 - INFO - Forecast days are read and set to 14
+2025-02-08 11:07:44,744 - INFO - Training data till 2024-11-03
+2025-02-08 11:07:45,076 - INFO - XGB predcition is           Date  Predicted Call Volume
+680 2024-11-11             526.588501
+681 2024-11-12             546.837585
+682 2024-11-13             543.507812
+683 2024-11-14             570.901367
+684 2024-11-15             562.981323
+685 2024-11-16             569.519775
+686 2024-11-17             550.406128
+2025-02-08 11:07:45,080 - INFO - XGB model saved to xgb_model.pkl
+2025-02-08 11:09:15,628 - INFO - Data is pushed into DB
+2025-02-08 11:09:15,633 - INFO - Data is read into DF FROM  DB
+2025-02-08 11:09:15,633 - INFO - Forecast days are read and set to 14
+2025-02-08 11:09:15,634 - INFO - Training data till 2024-11-03
+2025-02-08 11:09:15,846 - INFO - XGB predcition is           Date  Predicted Call Volume
+680 2024-11-11             526.588501
+681 2024-11-12             546.837585
+682 2024-11-13             543.507812
+683 2024-11-14             570.901367
+684 2024-11-15             562.981323
+685 2024-11-16             569.519775
+686 2024-11-17             550.406128
+2025-02-08 11:09:15,848 - INFO - XGB model saved to xgb_model.pkl
