@@ -42,7 +42,7 @@ except Exception as e:
 logger.info(f"Forecast days are read and set to {forecast_days}")
 logger.info(f"Training data till {train_date}")
 
-# Train and save the model
+#SCENARIO BASE: CREATING AN XGB MODEL AND SAVING ITS WEIGHTS
 try:
     forecast_obj = ForecastingModels(df_read, forecast_days)
     trained_model = forecast_obj.train_xgb_model()
@@ -51,17 +51,21 @@ try:
 except Exception as e:
     logger.error(f"Model training or saving failed because of {e}")
 
-# Load the model and predict for next `forecast_days`
+#SCENARIO 1: Loading the XGB Model on Monday to make predicitons
 try:
     XGB_LOADED = joblib.load("xgb_model.pkl")
     logger.info(f"XGB model successfully loaded")
 
     # Use the trained model to make future predictions
     forecast_df = forecast_obj.forecast_xgb_model(XGB_LOADED)
-
     logger.info(f"Forecasting for next {forecast_days} days completed")
-    print(forecast_df)
+    forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y")
+    forecast_df['Timestamp'] = datetime.now()
+    write_data_db(forecast_df, "ACD_VOLUME_FORECAST")
+    logger.info(f"FORECAST Data is pushed into DB")
 
 
 except Exception as e:
     logger.error(f"Prediction failed: {e}")
+
+#SCENARIO 2: Next mondays run load the model, get the actual data retrained and forecast the model

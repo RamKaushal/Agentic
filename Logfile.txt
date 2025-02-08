@@ -446,3 +446,25 @@
 2025-02-08 13:38:02,034 - INFO - XGB model successfully loaded
 2025-02-08 13:38:02,243 - INFO - Forecasting for next 14 days completed
 2025-02-08 13:38:02,265 - INFO - Forecasted data saved as CSV
+2025-02-08 13:39:22,376 - INFO - Data is pushed into DB
+2025-02-08 13:39:22,387 - INFO - Data is read into DF FROM DB
+2025-02-08 13:39:22,388 - INFO - Forecast days are read and set to 14
+2025-02-08 13:39:22,388 - INFO - Training data till 2024-11-03
+2025-02-08 13:39:22,730 - INFO - XGB model trained and saved successfully
+2025-02-08 13:39:22,746 - INFO - XGB model successfully loaded
+2025-02-08 13:39:22,953 - INFO - Forecasting for next 14 days completed
+2025-02-08 13:42:21,301 - INFO - Data is pushed into DB
+2025-02-08 13:42:21,301 - INFO - Data is read into DF FROM DB
+2025-02-08 13:42:21,301 - INFO - Forecast days are read and set to 14
+2025-02-08 13:42:21,301 - INFO - Training data till 2024-11-03
+2025-02-08 13:42:21,820 - INFO - XGB model trained and saved successfully
+2025-02-08 13:42:21,833 - INFO - XGB model successfully loaded
+2025-02-08 13:42:22,042 - INFO - Forecasting for next 14 days completed
+2025-02-08 13:49:10,173 - INFO - Data is pushed into DB
+2025-02-08 13:49:10,185 - INFO - Data is read into DF FROM DB
+2025-02-08 13:49:10,185 - INFO - Forecast days are read and set to 14
+2025-02-08 13:49:10,185 - INFO - Training data till 2024-11-03
+2025-02-08 13:49:10,588 - INFO - XGB model trained and saved successfully
+2025-02-08 13:49:10,598 - INFO - XGB model successfully loaded
+2025-02-08 13:49:10,816 - INFO - Forecasting for next 14 days completed
+2025-02-08 13:49:10,827 - INFO - FORECAST Data is pushed into DB
