@@ -1,5 +1,4 @@
 from xgboost import XGBRegressor
-from sklearn.metrics import mean_squared_error
 import pandas as pd
 import numpy as np
 
@@ -7,6 +6,7 @@ class ForecastingModels:
     def __init__(self, train_df, forecast_days=14):
         self.train_df = train_df
         self.forecast_days = forecast_days
+        self.model = None  # Model will be assigned after training
 
     def preprocess_data(self, data):
         """ Preprocess train data by adding lag and time-based features. """
@@ -25,15 +25,11 @@ class ForecastingModels:
             if col in data.columns:
                 data[col] = data[col].astype('category').cat.codes
 
-        # Add lag features (1 to 7 days) only for features, not the target
+        # Add lag features (1 to 7 days)
         feature_columns = [col for col in data.columns if col not in ['Date', 'Call Volume']]
-        lagged_features = []
         for lag in range(1, 8):
             for feature in feature_columns:
-                lagged_features.append(data[feature].shift(lag).rename(f"{feature} Lag {lag}"))
-        
-        # Concatenate lagged features to original data
-        data = pd.concat([data] + lagged_features, axis=1)
+                data[f"{feature} Lag {lag}"] = data[feature].shift(lag)
 
         # Add additional time-based features
         data['Day of Week'] = data['Date'].dt.weekday
@@ -49,10 +45,10 @@ class ForecastingModels:
 
         return data
 
-    def forecast_acd_call_volume(self):
-        """ Train the XGBoost model and forecast call volume for the next n days. """
+    def train_xgb_model(self):
+        """ Train an XGBoost model on the provided data and return the trained model. """
 
-        # Preprocess train dataset
+        # Preprocess training data
         train_data = self.preprocess_data(self.train_df)
 
         # Define feature columns
@@ -65,24 +61,34 @@ class ForecastingModels:
         y_train = train_data[target]
 
         # Train the XGBoost model
-        xgb_model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=5, random_state=42)
-        xgb_model.fit(X_train, y_train)
+        self.model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=5, random_state=42)
+        self.model.fit(X_train, y_train)
 
-        # Generate next n days
-        last_train_date = train_data['Date'].max()
-        forecast_dates = pd.date_range(start=last_train_date + pd.Timedelta(days=1), periods=self.forecast_days, freq='D')
+        return self.model  # Returning trained model
+
+    def forecast_xgb_model(self, trained_model):
+        """ Forecast next `forecast_days` call volume using a trained XGBoost model. """
+
+        # Get the last date from training data
+        last_train_date = self.train_df['Date'].max()
+        forecast_dates = pd.date_range(start=last_train_date + pd.Timedelta(days=1), 
+                                       periods=self.forecast_days, freq='D')
 
         # Create empty DataFrame for future data
         future_data = pd.DataFrame({'Date': forecast_dates})
 
-        # Add lag features for input features, not target
+        # Get last available training data for feature extraction
+        train_data = self.preprocess_data(self.train_df)
+        feature_columns = [col for col in train_data.columns if col not in ['Date', 'Call Volume']]
+
+        # Generate lagged features for prediction
         for lag in range(1, 8):
-            for feature in features:
+            for feature in feature_columns:
                 if feature not in ['Date', 'Call Volume']:
                     last_feature_values = train_data[[feature]].tail(lag).values.flatten()
                     if len(last_feature_values) < self.forecast_days:
                         last_feature_values = np.append(
-                            np.full(self.forecast_days - len(last_feature_values), X_train[feature].mean()),
+                            np.full(self.forecast_days - len(last_feature_values), train_data[feature].mean()),
                             last_feature_values
                         )
                     future_data[f"{feature} Lag {lag}"] = last_feature_values[:self.forecast_days]
@@ -102,10 +108,10 @@ class ForecastingModels:
                 future_data[col] = train_data[col].mode()[0]
 
         # Prepare test data
-        X_future = future_data[features].apply(pd.to_numeric, errors='coerce')
+        X_future = future_data[feature_columns].apply(pd.to_numeric, errors='coerce')
         X_future.fillna(0, inplace=True)
 
-        # Predict call volume for the next n days
-        future_data['Call Volume'] = xgb_model.predict(X_future)
+        # Predict call volume for the next forecast_days
+        future_data['Predicted_Call_Volume'] = trained_model.predict(X_future)
 
-        return future_data[['Date', 'Call Volume']]
+        return future_data[['Date', 'Predicted_Call_Volume']]
