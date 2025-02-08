@@ -91,19 +91,57 @@ try:
     """
     df_actual = read_data_db(actual_query)
     plot_line_chart(df_actual,x='Date',y='Call Volume',df1=df_actual,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume", label2="Predicted_Call_Volume")
+except Exception as e:
+    logger.error(f"plot failed: {e}")
 
     #retrain data
-    df_actual_retrain  = df_actual.iloc[0,7][['Date','Call Volume']]
-    XGB_LOADED = joblib.load("xgb_model.pkl")
+try:
+    df_actual_retrain  = df_actual.iloc[:7][['Date','Call Volume']]
+    # XGB_LOADED = joblib.load("xgb_model.pkl")
     logger.info(f"XGB model successfully loaded")
+    query = f"""
+        SELECT * FROM ACD_VOLUME_TRAIN 
+        WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) 
+    """
+    df_train = read_data_db(query)
+    df_train = df_train[['Date', 'Call Volume', 'U.S. Holiday Indicator', 'Call Volume Impact', 'Day of Week', 'Day of Month', 'Day of Year', 'Week of Year', 'Month', 'Quarter', 'Is Weekend']]
+    df_train['Date'] = pd.to_datetime(df_train['Date'])
 
+    df_actual_retrain_query =  f"""
+       WITH cte1 AS (
+        SELECT * FROM ACD_VOLUME_FORECAST 
+        WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_FORECAST) 
+        LIMIT 7
+        ),
+        cte2 AS (
+            SELECT * FROM ACD_VOLUME  -- Keep only required columns
+        )
+        SELECT b.*
+        FROM cte1 a
+        JOIN cte2 b
+        ON a.Date = b.Date
+    """
+    df_actual_retrain = read_data_db(df_actual_retrain_query)
+    df_retrain = pd.concat([df_train, df_actual_retrain], ignore_index=True)
+    df_retrain['Date'] = pd.to_datetime(df_retrain['Date'])
+    forecast_obj = ForecastingModels(df_retrain, forecast_days)
+    retrained_model = forecast_obj.train_xgb_model()
+    # Save the retrained model
+    joblib.dump(retrained_model, "xgb_model_retrained.pkl")
+    logger.info(f"XGB model retrained and saved successfully")
 
-
-
-
-
-
-
+    # Forecast for the next `forecast_days`
+    forecast_df = forecast_obj.forecast_xgb_model(retrained_model)
+    logger.info(f"Forecasting for next {forecast_days} days completed")
+    
+    # Add timestamp
+    forecast_df['Timestamp'] = datetime.now()
+    
+    # Store the forecast results into DB
+    write_data_db(forecast_df, "ACD_VOLUME_FORECAST")
+    logger.info(f"Updated FORECAST Data pushed into DB")
 except Exception as e:
-    logger.error(f"Prediction failed: {e}")
+    logger.error(f"retrain failed: {e}")
+
+
 
