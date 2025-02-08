@@ -96,7 +96,6 @@ except Exception as e:
 
     #retrain data
 try:
-    df_actual_retrain  = df_actual.iloc[:7][['Date','Call Volume']]
     # XGB_LOADED = joblib.load("xgb_model.pkl")
     logger.info(f"XGB model successfully loaded")
     query = f"""
