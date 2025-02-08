@@ -3,6 +3,7 @@ from utils import write_data_db,read_data_db,get_logger
 import yaml 
 from models import ForecastingModels
 import joblib
+from datetime import datetime
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -28,7 +29,6 @@ except Exception as e:
 #read data into server
 try:
     train_date = pd.to_datetime(train_date).strftime("%Y-%m-%d")  # Ensure correct format
-    
     query = f"""
         SELECT * FROM ACD_VOLUME 
         WHERE DATE(strftime('%Y-%m-%d', Date)) <= DATE('{train_date}')
@@ -36,7 +36,8 @@ try:
     df_read = read_data_db(query)
 
     # Ensure Date is in datetime format in Pandas
-    df_read['Date'] = pd.to_datetime(df_read['Date'], format="%d-%m-%Y")
+    df_read['Date'] = pd.to_datetime(df_read['Date'], format="%Y-%m-%d")  # Change format
+
 
     logger.info("Data is read into DF FROM DB")
 except Exception as e:
@@ -53,7 +54,10 @@ logger.info(f"Training data till {train_date}")
 forecast_obj =  ForecastingModels(df_read,forecast_days)
 try:
     XGB_PRED = forecast_obj.forecast_acd_call_volume()
-    print(XGB_PRED)
+    XGB_PRED['Date'] = pd.to_datetime(XGB_PRED['Date'], format="%d-%m-%Y").dt.strftime("%Y-%m-%d")
+    XGB_PRED['Timestamp'] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    write_data_db(XGB_PRED,"ACD_VOLUME_PREDICTION")
+    logger.info(f"Prediciton data is pushed into DB")
     logger.info(f"XGB predcition is {XGB_PRED}")
 except Exception as e:
     logger.error(f"Model building failed becasue of {e}")

@@ -106,6 +106,6 @@ class ForecastingModels:
         X_future.fillna(0, inplace=True)
 
         # Predict call volume for the next n days
-        future_data['Predicted Call Volume'] = xgb_model.predict(X_future)
+        future_data['Call Volume'] = xgb_model.predict(X_future)
 
-        return future_data[['Date', 'Predicted Call Volume']]
+        return future_data[['Date', 'Call Volume']]
