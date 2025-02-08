@@ -146,3 +146,172 @@
 685 2024-11-16             569.519775
 686 2024-11-17             550.406128
 2025-02-08 11:09:15,848 - INFO - XGB model saved to xgb_model.pkl
+2025-02-08 12:41:19,791 - INFO - Data is pushed into DB
+2025-02-08 12:41:19,794 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:41:19,794 - INFO - Forecast days are read and set to 14
+2025-02-08 12:41:19,794 - INFO - Training data till 2024-11-03
+2025-02-08 12:41:20,049 - ERROR - Model building failed becasue of Length of values (1) does not match length of index (14)
+2025-02-08 12:41:20,049 - ERROR - Model saving failed becasue of name 'XGB_PRED' is not defined
+2025-02-08 12:41:20,067 - INFO - XGB model loaded
+2025-02-08 12:41:51,661 - INFO - Data is pushed into DB
+2025-02-08 12:41:51,663 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:41:51,663 - INFO - Forecast days are read and set to 14
+2025-02-08 12:41:51,663 - INFO - Training data till 2024-11-03
+2025-02-08 12:41:51,846 - ERROR - Model building failed becasue of Length of values (1) does not match length of index (14)
+2025-02-08 12:41:51,846 - ERROR - Model saving failed becasue of name 'XGB_PRED' is not defined
+2025-02-08 12:44:10,822 - INFO - Data is pushed into DB
+2025-02-08 12:44:10,833 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:44:10,833 - INFO - Forecast days are read and set to 14
+2025-02-08 12:44:10,833 - INFO - Training data till 2024-11-03
+2025-02-08 12:44:11,094 - INFO - XGB predcition is          Date  Predicted Call Volume
+0  2024-12-21             579.665649
+1  2024-12-22             545.447388
+2  2024-12-23             546.848389
+3  2024-12-24             546.848389
+4  2024-12-25             546.848389
+5  2024-12-26             572.603638
+6  2024-12-27             655.594543
+7  2024-12-28             579.665649
+8  2024-12-29             545.447388
+9  2024-12-30             546.848389
+10 2024-12-31             546.848389
+11 2025-01-01             535.710388
+12 2025-01-02             604.988831
+13 2025-01-03             620.425720
+2025-02-08 12:44:11,096 - INFO - XGB model saved to xgb_model.pkl
+2025-02-08 12:48:35,461 - INFO - Data is pushed into DB
+2025-02-08 12:48:35,463 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:48:35,463 - INFO - Forecast days are read and set to 14
+2025-02-08 12:48:35,463 - INFO - Training data till 2024-11-03
+2025-02-08 12:49:25,674 - INFO - Data is pushed into DB
+2025-02-08 12:49:25,674 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:49:25,674 - INFO - Forecast days are read and set to 14
+2025-02-08 12:49:25,674 - INFO - Training data till 2024-11-03
+2025-02-08 12:49:26,283 - INFO - XGB predcition is          Date  Predicted Call Volume
+0  2024-12-21             526.772461
+1  2024-12-22             516.632874
+2  2024-12-23             515.862122
+3  2024-12-24             520.586182
+4  2024-12-25             529.036682
+5  2024-12-26             531.216309
+6  2024-12-27             529.582336
+7  2024-12-28             545.038879
+8  2024-12-29             534.222778
+9  2024-12-30             533.161926
+10 2024-12-31             542.234192
+11 2025-01-01             556.742737
+12 2025-01-02             539.165710
+13 2025-01-03             627.886902
+2025-02-08 12:49:26,286 - INFO - XGB model saved to xgb_model.pkl
+2025-02-08 12:50:16,659 - INFO - Data is pushed into DB
+2025-02-08 12:50:16,667 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:50:16,676 - INFO - Forecast days are read and set to 14
+2025-02-08 12:50:16,676 - INFO - Training data till 2024-11-03
+2025-02-08 12:50:17,276 - INFO - XGB predcition is          Date  Predicted Call Volume
+0  2024-12-21             526.772461
+1  2024-12-22             516.632874
+2  2024-12-23             515.862122
+3  2024-12-24             520.586182
+4  2024-12-25             529.036682
+5  2024-12-26             531.216309
+6  2024-12-27             529.582336
+7  2024-12-28             545.038879
+8  2024-12-29             534.222778
+9  2024-12-30             533.161926
+10 2024-12-31             542.234192
+11 2025-01-01             556.742737
+12 2025-01-02             539.165710
+13 2025-01-03             627.886902
+2025-02-08 12:50:17,278 - INFO - XGB model saved to xgb_model.pkl
+2025-02-08 12:50:54,463 - INFO - Data is pushed into DB
+2025-02-08 12:50:54,473 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:51:57,372 - INFO - Data is pushed into DB
+2025-02-08 12:51:57,382 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:52:17,365 - INFO - Data is pushed into DB
+2025-02-08 12:52:17,365 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:53:47,903 - INFO - Data is pushed into DB
+2025-02-08 12:53:47,913 - INFO - Data is read into DF FROM  DB
+2025-02-08 12:54:13,348 - INFO - Data is pushed into DB
+2025-02-08 12:54:13,358 - INFO - Data is read into DF FROM  DB
+2025-02-08 13:06:35,881 - INFO - Data is pushed into DB
+2025-02-08 13:06:35,883 - INFO - Data is read into DF FROM  DB
+2025-02-08 13:07:35,139 - INFO - Data is pushed into DB
+2025-02-08 13:07:35,139 - INFO - Data is read into DF FROM  DB
+2025-02-08 13:07:49,410 - INFO - Data is pushed into DB
+2025-02-08 13:07:49,419 - INFO - Data is read into DF FROM  DB
+2025-02-08 13:09:43,848 - INFO - Data is pushed into DB
+2025-02-08 13:09:43,848 - INFO - Data is read into DF FROM DB
+2025-02-08 13:10:46,686 - INFO - Data is pushed into DB
+2025-02-08 13:10:46,687 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-02-08 13:11:57,160 - INFO - Data is pushed into DB
+2025-02-08 13:11:57,160 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-02-08 13:11:57,160 - INFO - Forecast days are read and set to 14
+2025-02-08 13:11:57,169 - INFO - Training data till 2024-11-03
+2025-02-08 13:11:57,790 - INFO - XGB predcition is          Date  Predicted Call Volume
+0  2025-01-01             524.278992
+1  2025-01-02             522.143677
+2  2025-01-03             523.962952
+3  2025-01-04             523.784790
+4  2025-01-05             518.750488
+5  2025-01-06             513.551941
+6  2025-01-07             519.006226
+7  2025-01-08             525.311890
+8  2025-01-09             525.834473
+9  2025-01-10             532.895020
+10 2025-01-11             525.783325
+11 2025-01-12             522.154419
+12 2025-01-13             628.224304
+13 2025-01-14             624.260071
+2025-02-08 13:11:57,792 - INFO - XGB model saved to xgb_model.pkl
+2025-02-08 13:12:31,321 - INFO - Data is pushed into DB
+2025-02-08 13:12:31,321 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-02-08 13:12:31,321 - INFO - Forecast days are read and set to 14
+2025-02-08 13:12:31,321 - INFO - Training data till 2024-11-03
+2025-02-08 13:12:31,822 - INFO - XGB predcition is          Date  Predicted Call Volume
+0  2025-01-01             524.278992
+1  2025-01-02             522.143677
+2  2025-01-03             523.962952
+3  2025-01-04             523.784790
+4  2025-01-05             518.750488
+5  2025-01-06             513.551941
+6  2025-01-07             519.006226
+7  2025-01-08             525.311890
+8  2025-01-09             525.834473
+9  2025-01-10             532.895020
+10 2025-01-11             525.783325
+11 2025-01-12             522.154419
+12 2025-01-13             628.224304
+13 2025-01-14             624.260071
+2025-02-08 13:12:31,822 - INFO - XGB model saved to xgb_model.pkl
+2025-02-08 13:12:52,345 - INFO - Data is pushed into DB
+2025-02-08 13:12:52,348 - ERROR - Failed to read data from DB because of time data "2023-01-01" doesn't match format "%d-%m-%Y", at position 0. You might want to try:
+    - passing `format` if your strings have a consistent format;
+    - passing `format='ISO8601'` if your strings are all ISO8601 but not necessarily in exactly the same format;
+    - passing `format='mixed'`, and the format will be inferred for each element individually. You might want to use `dayfirst` alongside this.
+2025-02-08 13:12:52,348 - INFO - Forecast days are read and set to 14
+2025-02-08 13:12:52,348 - INFO - Training data till 2024-11-03
+2025-02-08 13:12:52,772 - INFO - XGB predcition is          Date  Predicted Call Volume
+0  2024-11-04             509.240112
+1  2024-11-05             521.542542
+2  2024-11-06             518.616577
+3  2024-11-07             519.645508
+4  2024-11-08             515.292725
+5  2024-11-09             515.613892
+6  2024-11-10             521.088623
+7  2024-11-11             514.605957
+8  2024-11-12             544.973999
+9  2024-11-13             558.223938
+10 2024-11-14             549.356384
+11 2024-11-15             531.810364
+12 2024-11-16             529.346130
+13 2024-11-17             534.846863
+2025-02-08 13:12:52,782 - INFO - XGB model saved to xgb_model.pkl
