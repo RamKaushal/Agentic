@@ -16,6 +16,8 @@ with open(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\config.yaml", "r") as 
 
 forecast_days = config['forecast_days']
 train_date = config['train_date']
+logger.info(f"Forecast days are read and set to {forecast_days}")
+logger.info(f"Training data till {train_date}")
 
 # Write data into DB
 try:
@@ -39,8 +41,7 @@ try:
 except Exception as e:
     logger.error(f"Failed to read data from DB because of {e}")
 
-logger.info(f"Forecast days are read and set to {forecast_days}")
-logger.info(f"Training data till {train_date}")
+
 
 #SCENARIO BASE: CREATING AN XGB MODEL AND SAVING ITS WEIGHTS
 try:
@@ -71,7 +72,7 @@ try:
 except Exception as e:
     logger.error(f"Prediction failed: {e}")
 
-#SCENARIO 2: Next mondays run load the model, get the actual data retrained and forecast the model
+# #SCENARIO 2: Next mondays run load the model, get the actual data retrained and forecast the model
 
 try:
     #compare actuals vs forecast (as we are in next weeek)
@@ -94,9 +95,8 @@ try:
 except Exception as e:
     logger.error(f"plot failed: {e}")
 
-    #retrain data
+    # retrain data
 try:
-    # XGB_LOADED = joblib.load("xgb_model.pkl")
     logger.info(f"XGB model successfully loaded")
     query = f"""
         SELECT * FROM ACD_VOLUME_TRAIN 
@@ -105,7 +105,7 @@ try:
     df_train = read_data_db(query)
     df_train = df_train[['Date', 'Call Volume', 'U.S. Holiday Indicator', 'Call Volume Impact', 'Day of Week', 'Day of Month', 'Day of Year', 'Week of Year', 'Month', 'Quarter', 'Is Weekend']]
     df_train['Date'] = pd.to_datetime(df_train['Date'])
-
+  
     df_actual_retrain_query =  f"""
        WITH cte1 AS (
         SELECT * FROM ACD_VOLUME_FORECAST 
