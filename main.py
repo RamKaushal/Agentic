@@ -163,7 +163,7 @@ try:
     write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append")
     logger.info(f"Updated FORECAST Data pushed into DB from  {min_date} to {max_date}")
     write_data_db(df_retrain, "ACD_VOLUME_TRAIN","append")
-    logger.info(f"Updated Train data Data pushed into DB from  {min_date_r} to {max_date_r}")
+    logger.info(f"Updated Train data pushed into DB from  {min_date_r} to {max_date_r}")
 except Exception as e:
     logger.error(f"retrain failed: {e}")
 
