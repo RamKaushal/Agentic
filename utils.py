@@ -4,9 +4,9 @@ import logging
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def write_data_db(df,table_name):
+def write_data_db(df,table_name,type):
     conn = sqlite3.connect("calls.db")
-    df.to_sql(table_name, conn, if_exists="replace", index=False)
+    df.to_sql(table_name, conn, if_exists=type, index=False)
     return None 
 
 def read_data_db(query):

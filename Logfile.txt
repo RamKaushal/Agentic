@@ -671,3 +671,17 @@
 2025-02-08 16:57:10,566 - INFO - XGB model retrained and saved successfully
 2025-02-08 16:57:10,782 - INFO - Forecasting for next 14 days completed
 2025-02-08 16:57:10,792 - INFO - Updated FORECAST Data pushed into DB
+2025-02-08 17:17:50,801 - INFO - Data is pushed into DB
+2025-02-08 17:17:50,806 - INFO - Data is read into DF FROM DB
+2025-02-08 17:17:50,806 - INFO - Forecast days are read and set to 14
+2025-02-08 17:17:50,806 - INFO - Training data till 2024-11-03
+2025-02-08 17:17:51,056 - INFO - XGB model trained and saved successfully
+2025-02-08 17:17:51,075 - INFO - XGB model successfully loaded
+2025-02-08 17:17:51,286 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:17:51,310 - INFO - FORECAST Data is pushed into DB
+2025-02-08 17:17:51,310 - INFO - TRAIN Data is pushed into DB
+2025-02-08 17:17:53,395 - INFO - XGB model successfully loaded
+2025-02-08 17:17:53,566 - INFO - XGB model retrained and saved successfully
+2025-02-08 17:17:53,792 - INFO - Forecasting for next 14 days completed
+2025-02-08 17:17:53,801 - INFO - Updated FORECAST Data pushed into DB
+2025-02-08 17:17:53,808 - INFO - Updated Train data Data pushed into DB

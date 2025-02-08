@@ -21,7 +21,7 @@ train_date = config['train_date']
 try:
     df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv")
     df['Date'] = pd.to_datetime(df['Date'], format="%d-%m-%Y")
-    write_data_db(df, "ACD_VOLUME")
+    write_data_db(df, "ACD_VOLUME","replace")
     logger.info(f"Data is pushed into DB")
 except Exception as e:
     logger.error(f"Failed to push data into server because of {e}")
@@ -62,8 +62,8 @@ try:
     forecast_df['Timestamp'] = datetime.now()
     df_read['Timestamp'] = datetime.now()
     df_read['Date'] = pd.to_datetime(df_read['Date'], format="%d-%m-%Y")
-    write_data_db(df_read, "ACD_VOLUME_TRAIN")
-    write_data_db(forecast_df, "ACD_VOLUME_FORECAST")
+    write_data_db(df_read, "ACD_VOLUME_TRAIN","append")
+    write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append")
     logger.info(f"FORECAST Data is pushed into DB")
     logger.info(f"TRAIN Data is pushed into DB")
 
@@ -113,7 +113,7 @@ try:
         LIMIT 7
         ),
         cte2 AS (
-            SELECT * FROM ACD_VOLUME  -- Keep only required columns
+            SELECT * FROM ACD_VOLUME 
         )
         SELECT b.*
         FROM cte1 a
@@ -137,8 +137,10 @@ try:
     forecast_df['Timestamp'] = datetime.now()
     
     # Store the forecast results into DB
-    write_data_db(forecast_df, "ACD_VOLUME_FORECAST")
+    write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append")
     logger.info(f"Updated FORECAST Data pushed into DB")
+    write_data_db(df_retrain, "ACD_VOLUME_TRAIN","append")
+    logger.info(f"Updated Train data Data pushed into DB")
 except Exception as e:
     logger.error(f"retrain failed: {e}")
 
