@@ -1,5 +1,5 @@
 import pandas as pd
-from utils import write_data_db, read_data_db, get_logger,plot_line_chart
+from utils import write_data_db, read_data_db, get_logger,plot_line_chart,plot_weekday_call_volume_distribution
 import yaml
 from models import ForecastingModels  # Ensure this imports the correct ForecastingModels class
 import joblib
@@ -131,11 +131,17 @@ def retrain_actuals():
         max_date = df_actual_retrain['Date'].max()
         min_date = df_actual_retrain['Date'].min()
         logger.info(f"Actuals of  {min_date} to {max_date} are added and are being retrained")
-        act_pred_df = df_actual_retrain[['Date','Call Volume','Predicted_Call_Volume']]
+        act_pred_df = df_actual_retrain[['Date','Day of Week','Call Volume','Predicted_Call_Volume']]
+        # plot_weekday_call_volume_distribution(act_pred_df,'Day of Week','Predicted_Call_Volume')
+       
+
         plot_line_chart(act_pred_df,x='Date',y='Call Volume',df1=act_pred_df,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume last 7 days", label2="Predicted_Call_Volume last 7 days")
 
         df_actual_retrain = df_actual_retrain.drop(columns=['Predicted_Call_Volume'])
         df_retrain = pd.concat([df_train, df_actual_retrain], ignore_index=True)
+        df_retrain_viz = df_retrain.copy()
+        plot_weekday_call_volume_distribution(df_retrain_viz,'Day of Week','Call Volume')
+    
         df_retrain['Date'] = pd.to_datetime(df_retrain['Date'])
         max_date_r = df_retrain['Date'].max()
         min_date_r = df_retrain['Date'].min()

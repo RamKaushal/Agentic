@@ -357,3 +357,662 @@
 13 2025-01-12             514.933594
 2025-02-08 21:05:38,396 - INFO - Updated FORECAST Data pushed into DB from  2024-12-30 00:00:00 to 2025-01-12 00:00:00
 2025-02-08 21:05:38,404 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-29 00:00:00
+2025-02-08 21:13:08,485 - INFO - Forecast days are read and set to 14
+2025-02-08 21:13:08,485 - INFO - Training data till 2024-11-03
+2025-02-08 21:13:08,485 - INFO - Actuals of  2024-12-30 00:00:00 to 2024-12-31 00:00:00 are added and are being retrained
+2025-02-08 21:13:08,497 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-08 21:13:08,771 - INFO - XGB model retrained and saved successfully
+2025-02-08 21:13:13,618 - INFO - Forecasting for next 14 days completed and forecasted for 2025-01-01 00:00:00 to 2025-01-14 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2025-01-01             523.311584
+1  2025-01-02             524.484314
+2  2025-01-03             520.299255
+3  2025-01-04             520.693970
+4  2025-01-05             509.352539
+5  2025-01-06             515.725220
+6  2025-01-07             520.515198
+7  2025-01-08             523.748901
+8  2025-01-09             528.162903
+9  2025-01-10             541.372986
+10 2025-01-11             539.024475
+11 2025-01-12             512.216614
+12 2025-01-13             620.650879
+13 2025-01-14             614.073486
+2025-02-08 21:13:13,637 - INFO - Updated FORECAST Data pushed into DB from  2025-01-01 00:00:00 to 2025-01-14 00:00:00
+2025-02-08 21:13:13,645 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 12:55:37,358 - INFO - Forecast days are read and set to 14
+2025-02-09 12:55:37,359 - INFO - Training data till 2024-11-03
+2025-02-09 12:55:37,391 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 12:55:37,392 - ERROR - Failed to read data from DB because of cannot access local variable 'train_date' where it is not associated with a value
+2025-02-09 12:55:37,392 - ERROR - Model training or saving failed because of cannot access local variable 'df_read' where it is not associated with a value
+2025-02-09 12:55:37,633 - INFO - XGB model successfully loaded
+2025-02-09 12:55:37,633 - ERROR - Prediction failed: cannot access local variable 'forecast_obj' where it is not associated with a value
+2025-02-09 12:55:37,642 - INFO - ACTAUL VS PRED OF nan to nan
+2025-02-09 12:55:45,190 - INFO - Actuals of  nan to nan are added and are being retrained
+2025-02-09 12:55:45,193 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 12:55:45,334 - INFO - XGB model retrained and saved successfully
+2025-02-09 12:55:59,596 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-04 00:00:00 to 2024-11-17 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-04             509.240112
+1  2024-11-05             521.542542
+2  2024-11-06             518.616577
+3  2024-11-07             519.645508
+4  2024-11-08             515.292725
+5  2024-11-09             515.613892
+6  2024-11-10             521.088623
+7  2024-11-11             514.605957
+8  2024-11-12             544.973999
+9  2024-11-13             558.223938
+10 2024-11-14             549.356384
+11 2024-11-15             531.810364
+12 2024-11-16             529.346130
+13 2024-11-17             534.846863
+2025-02-09 12:55:59,601 - INFO - Updated FORECAST Data pushed into DB from  2024-11-04 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 12:55:59,608 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 12:56:10,030 - INFO - Forecast days are read and set to 14
+2025-02-09 12:56:10,031 - INFO - Training data till 2024-11-03
+2025-02-09 12:56:10,041 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-09 12:56:10,043 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 12:56:10,373 - INFO - XGB model retrained and saved successfully
+2025-02-09 12:56:27,984 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-11 00:00:00 to 2024-11-24 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-11             536.536377
+1  2024-11-12             534.006531
+2  2024-11-13             537.386475
+3  2024-11-14             541.789124
+4  2024-11-15             535.661072
+5  2024-11-16             548.934448
+6  2024-11-17             552.259888
+7  2024-11-18             537.243042
+8  2024-11-19             536.159241
+9  2024-11-20             539.837280
+10 2024-11-21             544.239929
+11 2024-11-22             537.777222
+12 2024-11-23             564.578735
+13 2024-11-24             536.714294
+2025-02-09 12:56:27,993 - INFO - Updated FORECAST Data pushed into DB from  2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 12:56:27,999 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 12:56:31,884 - INFO - Forecast days are read and set to 14
+2025-02-09 12:56:31,884 - INFO - Training data till 2024-11-03
+2025-02-09 12:56:31,896 - INFO - Actuals of  2024-11-11 00:00:00 to 2024-11-17 00:00:00 are added and are being retrained
+2025-02-09 12:56:31,898 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 12:56:32,113 - INFO - XGB model retrained and saved successfully
+2025-02-09 12:56:38,812 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-18 00:00:00 to 2024-12-01 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-18             505.951477
+1  2024-11-19             509.713654
+2  2024-11-20             513.875244
+3  2024-11-21             519.704468
+4  2024-11-22             513.142944
+5  2024-11-23             513.798950
+6  2024-11-24             524.276001
+7  2024-11-25             523.705383
+8  2024-11-26             543.227539
+9  2024-11-27             549.639648
+10 2024-11-28             541.093201
+11 2024-11-29             533.252808
+12 2024-11-30             540.250183
+13 2024-12-01             535.107361
+2025-02-09 12:56:38,831 - INFO - Updated FORECAST Data pushed into DB from  2024-11-18 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 12:56:38,841 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 17:23:51,263 - INFO - Forecast days are read and set to 14
+2025-02-09 17:23:51,263 - INFO - Training data till 2024-11-03
+2025-02-09 17:23:51,288 - INFO - Actuals of  2024-11-18 00:00:00 to 2024-11-24 00:00:00 are added and are being retrained
+2025-02-09 17:23:51,294 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 17:23:51,638 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:23:54,462 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-25 00:00:00 to 2024-12-08 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-25             516.824463
+1  2024-11-26             515.269714
+2  2024-11-27             523.491699
+3  2024-11-28             522.832825
+4  2024-11-29             523.499451
+5  2024-11-30             524.860352
+6  2024-12-01             524.613281
+7  2024-12-02             524.359436
+8  2024-12-03             533.947693
+9  2024-12-04             544.423035
+10 2024-12-05             538.134338
+11 2024-12-06             536.796143
+12 2024-12-07             538.033020
+13 2024-12-08             538.611694
+2025-02-09 17:23:54,467 - INFO - Updated FORECAST Data pushed into DB from  2024-11-25 00:00:00 to 2024-12-08 00:00:00
+2025-02-09 17:23:54,473 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 17:24:02,023 - INFO - Forecast days are read and set to 14
+2025-02-09 17:24:02,023 - INFO - Training data till 2024-11-03
+2025-02-09 17:24:02,046 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 17:24:02,047 - ERROR - Failed to read data from DB because of cannot access local variable 'train_date' where it is not associated with a value
+2025-02-09 17:24:02,047 - ERROR - Model training or saving failed because of cannot access local variable 'df_read' where it is not associated with a value
+2025-02-09 17:24:02,350 - INFO - XGB model successfully loaded
+2025-02-09 17:24:02,350 - ERROR - Prediction failed: cannot access local variable 'forecast_obj' where it is not associated with a value
+2025-02-09 17:24:02,353 - INFO - ACTAUL VS PRED OF 2024-11-25 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 17:24:12,663 - INFO - Actuals of  2024-11-25 00:00:00 to 2024-12-01 00:00:00 are added and are being retrained
+2025-02-09 17:24:12,666 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 17:24:12,784 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:24:15,783 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-02 00:00:00 to 2024-12-15 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-02             503.116730
+1  2024-12-03             510.815338
+2  2024-12-04             517.616699
+3  2024-12-05             518.521179
+4  2024-12-06             515.601562
+5  2024-12-07             515.601562
+6  2024-12-08             518.612427
+7  2024-12-09             518.681824
+8  2024-12-10             540.236755
+9  2024-12-11             546.285889
+10 2024-12-12             548.897949
+11 2024-12-13             538.892334
+12 2024-12-14             538.892334
+13 2024-12-15             535.523376
+2025-02-09 17:24:15,790 - INFO - Updated FORECAST Data pushed into DB from  2024-12-02 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 17:24:15,796 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 17:30:07,513 - INFO - Forecast days are read and set to 14
+2025-02-09 17:30:07,513 - INFO - Training data till 2024-11-03
+2025-02-09 17:30:07,529 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 17:30:07,530 - ERROR - Failed to read data from DB because of cannot access local variable 'train_date' where it is not associated with a value
+2025-02-09 17:30:07,530 - ERROR - Model training or saving failed because of cannot access local variable 'df_read' where it is not associated with a value
+2025-02-09 17:30:07,693 - INFO - XGB model successfully loaded
+2025-02-09 17:30:07,693 - ERROR - Prediction failed: cannot access local variable 'forecast_obj' where it is not associated with a value
+2025-02-09 17:30:07,695 - INFO - ACTAUL VS PRED OF 2024-12-02 00:00:00 to 2024-12-08 00:00:00
+2025-02-09 17:30:23,741 - INFO - Actuals of  2024-12-02 00:00:00 to 2024-12-08 00:00:00 are added and are being retrained
+2025-02-09 17:30:27,091 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-08 00:00:00
+2025-02-09 17:30:27,263 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:30:29,914 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-09 00:00:00 to 2024-12-22 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-09             524.280457
+1  2024-12-10             520.298706
+2  2024-12-11             526.745911
+3  2024-12-12             529.904358
+4  2024-12-13             522.906921
+5  2024-12-14             524.186890
+6  2024-12-15             529.513367
+7  2024-12-16             524.998779
+8  2024-12-17             523.769714
+9  2024-12-18             541.505920
+10 2024-12-19             548.612000
+11 2024-12-20             532.383728
+12 2024-12-21             532.294922
+13 2024-12-22             537.574707
+2025-02-09 17:30:29,930 - INFO - Updated FORECAST Data pushed into DB from  2024-12-09 00:00:00 to 2024-12-22 00:00:00
+2025-02-09 17:30:29,940 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-08 00:00:00
+2025-02-09 17:30:45,763 - INFO - Forecast days are read and set to 14
+2025-02-09 17:30:45,763 - INFO - Training data till 2024-11-03
+2025-02-09 17:30:45,784 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 17:30:45,784 - ERROR - Failed to read data from DB because of cannot access local variable 'train_date' where it is not associated with a value
+2025-02-09 17:30:45,784 - ERROR - Model training or saving failed because of cannot access local variable 'df_read' where it is not associated with a value
+2025-02-09 17:30:46,003 - INFO - XGB model successfully loaded
+2025-02-09 17:30:46,003 - ERROR - Prediction failed: cannot access local variable 'forecast_obj' where it is not associated with a value
+2025-02-09 17:30:46,007 - INFO - ACTAUL VS PRED OF 2024-12-09 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 17:31:49,525 - INFO - Forecast days are read and set to 14
+2025-02-09 17:31:49,525 - INFO - Training data till 2024-11-03
+2025-02-09 17:31:49,545 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 17:31:49,546 - ERROR - Failed to read data from DB because of cannot access local variable 'train_date' where it is not associated with a value
+2025-02-09 17:31:49,546 - ERROR - Model training or saving failed because of cannot access local variable 'df_read' where it is not associated with a value
+2025-02-09 17:31:49,853 - INFO - XGB model successfully loaded
+2025-02-09 17:31:49,853 - ERROR - Prediction failed: cannot access local variable 'forecast_obj' where it is not associated with a value
+2025-02-09 17:31:49,858 - INFO - ACTAUL VS PRED OF 2024-12-09 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 17:31:56,058 - INFO - Actuals of  2024-12-09 00:00:00 to 2024-12-15 00:00:00 are added and are being retrained
+2025-02-09 17:31:58,625 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 17:31:58,764 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:32:01,282 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-16 00:00:00 to 2024-12-29 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-16             535.028870
+1  2024-12-17             533.721252
+2  2024-12-18             535.104980
+3  2024-12-19             543.159607
+4  2024-12-20             536.743774
+5  2024-12-21             539.897461
+6  2024-12-22             541.810974
+7  2024-12-23             529.349182
+8  2024-12-24             534.823914
+9  2024-12-25             533.633179
+10 2024-12-26             541.514832
+11 2024-12-27             535.904724
+12 2024-12-28             544.196289
+13 2024-12-29             535.664673
+2025-02-09 17:32:01,293 - INFO - Updated FORECAST Data pushed into DB from  2024-12-16 00:00:00 to 2024-12-29 00:00:00
+2025-02-09 17:32:01,302 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 17:33:33,206 - INFO - Forecast days are read and set to 14
+2025-02-09 17:33:33,206 - INFO - Training data till 2024-11-03
+2025-02-09 17:33:33,226 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 17:33:33,238 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 17:33:33,531 - INFO - XGB model trained and saved successfully
+2025-02-09 17:33:33,552 - INFO - XGB model successfully loaded
+2025-02-09 17:33:35,836 - INFO - Forecasting for next 14 days completed from 2024-11-04 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 17:33:35,856 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+0  2024-11-04             509.240112 2025-02-09 17:33:33.767398
+1  2024-11-05             521.542542 2025-02-09 17:33:33.767398
+2  2024-11-06             518.616577 2025-02-09 17:33:33.767398
+3  2024-11-07             519.645508 2025-02-09 17:33:33.767398
+4  2024-11-08             515.292725 2025-02-09 17:33:33.767398
+5  2024-11-09             515.613892 2025-02-09 17:33:33.767398
+6  2024-11-10             521.088623 2025-02-09 17:33:33.767398
+7  2024-11-11             514.605957 2025-02-09 17:33:33.767398
+8  2024-11-12             544.973999 2025-02-09 17:33:33.767398
+9  2024-11-13             558.223938 2025-02-09 17:33:33.767398
+10 2024-11-14             549.356384 2025-02-09 17:33:33.767398
+11 2024-11-15             531.810364 2025-02-09 17:33:33.767398
+12 2024-11-16             529.346130 2025-02-09 17:33:33.767398
+13 2024-11-17             534.846863 2025-02-09 17:33:33.767398
+2025-02-09 17:33:35,857 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 17:33:35,860 - INFO - ACTAUL VS PRED OF 2024-11-04 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 17:33:37,939 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-09 17:33:39,941 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 17:33:40,073 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:33:42,411 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-11 00:00:00 to 2024-11-24 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-11             536.536377
+1  2024-11-12             534.006531
+2  2024-11-13             537.386475
+3  2024-11-14             541.789124
+4  2024-11-15             535.661072
+5  2024-11-16             548.934448
+6  2024-11-17             552.259888
+7  2024-11-18             537.243042
+8  2024-11-19             536.159241
+9  2024-11-20             539.837280
+10 2024-11-21             544.239929
+11 2024-11-22             537.777222
+12 2024-11-23             564.578735
+13 2024-11-24             536.714294
+2025-02-09 17:33:42,432 - INFO - Updated FORECAST Data pushed into DB from  2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 17:33:42,439 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 17:34:43,905 - INFO - Forecast days are read and set to 14
+2025-02-09 17:34:43,905 - INFO - Training data till 2024-11-03
+2025-02-09 17:34:43,922 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 17:34:43,930 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 17:34:44,229 - INFO - XGB model trained and saved successfully
+2025-02-09 17:34:44,240 - INFO - XGB model successfully loaded
+2025-02-09 17:34:50,646 - INFO - Forecasting for next 14 days completed from 2024-11-04 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 17:34:50,653 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+0  2024-11-04             509.240112 2025-02-09 17:34:44.447565
+1  2024-11-05             521.542542 2025-02-09 17:34:44.447565
+2  2024-11-06             518.616577 2025-02-09 17:34:44.447565
+3  2024-11-07             519.645508 2025-02-09 17:34:44.447565
+4  2024-11-08             515.292725 2025-02-09 17:34:44.447565
+5  2024-11-09             515.613892 2025-02-09 17:34:44.447565
+6  2024-11-10             521.088623 2025-02-09 17:34:44.447565
+7  2024-11-11             514.605957 2025-02-09 17:34:44.447565
+8  2024-11-12             544.973999 2025-02-09 17:34:44.447565
+9  2024-11-13             558.223938 2025-02-09 17:34:44.447565
+10 2024-11-14             549.356384 2025-02-09 17:34:44.447565
+11 2024-11-15             531.810364 2025-02-09 17:34:44.447565
+12 2024-11-16             529.346130 2025-02-09 17:34:44.447565
+13 2024-11-17             534.846863 2025-02-09 17:34:44.447565
+2025-02-09 17:34:50,655 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 17:34:50,658 - INFO - ACTAUL VS PRED OF 2024-11-04 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 17:35:26,468 - INFO - Forecast days are read and set to 14
+2025-02-09 17:35:26,468 - INFO - Training data till 2024-11-03
+2025-02-09 17:35:26,485 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-09 17:35:35,402 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 17:35:35,771 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:35:38,610 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-11 00:00:00 to 2024-11-24 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-11             536.536377
+1  2024-11-12             534.006531
+2  2024-11-13             537.386475
+3  2024-11-14             541.789124
+4  2024-11-15             535.661072
+5  2024-11-16             548.934448
+6  2024-11-17             552.259888
+7  2024-11-18             537.243042
+8  2024-11-19             536.159241
+9  2024-11-20             539.837280
+10 2024-11-21             544.239929
+11 2024-11-22             537.777222
+12 2024-11-23             564.578735
+13 2024-11-24             536.714294
+2025-02-09 17:35:38,616 - INFO - Updated FORECAST Data pushed into DB from  2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 17:35:38,623 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 17:35:56,745 - INFO - Forecast days are read and set to 14
+2025-02-09 17:35:56,747 - INFO - Training data till 2024-11-03
+2025-02-09 17:35:56,755 - INFO - Actuals of  2024-11-11 00:00:00 to 2024-11-17 00:00:00 are added and are being retrained
+2025-02-09 17:36:06,173 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 17:36:06,549 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:36:08,882 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-18 00:00:00 to 2024-12-01 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-18             505.951477
+1  2024-11-19             509.713654
+2  2024-11-20             513.875244
+3  2024-11-21             519.704468
+4  2024-11-22             513.142944
+5  2024-11-23             513.798950
+6  2024-11-24             524.276001
+7  2024-11-25             523.705383
+8  2024-11-26             543.227539
+9  2024-11-27             549.639648
+10 2024-11-28             541.093201
+11 2024-11-29             533.252808
+12 2024-11-30             540.250183
+13 2024-12-01             535.107361
+2025-02-09 17:36:08,887 - INFO - Updated FORECAST Data pushed into DB from  2024-11-18 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 17:36:08,897 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 17:36:20,188 - INFO - Forecast days are read and set to 14
+2025-02-09 17:36:20,188 - INFO - Training data till 2024-11-03
+2025-02-09 17:36:20,203 - INFO - Actuals of  2024-11-18 00:00:00 to 2024-11-24 00:00:00 are added and are being retrained
+2025-02-09 17:36:27,084 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 17:36:27,442 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:36:30,179 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-25 00:00:00 to 2024-12-08 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-25             516.824463
+1  2024-11-26             515.269714
+2  2024-11-27             523.491699
+3  2024-11-28             522.832825
+4  2024-11-29             523.499451
+5  2024-11-30             524.860352
+6  2024-12-01             524.613281
+7  2024-12-02             524.359436
+8  2024-12-03             533.947693
+9  2024-12-04             544.423035
+10 2024-12-05             538.134338
+11 2024-12-06             536.796143
+12 2024-12-07             538.033020
+13 2024-12-08             538.611694
+2025-02-09 17:36:30,179 - INFO - Updated FORECAST Data pushed into DB from  2024-11-25 00:00:00 to 2024-12-08 00:00:00
+2025-02-09 17:36:30,189 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 17:46:06,638 - INFO - Forecast days are read and set to 14
+2025-02-09 17:46:06,639 - INFO - Training data till 2024-11-03
+2025-02-09 17:46:06,652 - INFO - Actuals of  2024-11-25 00:00:00 to 2024-12-01 00:00:00 are added and are being retrained
+2025-02-09 17:46:24,899 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 17:46:25,132 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:46:27,066 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-02 00:00:00 to 2024-12-15 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-02             503.116730
+1  2024-12-03             510.815338
+2  2024-12-04             517.616699
+3  2024-12-05             518.521179
+4  2024-12-06             515.601562
+5  2024-12-07             515.601562
+6  2024-12-08             518.612427
+7  2024-12-09             518.681824
+8  2024-12-10             540.236755
+9  2024-12-11             546.285889
+10 2024-12-12             548.897949
+11 2024-12-13             538.892334
+12 2024-12-14             538.892334
+13 2024-12-15             535.523376
+2025-02-09 17:46:27,083 - INFO - Updated FORECAST Data pushed into DB from  2024-12-02 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 17:46:27,090 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 17:47:05,907 - INFO - Forecast days are read and set to 14
+2025-02-09 17:47:05,909 - INFO - Training data till 2024-11-03
+2025-02-09 17:47:05,922 - INFO - Actuals of  2024-12-02 00:00:00 to 2024-12-08 00:00:00 are added and are being retrained
+2025-02-09 17:48:11,665 - INFO - Forecast days are read and set to 14
+2025-02-09 17:48:11,666 - INFO - Training data till 2024-11-03
+2025-02-09 17:48:11,679 - INFO - Actuals of  2024-12-02 00:00:00 to 2024-12-08 00:00:00 are added and are being retrained
+2025-02-09 17:48:18,994 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-08 00:00:00
+2025-02-09 17:48:19,303 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:48:21,622 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-09 00:00:00 to 2024-12-22 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-09             524.280457
+1  2024-12-10             520.298706
+2  2024-12-11             526.745911
+3  2024-12-12             529.904358
+4  2024-12-13             522.906921
+5  2024-12-14             524.186890
+6  2024-12-15             529.513367
+7  2024-12-16             524.998779
+8  2024-12-17             523.769714
+9  2024-12-18             541.505920
+10 2024-12-19             548.612000
+11 2024-12-20             532.383728
+12 2024-12-21             532.294922
+13 2024-12-22             537.574707
+2025-02-09 17:48:21,670 - INFO - Updated FORECAST Data pushed into DB from  2024-12-09 00:00:00 to 2024-12-22 00:00:00
+2025-02-09 17:48:21,680 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-08 00:00:00
+2025-02-09 17:49:27,509 - INFO - Forecast days are read and set to 14
+2025-02-09 17:49:27,509 - INFO - Training data till 2024-11-03
+2025-02-09 17:49:27,528 - INFO - Actuals of  2024-12-09 00:00:00 to 2024-12-15 00:00:00 are added and are being retrained
+2025-02-09 17:50:37,785 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 17:50:37,973 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:50:39,903 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-16 00:00:00 to 2024-12-29 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-16             535.028870
+1  2024-12-17             533.721252
+2  2024-12-18             535.104980
+3  2024-12-19             543.159607
+4  2024-12-20             536.743774
+5  2024-12-21             539.897461
+6  2024-12-22             541.810974
+7  2024-12-23             529.349182
+8  2024-12-24             534.823914
+9  2024-12-25             533.633179
+10 2024-12-26             541.514832
+11 2024-12-27             535.904724
+12 2024-12-28             544.196289
+13 2024-12-29             535.664673
+2025-02-09 17:50:39,918 - INFO - Updated FORECAST Data pushed into DB from  2024-12-16 00:00:00 to 2024-12-29 00:00:00
+2025-02-09 17:50:39,925 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 17:51:04,814 - INFO - Forecast days are read and set to 14
+2025-02-09 17:51:04,815 - INFO - Training data till 2024-11-03
+2025-02-09 17:51:04,830 - INFO - Actuals of  2024-12-16 00:00:00 to 2024-12-22 00:00:00 are added and are being retrained
+2025-02-09 17:51:35,172 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-22 00:00:00
+2025-02-09 17:51:35,445 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:51:37,512 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-23 00:00:00 to 2025-01-05 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-23             512.340942
+1  2024-12-24             526.003296
+2  2024-12-25             521.138550
+3  2024-12-26             522.454834
+4  2024-12-27             517.660156
+5  2024-12-28             517.826782
+6  2024-12-29             522.486328
+7  2024-12-30             513.885803
+8  2024-12-31             532.216675
+9  2025-01-01             537.502075
+10 2025-01-02             536.360596
+11 2025-01-03             526.400757
+12 2025-01-04             524.149414
+13 2025-01-05             513.265930
+2025-02-09 17:51:37,529 - INFO - Updated FORECAST Data pushed into DB from  2024-12-23 00:00:00 to 2025-01-05 00:00:00
+2025-02-09 17:51:37,537 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-22 00:00:00
+2025-02-09 17:52:10,563 - INFO - Forecast days are read and set to 14
+2025-02-09 17:52:10,564 - INFO - Training data till 2024-11-03
+2025-02-09 17:52:10,578 - INFO - Actuals of  2024-12-23 00:00:00 to 2024-12-29 00:00:00 are added and are being retrained
+2025-02-09 17:53:27,284 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-29 00:00:00
+2025-02-09 17:53:27,700 - ERROR - retrain failed: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, the experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:day_name: object, day_name Lag 1: object, day_name Lag 2: object, day_name Lag 3: object, day_name Lag 4: object, day_name Lag 5: object, day_name Lag 6: object, day_name Lag 7: object
+2025-02-09 17:53:37,308 - INFO - Forecast days are read and set to 14
+2025-02-09 17:53:37,308 - INFO - Training data till 2024-11-03
+2025-02-09 17:53:37,323 - INFO - Actuals of  2024-12-23 00:00:00 to 2024-12-29 00:00:00 are added and are being retrained
+2025-02-09 17:54:35,426 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-29 00:00:00
+2025-02-09 17:54:35,616 - ERROR - retrain failed: DataFrame.dtypes for data must be int, float, bool or category. When categorical type is supplied, the experimental DMatrix parameter`enable_categorical` must be set to `True`.  Invalid columns:day_name: object, day_name Lag 1: object, day_name Lag 2: object, day_name Lag 3: object, day_name Lag 4: object, day_name Lag 5: object, day_name Lag 6: object, day_name Lag 7: object
+2025-02-09 17:56:44,698 - INFO - Forecast days are read and set to 14
+2025-02-09 17:56:44,699 - INFO - Training data till 2024-11-03
+2025-02-09 17:56:44,713 - INFO - Actuals of  2024-12-23 00:00:00 to 2024-12-29 00:00:00 are added and are being retrained
+2025-02-09 17:56:47,271 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-29 00:00:00
+2025-02-09 17:56:47,556 - INFO - XGB model retrained and saved successfully
+2025-02-09 17:56:49,698 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-30 00:00:00 to 2025-01-12 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-30             502.241180
+1  2024-12-31             512.765869
+2  2025-01-01             521.288208
+3  2025-01-02             519.305847
+4  2025-01-03             517.459900
+5  2025-01-04             518.225708
+6  2025-01-05             512.341248
+7  2025-01-06             513.643127
+8  2025-01-07             526.283752
+9  2025-01-08             532.889160
+10 2025-01-09             526.464783
+11 2025-01-10             521.404907
+12 2025-01-11             519.647827
+13 2025-01-12             625.123718
+2025-02-09 17:56:49,715 - INFO - Updated FORECAST Data pushed into DB from  2024-12-30 00:00:00 to 2025-01-12 00:00:00
+2025-02-09 17:56:49,723 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-29 00:00:00
+2025-02-09 17:59:51,927 - INFO - Forecast days are read and set to 14
+2025-02-09 17:59:51,927 - INFO - Training data till 2024-11-03
+2025-02-09 17:59:51,947 - INFO - Actuals of  2024-12-30 00:00:00 to 2024-12-31 00:00:00 are added and are being retrained
+2025-02-09 17:59:58,751 - ERROR - retrain failed: 'Day of Week'
+2025-02-09 18:00:11,741 - INFO - Forecast days are read and set to 14
+2025-02-09 18:00:11,741 - INFO - Training data till 2024-11-03
+2025-02-09 18:00:11,761 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 18:00:11,772 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 18:00:12,105 - INFO - XGB model trained and saved successfully
+2025-02-09 18:00:12,111 - INFO - XGB model successfully loaded
+2025-02-09 18:00:14,688 - INFO - Forecasting for next 14 days completed from 2024-11-04 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 18:00:14,694 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+0  2024-11-04             509.240112 2025-02-09 18:00:12.331112
+1  2024-11-05             521.542542 2025-02-09 18:00:12.331112
+2  2024-11-06             518.616577 2025-02-09 18:00:12.331112
+3  2024-11-07             519.645508 2025-02-09 18:00:12.331112
+4  2024-11-08             515.292725 2025-02-09 18:00:12.331112
+5  2024-11-09             515.613892 2025-02-09 18:00:12.331112
+6  2024-11-10             521.088623 2025-02-09 18:00:12.331112
+7  2024-11-11             514.605957 2025-02-09 18:00:12.331112
+8  2024-11-12             544.973999 2025-02-09 18:00:12.331112
+9  2024-11-13             558.223938 2025-02-09 18:00:12.331112
+10 2024-11-14             549.356384 2025-02-09 18:00:12.331112
+11 2024-11-15             531.810364 2025-02-09 18:00:12.331112
+12 2024-11-16             529.346130 2025-02-09 18:00:12.331112
+13 2024-11-17             534.846863 2025-02-09 18:00:12.331112
+2025-02-09 18:00:14,696 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 18:00:14,700 - INFO - ACTAUL VS PRED OF 2024-11-04 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 18:00:30,134 - INFO - Forecast days are read and set to 14
+2025-02-09 18:00:30,134 - INFO - Training data till 2024-11-03
+2025-02-09 18:00:30,151 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-09 18:00:54,229 - ERROR - retrain failed: 'Day of Week'
+2025-02-09 18:02:16,173 - INFO - Forecast days are read and set to 14
+2025-02-09 18:02:16,173 - INFO - Training data till 2024-11-03
+2025-02-09 18:02:16,192 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-09 18:02:39,639 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 18:02:40,055 - INFO - XGB model retrained and saved successfully
+2025-02-09 18:02:42,572 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-11 00:00:00 to 2024-11-24 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-11             536.536377
+1  2024-11-12             534.006531
+2  2024-11-13             537.386475
+3  2024-11-14             541.789124
+4  2024-11-15             535.661072
+5  2024-11-16             548.934448
+6  2024-11-17             552.259888
+7  2024-11-18             537.243042
+8  2024-11-19             536.159241
+9  2024-11-20             539.837280
+10 2024-11-21             544.239929
+11 2024-11-22             537.777222
+12 2024-11-23             564.578735
+13 2024-11-24             536.714294
+2025-02-09 18:02:42,589 - INFO - Updated FORECAST Data pushed into DB from  2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 18:02:42,595 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 18:03:17,135 - INFO - Forecast days are read and set to 14
+2025-02-09 18:03:17,136 - INFO - Training data till 2024-11-03
+2025-02-09 18:03:17,150 - INFO - Actuals of  2024-11-11 00:00:00 to 2024-11-17 00:00:00 are added and are being retrained
+2025-02-09 18:04:49,157 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 18:04:49,512 - INFO - XGB model retrained and saved successfully
+2025-02-09 18:04:49,533 - ERROR - retrain failed: Could not convert string 'SundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySundayMondayTuesdayWednesdayThursdayFridaySaturdaySunday' to numeric
+2025-02-09 18:06:42,138 - INFO - Forecast days are read and set to 14
+2025-02-09 18:06:42,138 - INFO - Training data till 2024-11-03
+2025-02-09 18:06:42,153 - INFO - Actuals of  2024-11-11 00:00:00 to 2024-11-17 00:00:00 are added and are being retrained
+2025-02-09 18:06:45,545 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 18:06:45,736 - INFO - XGB model retrained and saved successfully
+2025-02-09 18:06:47,926 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-18 00:00:00 to 2024-12-01 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-18             505.951477
+1  2024-11-19             509.713654
+2  2024-11-20             513.875244
+3  2024-11-21             519.704468
+4  2024-11-22             513.142944
+5  2024-11-23             513.798950
+6  2024-11-24             524.276001
+7  2024-11-25             523.705383
+8  2024-11-26             543.227539
+9  2024-11-27             549.639648
+10 2024-11-28             541.093201
+11 2024-11-29             533.252808
+12 2024-11-30             540.250183
+13 2024-12-01             535.107361
+2025-02-09 18:06:47,944 - INFO - Updated FORECAST Data pushed into DB from  2024-11-18 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 18:06:47,953 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 18:07:10,365 - INFO - Forecast days are read and set to 14
+2025-02-09 18:07:10,370 - INFO - Training data till 2024-11-03
+2025-02-09 18:07:10,383 - INFO - Actuals of  2024-11-18 00:00:00 to 2024-11-24 00:00:00 are added and are being retrained
+2025-02-09 18:07:31,431 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 18:07:31,747 - INFO - XGB model retrained and saved successfully
+2025-02-09 18:07:34,196 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-25 00:00:00 to 2024-12-08 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-25             516.824463
+1  2024-11-26             515.269714
+2  2024-11-27             523.491699
+3  2024-11-28             522.832825
+4  2024-11-29             523.499451
+5  2024-11-30             524.860352
+6  2024-12-01             524.613281
+7  2024-12-02             524.359436
+8  2024-12-03             533.947693
+9  2024-12-04             544.423035
+10 2024-12-05             538.134338
+11 2024-12-06             536.796143
+12 2024-12-07             538.033020
+13 2024-12-08             538.611694
+2025-02-09 18:07:34,213 - INFO - Updated FORECAST Data pushed into DB from  2024-11-25 00:00:00 to 2024-12-08 00:00:00
+2025-02-09 18:07:34,301 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 18:07:58,798 - INFO - Forecast days are read and set to 14
+2025-02-09 18:07:58,799 - INFO - Training data till 2024-11-03
+2025-02-09 18:07:58,814 - INFO - Actuals of  2024-11-25 00:00:00 to 2024-12-01 00:00:00 are added and are being retrained
+2025-02-09 18:08:21,691 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 18:08:22,008 - INFO - XGB model retrained and saved successfully
+2025-02-09 18:08:24,397 - INFO - Forecasting for next 14 days completed and forecasted for 2024-12-02 00:00:00 to 2024-12-15 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-12-02             503.116730
+1  2024-12-03             510.815338
+2  2024-12-04             517.616699
+3  2024-12-05             518.521179
+4  2024-12-06             515.601562
+5  2024-12-07             515.601562
+6  2024-12-08             518.612427
+7  2024-12-09             518.681824
+8  2024-12-10             540.236755
+9  2024-12-11             546.285889
+10 2024-12-12             548.897949
+11 2024-12-13             538.892334
+12 2024-12-14             538.892334
+13 2024-12-15             535.523376
+2025-02-09 18:08:24,424 - INFO - Updated FORECAST Data pushed into DB from  2024-12-02 00:00:00 to 2024-12-15 00:00:00
+2025-02-09 18:08:24,432 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 18:08:48,166 - INFO - Forecast days are read and set to 14
+2025-02-09 18:08:48,166 - INFO - Training data till 2024-11-03
+2025-02-09 18:08:48,183 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-09 18:08:48,193 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 18:08:48,487 - INFO - XGB model trained and saved successfully
+2025-02-09 18:08:48,501 - INFO - XGB model successfully loaded
+2025-02-09 18:08:55,821 - INFO - Forecasting for next 14 days completed from 2024-11-04 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 18:08:55,831 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+0  2024-11-04             509.240112 2025-02-09 18:08:48.709587
+1  2024-11-05             521.542542 2025-02-09 18:08:48.709587
+2  2024-11-06             518.616577 2025-02-09 18:08:48.709587
+3  2024-11-07             519.645508 2025-02-09 18:08:48.709587
+4  2024-11-08             515.292725 2025-02-09 18:08:48.709587
+5  2024-11-09             515.613892 2025-02-09 18:08:48.709587
+6  2024-11-10             521.088623 2025-02-09 18:08:48.709587
+7  2024-11-11             514.605957 2025-02-09 18:08:48.709587
+8  2024-11-12             544.973999 2025-02-09 18:08:48.709587
+9  2024-11-13             558.223938 2025-02-09 18:08:48.709587
+10 2024-11-14             549.356384 2025-02-09 18:08:48.709587
+11 2024-11-15             531.810364 2025-02-09 18:08:48.709587
+12 2024-11-16             529.346130 2025-02-09 18:08:48.709587
+13 2024-11-17             534.846863 2025-02-09 18:08:48.709587
+2025-02-09 18:08:55,831 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-09 18:08:55,836 - INFO - ACTAUL VS PRED OF 2024-11-04 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 18:09:14,948 - INFO - Forecast days are read and set to 14
+2025-02-09 18:09:14,949 - INFO - Training data till 2024-11-03
+2025-02-09 18:09:14,964 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-09 18:09:36,356 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 18:09:36,601 - INFO - XGB model retrained and saved successfully
+2025-02-09 18:09:42,042 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-11 00:00:00 to 2024-11-24 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-11             536.536377
+1  2024-11-12             534.006531
+2  2024-11-13             537.386475
+3  2024-11-14             541.789124
+4  2024-11-15             535.661072
+5  2024-11-16             548.934448
+6  2024-11-17             552.259888
+7  2024-11-18             537.243042
+8  2024-11-19             536.159241
+9  2024-11-20             539.837280
+10 2024-11-21             544.239929
+11 2024-11-22             537.777222
+12 2024-11-23             564.578735
+13 2024-11-24             536.714294
+2025-02-09 18:09:42,059 - INFO - Updated FORECAST Data pushed into DB from  2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 18:09:42,067 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 18:09:50,766 - INFO - Forecast days are read and set to 14
+2025-02-09 18:09:50,766 - INFO - Training data till 2024-11-03
+2025-02-09 18:09:50,787 - INFO - Actuals of  2024-11-11 00:00:00 to 2024-11-17 00:00:00 are added and are being retrained
+2025-02-09 18:09:58,728 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-09 18:09:58,931 - INFO - XGB model retrained and saved successfully
+2025-02-09 18:10:01,527 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-18 00:00:00 to 2024-12-01 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-18             505.951477
+1  2024-11-19             509.713654
+2  2024-11-20             513.875244
+3  2024-11-21             519.704468
+4  2024-11-22             513.142944
+5  2024-11-23             513.798950
+6  2024-11-24             524.276001
+7  2024-11-25             523.705383
+8  2024-11-26             543.227539
+9  2024-11-27             549.639648
+10 2024-11-28             541.093201
+11 2024-11-29             533.252808
+12 2024-11-30             540.250183
+13 2024-12-01             535.107361
+2025-02-09 18:10:01,547 - INFO - Updated FORECAST Data pushed into DB from  2024-11-18 00:00:00 to 2024-12-01 00:00:00
+2025-02-09 18:10:01,556 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-17 00:00:00

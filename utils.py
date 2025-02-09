@@ -79,3 +79,43 @@ def plot_line_chart(df, x, y, df1=None, x1=None, x2=None,
 
     # Show the plot
     plt.show()
+
+
+def plot_weekday_call_volume_distribution(df, day_column, volume_column):
+    """
+    Generates subplots for the distribution of call volumes for each day of the week.
+
+    Parameters:
+    df (pd.DataFrame): The input dataframe.
+    day_column (str): Column name representing the day of the week (1 for Monday, 7 for Sunday).
+    volume_column (str): Column name representing the call volume.
+
+    Returns:
+    None (Displays the subplots)
+    """
+    # Map numeric days to names
+    day_mapping = {1: 'Monday', 2: 'Tuesday', 3: 'Wednesday', 4: 'Thursday', 
+                   5: 'Friday', 6: 'Saturday', 0: 'Sunday'}
+    df['day_name'] = df[day_column].map(day_mapping)
+
+    # List of days in order
+    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+    # Create subplots
+    fig, axes = plt.subplots(nrows=4, ncols=2, figsize=(12, 10))
+    axes = axes.flatten()
+
+    # Plot each day's distribution
+    for i, day in enumerate(days):
+        filtered_data = df[df['day_name'] == day]
+        ax = axes[i]
+        if not filtered_data.empty:
+            sns.histplot(filtered_data[volume_column], kde=True, ax=ax)
+        ax.set_title(f"Call Volume Distribution - {day}")
+
+    # Remove empty subplot if any
+    for j in range(i + 1, len(axes)):
+        fig.delaxes(axes[j])
+
+    plt.tight_layout()
+    plt.show()
