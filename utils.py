@@ -3,6 +3,8 @@ import sqlite3
 import logging
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+from datetime import datetime
 
 def write_data_db(df,table_name,type):
     conn = sqlite3.connect("calls.db")
@@ -15,22 +17,35 @@ def read_data_db(query):
     df_from_db = pd.read_sql(query, conn)
     return df_from_db
 
-import logging
 
-def get_logger():
+
+def get_logger(log_dir=r"C:\Users\ramka\Downloads\Agentic-main\Agentic\logs"):
     logger = logging.getLogger("AGENTIC_PROJECT")
     logger.setLevel(logging.DEBUG)
 
     if not logger.handlers:
+        # Create formatter
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+
+        # Create console handler
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
-        file_handler = logging.FileHandler("logfile.txt", mode="a")
+
+        # Determine log file path
+        if log_dir:
+            os.makedirs(log_dir, exist_ok=True)  # Create directory if it doesn't exist
+            log_filename = os.path.join(log_dir, f"logfile_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt")
+        else:
+            log_filename = f"logfile_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
+
+        # Create file handler with timestamped filename
+        file_handler = logging.FileHandler(log_filename, mode="a")
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
 
     return logger
+
 
 
 

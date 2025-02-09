@@ -184,7 +184,7 @@ if __name__ == "__main__":
     train_date = config['train_date']
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    # total_data_push(train_date)
+    total_data_push(train_date)
     retrain_actuals()
 
     
