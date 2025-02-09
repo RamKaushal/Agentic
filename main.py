@@ -178,7 +178,7 @@ if __name__ == "__main__":
     train_date = config['train_date'] #gets train param from config file,change in train date is we want to train base model from a diff date
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    # total_data_push(train_date) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
+    total_data_push(train_date) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
     retrain_actuals() #This function needs to run in loop to simulates sub sequent weeks
 
     
