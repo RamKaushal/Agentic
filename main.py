@@ -117,6 +117,13 @@ def retrain_actuals():
         act_pred_df_metric = act_pred_df_metric.set_index('Date') #setting index to date 
         act_pred_df_metric_val = mean_absolute_percentage_error(act_pred_df_metric['Call Volume'],act_pred_df_metric['Predicted_Call_Volume']) * 100 #calcualting MAPE
         logger.info(f"MAPE for {min_date} to {max_date} is {act_pred_df_metric_val}") 
+        act_pred_df_metric_df = pd.DataFrame() #creating an df to push mape values
+        act_pred_df_metric_df['START_DATE'] = min_date #creating  start date col
+        act_pred_df_metric_df['END_DATE'] = max_date #creating end datecol
+        act_pred_df_metric_df['MAPE'] = act_pred_df_metric_val #MAPE value
+        act_pred_df_metric_df['START_DATE'] = pd.to_datetime(act_pred_df_metric_df['START_DATE'], format="%d-%m-%Y") #converting to dateitme
+        act_pred_df_metric_df['END_DATE'] = pd.to_datetime(act_pred_df_metric_df['END_DATE'], format="%d-%m-%Y") #converting to dateitme
+        write_data_db(act_pred_df_metric_df, "ACD_VOLUME_MAPE","append") #function to write back data to db,replaces the table
 
 
         # plot_weekday_call_volume_distribution(act_pred_df,'Day of Week','Predicted_Call_Volume')

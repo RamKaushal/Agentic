@@ -1,0 +1,23 @@
+2025-02-09 19:21:13,778 - INFO - Forecast days are read and set to 14
+2025-02-09 19:21:13,779 - INFO - Training data till 2024-11-03
+2025-02-09 19:21:13,793 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-09 19:21:13,795 - INFO - MAPE for 2024-11-04 00:00:00 to 2024-11-10 00:00:00 is 12.946333962435594
+2025-02-09 19:21:18,959 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-09 19:21:19,431 - INFO - XGB model retrained and saved successfully
+2025-02-09 19:21:23,075 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-11 00:00:00 to 2024-11-24 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-11             536.536377
+1  2024-11-12             534.006531
+2  2024-11-13             537.386475
+3  2024-11-14             541.789124
+4  2024-11-15             535.661072
+5  2024-11-16             548.934448
+6  2024-11-17             552.259888
+7  2024-11-18             537.243042
+8  2024-11-19             536.159241
+9  2024-11-20             539.837280
+10 2024-11-21             544.239929
+11 2024-11-22             537.777222
+12 2024-11-23             564.578735
+13 2024-11-24             536.714294
+2025-02-09 19:21:23,083 - INFO - Updated FORECAST Data pushed into DB from  2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-09 19:21:23,092 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-10 00:00:00
