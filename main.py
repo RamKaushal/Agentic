@@ -7,7 +7,9 @@ from datetime import datetime, timedelta
 import warnings
 warnings.filterwarnings("ignore")
 
-def total_data_push():
+
+
+def total_data_push(train_date):
     # Write data into DB
     try:
         df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv")
@@ -92,7 +94,7 @@ def total_data_push():
         max_date = df_actual['Date'].max()
         min_date = df_actual['Date'].min()
         logger.info(f"ACTAUL VS PRED OF {min_date} to {max_date}")
-        plot_line_chart(df_actual,x='Date',y='Call Volume',df1=df_actual,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume", label2="Predicted_Call_Volume")
+        # plot_line_chart(df_actual,x='Date',y='Call Volume',df1=df_actual,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume", label2="Predicted_Call_Volume")
     except Exception as e:
         logger.error(f"plot failed: {e}")
     return None
@@ -120,7 +122,7 @@ def retrain_actuals():
             cte2 AS (
                 SELECT * FROM ACD_VOLUME 
             )
-            SELECT b.*
+            SELECT b.*,a.Predicted_Call_Volume
             FROM cte1 a
             JOIN cte2 b
             ON a.Date = b.Date
@@ -129,6 +131,10 @@ def retrain_actuals():
         max_date = df_actual_retrain['Date'].max()
         min_date = df_actual_retrain['Date'].min()
         logger.info(f"Actuals of  {min_date} to {max_date} are added and are being retrained")
+        act_pred_df = df_actual_retrain[['Date','Call Volume','Predicted_Call_Volume']]
+        plot_line_chart(act_pred_df,x='Date',y='Call Volume',df1=act_pred_df,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume last 7 days", label2="Predicted_Call_Volume last 7 days")
+
+        df_actual_retrain = df_actual_retrain.drop(columns=['Predicted_Call_Volume'])
         df_retrain = pd.concat([df_train, df_actual_retrain], ignore_index=True)
         df_retrain['Date'] = pd.to_datetime(df_retrain['Date'])
         max_date_r = df_retrain['Date'].max()
@@ -172,7 +178,7 @@ if __name__ == "__main__":
     train_date = config['train_date']
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    total_data_push()
+    # total_data_push(train_date)
     retrain_actuals()
 
     
