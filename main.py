@@ -131,6 +131,8 @@ def retrain_actuals():
        
 
         plot_line_chart(act_pred_df,x='Date',y='Call Volume',df1=act_pred_df,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume last 7 days", label2="Predicted_Call_Volume last 7 days") #line chart for comaprision
+        response = llm_call(f"Hey can u tell me if anything has changed today that can affect my forecast and this is my forecast {act_pred_df}")
+        print(response)
 
         df_actual_retrain = df_actual_retrain.drop(columns=['Predicted_Call_Volume']) #droping the Predicted_Call_Volume as we dont we it for retraining approach
         df_retrain = pd.concat([df_train, df_actual_retrain], ignore_index=True) #adding last 7 days of data to the training data set
@@ -180,8 +182,6 @@ if __name__ == "__main__":
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
     # total_data_push(train_date) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
-    # retrain_actuals() #This function needs to run in loop to simulates sub sequent weeks
-    response = llm_call("Hello Google")
-    print(response)
+    retrain_actuals() #This function needs to run in loop to simulates sub sequent weeks
 
     
