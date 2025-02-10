@@ -132,6 +132,7 @@ def retrain_actuals():
 
         plot_line_chart(act_pred_df,x='Date',y='Call Volume',df1=act_pred_df,x1='Date',x2='Predicted_Call_Volume',label1="Call Volume last 7 days", label2="Predicted_Call_Volume last 7 days") #line chart for comaprision
         response = llm_call(f"Hey can u tell me if anything has changed today that can affect my forecast and this is my forecast {act_pred_df}")
+        logger.info(f"{response}")
         print(response)
 
         df_actual_retrain = df_actual_retrain.drop(columns=['Predicted_Call_Volume']) #droping the Predicted_Call_Volume as we dont we it for retraining approach

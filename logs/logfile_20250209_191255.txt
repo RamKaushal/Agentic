@@ -1,5 +1,0 @@
-2025-02-09 19:12:55,407 - INFO - Forecast days are read and set to 14
-2025-02-09 19:12:55,407 - INFO - Training data till 2024-11-03
-2025-02-09 19:12:55,437 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
-2025-02-09 19:12:55,439 - INFO - MAPE for 2024-11-04 00:00:00 to 2024-11-10 00:00:00 is 12.946333962435594
-2025-02-09 19:12:55,440 - ERROR - retrain failed: 'float' object has no attribute 'reset_index'

@@ -12,7 +12,7 @@ def llm_call(input):
     langchain_project = config['langchain_project'] 
 
     llm = ChatGoogleGenerativeAI(
-        model="gemini-1.5-flash",
+        model="gemini-2.0-flash-lite-preview-02-05",
         temperature=0,
         max_tokens=None,
         timeout=None,
@@ -31,7 +31,7 @@ def llm_call(input):
 
     Compare the given forecasted call volume with actual data.
     Identify and explain any differences (increase or decrease in volume).
-    List all possible internal (operational) and external (market-driven) factors that could have contributed to these changes.
+    List all possible internal (operational) and external (market-driven) factors that could have contributed to these changes by searching the internet.
 '''
     full_prompt = f"{template_text}\n{input}"
 

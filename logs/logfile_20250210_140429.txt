@@ -1,0 +1,83 @@
+2025-02-10 14:04:29,563 - INFO - Forecast days are read and set to 14
+2025-02-10 14:04:29,563 - INFO - Training data till 2024-11-03
+2025-02-10 14:04:29,588 - INFO - Actuals of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-10 14:04:29,590 - INFO - MAPE for 2024-11-04 00:00:00 to 2024-11-10 00:00:00 is 12.946333962435594
+2025-02-10 14:04:46,449 - INFO - Okay, let's analyze the provided forecast and identify potential factors that could explain the differences between the predicted and actual call volumes.
+
+**Analysis of Forecast vs. Actuals:**
+
+Based on the data you provided, here's a breakdown of the discrepancies:
+
+*   **Overall Trend:** The actual call volume is consistently higher than the predicted call volume across all days. This suggests a systematic underestimation in your forecasting model.
+*   **Magnitude of Difference:** The difference is particularly noticeable from 2024-11-07 onwards. The actual call volume jumps significantly compared to the predicted values.
+
+**Possible Contributing Factors (Internal & External):**
+
+Given the observed discrepancies, let's explore potential internal (operational) and external (market-driven) factors that could be at play.  Since you asked about *today* (assuming today is 2024-11-10), I'll focus on factors that could have influenced the call volume leading up to and including that date.
+
+**I. External (Market-Driven) Factors:**
+
+*   **Economic News/Events (USA Focus):**
+    *   **Interest Rate Announcements/Rumors:** Any news or rumors regarding potential changes to the Federal Reserve's (the Fed) repo rate (or other key interest rates) could significantly impact call volume. Customers might call to inquire about loan rates, savings account yields, or the general economic outlook. *Check for any Fed announcements, speeches by Fed officials, or major economic data releases (e.g., inflation reports, unemployment figures) around November 1st - November 10th.*
+    *   **Inflation Data:** Unexpectedly high or low inflation figures can trigger customer concerns about the value of their savings and investments, leading to increased call volume.
+    *   **Job Market Data:** Significant changes in unemployment rates or job creation numbers can also influence customer behavior and call volume.
+    *   **Stock Market Volatility:** A sharp drop or significant volatility in the stock market can cause customers to call with concerns about their investments.
+    *   **Major Company Announcements:** Significant news from major companies (e.g., bankruptcies, large layoffs) can create economic uncertainty and drive call volume.
+*   **Regulatory Changes:**
+    *   **New Banking Regulations:** Any recent or upcoming changes to banking regulations (e.g., related to fees, lending practices, or consumer protection) could prompt customer inquiries.
+    *   **Tax Law Changes:** Changes to tax laws can also lead to increased call volume as customers seek clarification on how the changes affect their finances.
+*   **Geopolitical Events:**
+    *   While less direct, major geopolitical events (e.g., international conflicts, political instability) can create economic uncertainty and indirectly impact call volume.
+*   **Seasonal Factors (Less Likely in Early November):**
+    *   While less pronounced in early November, consider if there are any specific seasonal promotions or events that might be driving increased call volume (e.g., end-of-year tax planning).
+*   **Public Holidays:** While there are no major US holidays between Nov 4th and Nov 10th, check if there were any local holidays or observances that might have affected staffing or customer behavior.
+
+**II. Internal (Operational) Factors:**
+
+*   **Marketing Campaigns:**
+    *   **New Product/Service Launches:** The launch of a new product or service (e.g., a new credit card, loan program, or investment product) can generate a surge in call volume as customers seek information and sign up.
+    *   **Promotional Offers:** Special promotional offers (e.g., limited-time interest rate discounts, balance transfer offers) can also drive increased call volume.
+    *   *Check your marketing calendar for any campaigns that launched around late October or early November.*
+*   **System Outages/Issues:**
+    *   **Website/App Problems:** Technical issues with the bank's website or mobile app can force customers to call for assistance.
+    *   **ATM Network Issues:** Problems with the ATM network can also lead to increased call volume.
+*   **Changes in Customer Service Policies/Procedures:**
+    *   **New IVR System:** Implementation of a new Interactive Voice Response (IVR) system can initially confuse customers and increase call volume.
+    *   **Changes to Call Routing:** Changes to call routing procedures can also impact call volume and customer wait times.
+*   **Staffing Levels:**
+    *   **Understaffing:** If staffing levels were lower than usual during this period (due to illness, vacations, or other reasons), it could lead to longer wait times and increased call volume as customers become more persistent.
+*   **Fraud Alerts/Security Breaches:**
+    *   **Increased Fraud Activity:** A spike in fraudulent activity (e.g., credit card fraud, identity theft) can trigger a surge in calls from concerned customers.
+    *   **Data Breach Concerns:** Even rumors of a potential data breach can lead to increased call volume.
+*   **Changes to Account Statements or Notifications:**
+    *   **Confusing Statements:** Changes to the format or content of account statements can lead to customer inquiries.
+    *   **Unexpected Notifications:** Unexpected account notifications (e.g., low balance alerts, transaction alerts) can also drive call volume.
+
+**Specific Actions to Take Now:**
+
+1.  **Review Economic Calendar:** Check a reliable economic calendar (e.g., Bloomberg, Reuters) for any significant economic data releases or Fed announcements that occurred between November 1st and November 10th.
+2.  **Check Internal Marketing Calendar:** Review your bank's marketing calendar for any campaigns or promotions that launched during this period.
+3.  **Investigate System Outages:** Check with your IT department to see if there were any reported system outages or technical issues during this period.
+4.  **Review Customer Service Metrics:** Analyze customer service metrics (e.g., average call handling time, abandonment rate) to see if there were any unusual patterns.
+5.  **Talk to Customer Service Representatives:** Speak with customer service representatives to get their insights into the types of calls they were receiving during this period. They may have firsthand knowledge of the issues driving call volume.
+
+By systematically investigating these potential factors, you should be able to identify the most likely causes of the discrepancies between your forecasted and actual call volumes. This will help you improve the accuracy of your forecasting model and better prepare for future fluctuations in call volume.
+2025-02-10 14:04:49,693 - INFO - New training is happening on 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-10 14:04:50,025 - INFO - XGB model retrained and saved successfully
+2025-02-10 14:04:53,178 - INFO - Forecasting for next 14 days completed and forecasted for 2024-11-11 00:00:00 to 2024-11-24 00:00:00 and forecast is          Date  Predicted_Call_Volume
+0  2024-11-11             536.536377
+1  2024-11-12             534.006531
+2  2024-11-13             537.386475
+3  2024-11-14             541.789124
+4  2024-11-15             535.661072
+5  2024-11-16             548.934448
+6  2024-11-17             552.259888
+7  2024-11-18             537.243042
+8  2024-11-19             536.159241
+9  2024-11-20             539.837280
+10 2024-11-21             544.239929
+11 2024-11-22             537.777222
+12 2024-11-23             564.578735
+13 2024-11-24             536.714294
+2025-02-10 14:04:53,183 - INFO - Updated FORECAST Data pushed into DB from  2024-11-11 00:00:00 to 2024-11-24 00:00:00
+2025-02-10 14:04:53,189 - INFO - Updated Train data pushed into DB from  2023-01-01 00:00:00 to 2024-11-10 00:00:00
