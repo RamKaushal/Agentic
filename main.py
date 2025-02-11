@@ -1,9 +1,9 @@
 import pandas as pd
 from utils import write_data_db, read_data_db, get_logger,plot_line_chart,plot_weekday_call_volume_distribution
 import yaml
-from models import ForecastingModels  # Ensure this imports the correct ForecastingModels class
+from models import ForecastingModels  
 import joblib
-from datetime import datetime, timedelta
+from datetime import datetime
 import warnings
 from sklearn.metrics import mean_absolute_percentage_error
 from llm import llm_call
@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 
 
 
-def total_data_push(train_date):
+def total_data_push(train_date,forecast_days):
     # Write data into DB
     try:
         df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv") #reading entire data
@@ -79,7 +79,7 @@ def total_data_push(train_date):
 
 
 
-def retrain_actuals():
+def retrain_actuals(forecast_days):
     # #SCENARIO 2: On next monday we will 
         # Retrain our model by adding last 7 days of actuals
         # Predict for next 14 days 
@@ -178,11 +178,14 @@ if __name__ == "__main__":
     # Load config
     with open(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\config.yaml", "r") as f: #opeining config file to pull params
         config = yaml.safe_load(f)
+
+    lag_days = config['lag_days'] #No of days to leave before starting the forecsat
     forecast_days = config['forecast_days'] #gets forecast param from config file,change in config file if we need to increase forecast days
+    forecast_days = forecast_days+lag_days
     train_date = config['train_date'] #gets train param from config file,change in train date is we want to train base model from a diff date
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    # total_data_push(train_date) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
-    retrain_actuals() #This function needs to run in loop to simulates sub sequent weeks
+    # total_data_push(train_date,forecast_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
+    retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
 
     

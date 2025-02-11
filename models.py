@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 class ForecastingModels:
-    def __init__(self, train_df, forecast_days=14):
+    def __init__(self, train_df, forecast_days):
         self.train_df = train_df
         self.forecast_days = forecast_days
         self.model = None  # Model will be assigned after training
