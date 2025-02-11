@@ -73,6 +73,62 @@ def total_data_push(train_date,forecast_days,lag_days):
         logger.info(f"Forecasting for next {forecast_days-lag_days} days completed from {min_date} to {max_date}")
         logger.info(f"FORECAST Data is pushed into DB and forecast is {forecast_df}")
         logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r}")
+        joblib.dump(trained_model, "xgb_model.pkl") #Dumping our model so that we can pull on monday and forecast it
+        logger.info(f"XGB model trained and saved successfully")
+
+     #SCenario 2: 1 week later re-train on last 7 days
+
+        logger.info(f"SCENARIO 2 of retraining last 7 days started")
+        query = f"""
+            SELECT * FROM ACD_VOLUME_TRAIN 
+            WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) 
+        """
+        df_train = read_data_db(query) #query to pull the training data, to append the next 7 days of actual data
+        df_train['Date'] = pd.to_datetime(df_train['Date']) #converting to datetime
+        df_train = df_train[['Date', 'Call Volume', 'U.S. Holiday Indicator', 'Call Volume Impact', 'Day of Week', 'Day of Month', 'Day of Year', 'Week of Year', 'Month', 'Quarter', 'Is Weekend']] #getting all the columns other than timestamp column
+        df_train['Date'] = pd.to_datetime(df_train['Date']) #converting to datetime
+        
+        df_actual_retrain_query =  f"""
+            WITH cte1 AS (
+                SELECT * 
+                FROM ACD_VOLUME 
+                WHERE Date <= (
+                    SELECT DATE(MAX(Date), '+7 days')  -- Correct format for SQLite
+                    FROM ACD_VOLUME_TRAIN 
+                    WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN)
+                )
+            )
+            SELECT * FROM cte1 order by Date Desc limit 7;
+        """
+        df_actual_retrain = read_data_db(df_actual_retrain_query) 
+        df_actual_retrain['Date'] = pd.to_datetime(df_actual_retrain['Date'])
+        max_date = df_actual_retrain['Date'].max() #getting max of date for logs
+        min_date = df_actual_retrain['Date'].min() #getting min of date for logs
+        logger.info(f"values of  {min_date} to {max_date} are added and are being retrained")
+        df_retrain = pd.concat([df_train, df_actual_retrain], ignore_index=True)
+        forecast_obj = ForecastingModels(df_retrain, forecast_days) #creating an object from the forecasting models class, passing the df_read which have data till nov3
+        trained_model = forecast_obj.train_xgb_model() #This will train our XGB model till NOv 3
+        forecast_df = forecast_obj.forecast_xgb_model(trained_model) #passing the model to the class
+        forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y") #converting to datetime
+        df_retrain['Date'] = pd.to_datetime(df_retrain['Date'], format="%d-%m-%Y") #converting to datetime
+        forecast_df = forecast_df.iloc[lag_days:]
+        max_date = forecast_df['Date'].max() #getting max of date for logs
+        min_date = forecast_df['Date'].min() #getting min of date for logs
+        min_date_r = df_retrain['Date'].min()
+        max_date_r = df_retrain['Date'].max()
+        write_data_db(df_retrain, "ACD_VOLUME_TRAIN","append") #wring the train data back to DB
+        write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append") #writng the forecast data back to DB
+        plot_line_chart(df_retrain,x='Date',y='Call Volume',label1="Call Volume Train",df1 = forecast_df,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted") #linechart of train and predicted
+        logger.info(f"Forecasting for next {forecast_days-lag_days} days completed from {min_date} to {max_date}")
+        logger.info(f"FORECAST Data is pushed into DB and forecast is {forecast_df}")
+        logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r}")
+        joblib.dump(trained_model, "xgb_model.pkl") #Dumping our model so that we can pull on monday and forecast it
+        logger.info(f"XGB model trained and saved successfully")
+
+
+
+        
+    
 
 
     except Exception as e:
