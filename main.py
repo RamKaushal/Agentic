@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 
 
 
-def total_data_push(train_date,forecast_days):
+def total_data_push(train_date,forecast_days,lag_days):
     # Write data into DB
     try:
         df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv") #reading entire data
@@ -56,8 +56,10 @@ def total_data_push(train_date,forecast_days):
         logger.info(f"XGB model successfully loaded")
 
         # Use the trained model to make future predictions
+        #  #creating an object from the forecasting models class, passing the df_read which have data till nov3
         forecast_df = forecast_obj.forecast_xgb_model(XGB_LOADED) #passing the model to the class
         forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y") #converting to datetime
+        forecast_df = forecast_df.iloc[lag_days:]
         max_date = forecast_df['Date'].max() #getting max of date for logs
         min_date = forecast_df['Date'].min() #getting min of date for logs
         forecast_df['Timestamp'] = datetime.now() #creating the timestamp column this will help us if we rerun model on same day to pick the latest forecast
@@ -68,7 +70,7 @@ def total_data_push(train_date,forecast_days):
         write_data_db(df_read, "ACD_VOLUME_TRAIN","append") #wring the train data back to DB
         write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append") #writng the forecast data back to DB
         plot_line_chart(df_read,x='Date',y='Call Volume',label1="Call Volume Train",df1 = forecast_df,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted") #linechart of train and predicted
-        logger.info(f"Forecasting for next {forecast_days} days completed from {min_date} to {max_date}")
+        logger.info(f"Forecasting for next {forecast_days-lag_days} days completed from {min_date} to {max_date}")
         logger.info(f"FORECAST Data is pushed into DB and forecast is {forecast_df}")
         logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r}")
 
@@ -185,7 +187,7 @@ if __name__ == "__main__":
     train_date = config['train_date'] #gets train param from config file,change in train date is we want to train base model from a diff date
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    # total_data_push(train_date,forecast_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
-    retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
+    total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
+    # retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
 
     
