@@ -143,10 +143,24 @@ def scenario2(forecast_days):
 
 def retrain_actuals(forecast_days):
     # scenario2(forecast_days)
-
-
-
-
+    actuals_query = '''
+    with cte1 as(
+    SELECT * FROM ACD_VOLUME_TRAIN 
+    WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) 
+    order by Date Desc limit 14
+    ),
+    cte2 as (
+    select * from cte1 order by Date limit 7
+    ),
+    cte3 as (
+    SELECT DISTINCT Date FROM ACD_VOLUME_FORECAST a 
+   
+    )
+    select * from cte3
+    '''
+    df_actual_retrain = read_data_db(actuals_query) 
+    print(df_actual_retrain)
+    logger.info(f"Training data till {df_actual_retrain}")
     return None
 
 if __name__ == "__main__":
@@ -163,5 +177,6 @@ if __name__ == "__main__":
     logger.info(f"Training data till {train_date}")
     # total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
     # scenario2(forecast_days)
-    retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
+    # scenario2(forecast_days)
+    # retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
     
