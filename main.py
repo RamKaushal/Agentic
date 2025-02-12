@@ -6,7 +6,7 @@ import joblib
 from datetime import datetime
 import warnings
 from sklearn.metrics import mean_absolute_percentage_error
-from llm import llm_call
+from llm import llm_call2
 warnings.filterwarnings("ignore")
 
 
@@ -165,7 +165,6 @@ def retrain_actuals(forecast_days):
     where a.Timestamp = (SELECT MAX(Timestamp) FROM cte3)
     )
     select * from cte4
-
     '''
     df_actual_retrain = read_data_db(actuals_query) 
     plot_line_chart(df_actual_retrain,x='Date',y='Call Volume',label1="Call Volume Train",df1 = df_actual_retrain,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted")
@@ -173,6 +172,20 @@ def retrain_actuals(forecast_days):
     max_date = df_actual_retrain['Date'].max() #getting max of date for logs
     min_date = df_actual_retrain['Date'].min() #getting min of date for logs
     logger.info(f" Compared actual vs predicted of {min_date} to {max_date} is done")
+
+    df_forecast_latest_q = '''
+    SELECT * FROM ACD_VOLUME_FORECAST WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_FORECAST) 
+    '''
+    df_forecast_latest = read_data_db(df_forecast_latest_q) 
+
+    df_actual_latest_q = '''
+    SELECT * FROM ACD_VOLUME_TRAIN WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) order by DATE DESC limit 100
+    '''
+    df_actual_latest = read_data_db(df_actual_latest_q) 
+
+    llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me insights report"
+    response = llm_call2(llm_input)
+    logger.info(f"{response}")
     return None
 
 if __name__ == "__main__":
@@ -187,8 +200,8 @@ if __name__ == "__main__":
     train_date = config['train_date'] #gets train param from config file,change in train date is we want to train base model from a diff date
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    # total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
-    # scenario2(forecast_days)
-    # scenario2(forecast_days)
-    # retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
+    total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
+    scenario2(forecast_days)
+    scenario2(forecast_days)
+    retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
     

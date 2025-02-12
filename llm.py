@@ -40,3 +40,43 @@ def llm_call(input):
 
     return output
 
+def llm_call2(input):
+    with open(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\config.yaml", "r") as f: #opeining config file to pull params
+        config = yaml.safe_load(f)
+
+    lang_chain = config['lang_chain'] 
+    gemini = config['gemini'] 
+    langchain_project = config['langchain_project'] 
+
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-2.0-flash-lite-preview-02-05",
+        temperature=0,
+        max_tokens=None,
+        timeout=None,
+        max_retries=2,
+        google_api_key=gemini  
+    )
+    template_text = '''
+You are a highly experienced data scientist specializing in banking analytics, time series forecasting, and insight generation.
+Given the actuals and forecast data for the past week, along with forecasted values for the next N weeks, conduct an in-depth analysis.
+Additionally, I will provide the last 100 days of historical training data.  
+
+Analyze the call distribution of training data,forecasted data across weekdays and get those numbers in the report
+and then compare  values. Identify any patterns, deviations, or anomalies in weekday trends and highlight any unexpected variations.  
+
+Identify any days where the call volume is significantly higher or lower than usual, excluding U.S. holidays and the two days following each holiday. 
+Prepare a report highlighting these anomalies, including details such as the date, call volume, and the extent of deviation from the normal volume.  
+Compose an email to the operations team inquiring if there were any issues on the identified dates that could explain the unusual call volume. 
+The email should include key details such as the specific date, the call volume recorded, and how significantly it deviates from the normal trend.
+
+Determine any key insights I might be missing, such as seasonality, sudden spikes, or trends that may impact future performance. 
+Present your findings in a structured format rather than paragraphs, making it easy to interpret key insights, variance explanations, and actionable recommendations.
+This report should be suitable for sharing with management to support data-driven decision-making.
+'''
+    full_prompt = f"{template_text}\n{input}"
+
+    response = llm.invoke(full_prompt)
+    output = response.content
+
+    return output
+
