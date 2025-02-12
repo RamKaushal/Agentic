@@ -142,7 +142,7 @@ def scenario2(forecast_days):
 
 
 def retrain_actuals(forecast_days):
-    # scenario2(forecast_days)
+    scenario2(forecast_days)
     actuals_query = '''
     with cte1 as(
     SELECT * FROM ACD_VOLUME_TRAIN 
@@ -153,14 +153,26 @@ def retrain_actuals(forecast_days):
     select * from cte1 order by Date limit 7
     ),
     cte3 as (
-    SELECT DISTINCT Date FROM ACD_VOLUME_FORECAST a 
-   
+    SELECT a.* FROM ACD_VOLUME_FORECAST a 
+    join cte2 b
+    on a.Date = b.Date  
     )
-    select * from cte3
+    ,cte4 as (
+    select a.Date,a.Predicted_Call_Volume,b."Call Volume"
+    from cte3 a
+    join cte2 b
+    on a.Date = b.Date
+    where a.Timestamp = (SELECT MAX(Timestamp) FROM cte3)
+    )
+    select * from cte4
+
     '''
     df_actual_retrain = read_data_db(actuals_query) 
+    plot_line_chart(df_actual_retrain,x='Date',y='Call Volume',label1="Call Volume Train",df1 = df_actual_retrain,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted")
     print(df_actual_retrain)
-    logger.info(f"Training data till {df_actual_retrain}")
+    max_date = df_actual_retrain['Date'].max() #getting max of date for logs
+    min_date = df_actual_retrain['Date'].min() #getting min of date for logs
+    logger.info(f" Compared actual vs predicted of {min_date} to {max_date} is done")
     return None
 
 if __name__ == "__main__":
