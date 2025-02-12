@@ -105,7 +105,8 @@ class ForecastingModels:
         # Fill categorical columns with most frequent value from training data
         for col in ['U.S. Holiday Indicator', 'Call Volume Impact']:
             if col in train_data.columns:
-                future_data[col] = train_data[col].mode()[0]
+                # future_data[col] = train_data[col].mode()[0]
+                future_data[col] = train_data.iloc[0] if not train_data.empty else 0
 
         # Prepare test data
         X_future = future_data[feature_columns].apply(pd.to_numeric, errors='coerce')
