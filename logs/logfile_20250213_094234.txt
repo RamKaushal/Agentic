@@ -1,0 +1,308 @@
+2025-02-13 09:42:34,354 - INFO - Forecast days are read and set to 35
+2025-02-13 09:42:34,354 - INFO - Training data till 2024-11-03
+2025-02-13 09:42:34,380 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2024-12-31 00:00:00
+2025-02-13 09:42:34,381 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-13 09:42:34,717 - INFO - XGB model trained and saved successfully
+2025-02-13 09:42:34,733 - INFO - XGB model successfully loaded
+2025-02-13 09:42:36,820 - INFO - Forecasting for next 28 days completed from 2024-11-11 00:00:00 to 2024-12-08 00:00:00
+2025-02-13 09:42:36,827 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+7  2024-11-11             407.815918 2025-02-13 09:42:34.933502
+8  2024-11-12             420.627441 2025-02-13 09:42:34.933502
+9  2024-11-13             417.701569 2025-02-13 09:42:34.933502
+10 2024-11-14             419.105927 2025-02-13 09:42:34.933502
+11 2024-11-15             418.609741 2025-02-13 09:42:34.933502
+12 2024-11-16             418.930939 2025-02-13 09:42:34.933502
+13 2024-11-17             425.373749 2025-02-13 09:42:34.933502
+14 2024-11-18             407.815918 2025-02-13 09:42:34.933502
+15 2024-11-19             420.627441 2025-02-13 09:42:34.933502
+16 2024-11-20             417.701569 2025-02-13 09:42:34.933502
+17 2024-11-21             419.105927 2025-02-13 09:42:34.933502
+18 2024-11-22             418.609741 2025-02-13 09:42:34.933502
+19 2024-11-23             418.930939 2025-02-13 09:42:34.933502
+20 2024-11-24             425.373749 2025-02-13 09:42:34.933502
+21 2024-11-25             407.815918 2025-02-13 09:42:34.933502
+22 2024-11-26             420.627441 2025-02-13 09:42:34.933502
+23 2024-11-27             417.701569 2025-02-13 09:42:34.933502
+24 2024-11-28             419.105927 2025-02-13 09:42:34.933502
+25 2024-11-29             418.609741 2025-02-13 09:42:34.933502
+26 2024-11-30             418.930939 2025-02-13 09:42:34.933502
+27 2024-12-01             424.200653 2025-02-13 09:42:34.933502
+28 2024-12-02             420.406616 2025-02-13 09:42:34.933502
+29 2024-12-03             450.077606 2025-02-13 09:42:34.933502
+30 2024-12-04             464.330780 2025-02-13 09:42:34.933502
+31 2024-12-05             454.717682 2025-02-13 09:42:34.933502
+32 2024-12-06             439.694122 2025-02-13 09:42:34.933502
+33 2024-12-07             437.738464 2025-02-13 09:42:34.933502
+34 2024-12-08             445.394531 2025-02-13 09:42:34.933502
+2025-02-13 09:42:36,830 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-13 09:42:36,834 - INFO - XGB model trained and saved successfully
+2025-02-13 09:42:36,834 - INFO - SCENARIO 2 of retraining last 7 days started
+2025-02-13 09:42:36,872 - INFO - values of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-13 09:42:42,062 - INFO - Forecasting for next 28 days completed from 2024-11-18 00:00:00 to 2024-12-15 00:00:00
+2025-02-13 09:42:42,072 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+7  2024-11-18             440.147461 2025-02-13 09:42:37.251274
+8  2024-11-19             438.320343 2025-02-13 09:42:37.251274
+9  2024-11-20             448.005493 2025-02-13 09:42:37.251274
+10 2024-11-21             452.621033 2025-02-13 09:42:37.251274
+11 2024-11-22             451.081543 2025-02-13 09:42:37.251274
+12 2024-11-23             466.032898 2025-02-13 09:42:37.251274
+13 2024-11-24             471.087372 2025-02-13 09:42:37.251274
+14 2024-11-25             440.147461 2025-02-13 09:42:37.251274
+15 2024-11-26             438.320343 2025-02-13 09:42:37.251274
+16 2024-11-27             448.005493 2025-02-13 09:42:37.251274
+17 2024-11-28             452.621033 2025-02-13 09:42:37.251274
+18 2024-11-29             451.081543 2025-02-13 09:42:37.251274
+19 2024-11-30             466.032898 2025-02-13 09:42:37.251274
+20 2024-12-01             471.087372 2025-02-13 09:42:37.251274
+21 2024-12-02             440.147461 2025-02-13 09:42:37.251274
+22 2024-12-03             438.320343 2025-02-13 09:42:37.251274
+23 2024-12-04             448.005493 2025-02-13 09:42:37.251274
+24 2024-12-05             452.621033 2025-02-13 09:42:37.251274
+25 2024-12-06             451.081543 2025-02-13 09:42:37.251274
+26 2024-12-07             466.032898 2025-02-13 09:42:37.251274
+27 2024-12-08             471.087372 2025-02-13 09:42:37.251274
+28 2024-12-09             440.147461 2025-02-13 09:42:37.251274
+29 2024-12-10             438.320343 2025-02-13 09:42:37.251274
+30 2024-12-11             448.303436 2025-02-13 09:42:37.251274
+31 2024-12-12             452.918976 2025-02-13 09:42:37.251274
+32 2024-12-13             450.761475 2025-02-13 09:42:37.251274
+33 2024-12-14             483.287781 2025-02-13 09:42:37.251274
+34 2024-12-15             452.399109 2025-02-13 09:42:37.251274
+2025-02-13 09:42:42,073 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-13 09:42:42,079 - INFO - XGB model trained and saved successfully
+2025-02-13 09:42:42,079 - INFO - SCENARIO 2 of retraining last 7 days started
+2025-02-13 09:42:42,111 - INFO - values of  2024-11-11 00:00:00 to 2024-11-17 00:00:00 are added and are being retrained
+2025-02-13 09:42:43,587 - INFO - Forecasting for next 28 days completed from 2024-11-25 00:00:00 to 2024-12-22 00:00:00
+2025-02-13 09:42:43,590 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+7  2024-11-25             429.075714 2025-02-13 09:42:42.481778
+8  2024-11-26             426.760834 2025-02-13 09:42:42.481778
+9  2024-11-27             428.837219 2025-02-13 09:42:42.481778
+10 2024-11-28             434.422150 2025-02-13 09:42:42.481778
+11 2024-11-29             433.216644 2025-02-13 09:42:42.481778
+12 2024-11-30             434.508453 2025-02-13 09:42:42.481778
+13 2024-12-01             435.627960 2025-02-13 09:42:42.481778
+14 2024-12-02             424.199463 2025-02-13 09:42:42.481778
+15 2024-12-03             421.884552 2025-02-13 09:42:42.481778
+16 2024-12-04             428.837219 2025-02-13 09:42:42.481778
+17 2024-12-05             434.422150 2025-02-13 09:42:42.481778
+18 2024-12-06             433.216644 2025-02-13 09:42:42.481778
+19 2024-12-07             434.508453 2025-02-13 09:42:42.481778
+20 2024-12-08             440.504242 2025-02-13 09:42:42.481778
+21 2024-12-09             429.075714 2025-02-13 09:42:42.481778
+22 2024-12-10             426.760834 2025-02-13 09:42:42.481778
+23 2024-12-11             428.837219 2025-02-13 09:42:42.481778
+24 2024-12-12             434.422150 2025-02-13 09:42:42.481778
+25 2024-12-13             433.216644 2025-02-13 09:42:42.481778
+26 2024-12-14             434.508453 2025-02-13 09:42:42.481778
+27 2024-12-15             440.504242 2025-02-13 09:42:42.481778
+28 2024-12-16             437.098206 2025-02-13 09:42:42.481778
+29 2024-12-17             435.666962 2025-02-13 09:42:42.481778
+30 2024-12-18             458.865814 2025-02-13 09:42:42.481778
+31 2024-12-19             464.450745 2025-02-13 09:42:42.481778
+32 2024-12-20             446.625397 2025-02-13 09:42:42.481778
+33 2024-12-21             454.876221 2025-02-13 09:42:42.481778
+34 2024-12-22             458.526886 2025-02-13 09:42:42.481778
+2025-02-13 09:42:43,592 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-13 09:42:43,596 - INFO - XGB model trained and saved successfully
+2025-02-13 09:42:43,598 - INFO - SCENARIO 2 of retraining last 7 days started
+2025-02-13 09:42:43,645 - INFO - values of  2024-11-18 00:00:00 to 2024-11-24 00:00:00 are added and are being retrained
+2025-02-13 09:42:45,472 - INFO - Forecasting for next 28 days completed from 2024-12-02 00:00:00 to 2024-12-29 00:00:00
+2025-02-13 09:42:45,479 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+7  2024-12-02             415.721649 2025-02-13 09:42:44.047262
+8  2024-12-03             418.902466 2025-02-13 09:42:44.047262
+9  2024-12-04             420.487976 2025-02-13 09:42:44.047262
+10 2024-12-05             429.568665 2025-02-13 09:42:44.047262
+11 2024-12-06             429.751282 2025-02-13 09:42:44.047262
+12 2024-12-07             430.908447 2025-02-13 09:42:44.047262
+13 2024-12-08             441.892517 2025-02-13 09:42:44.047262
+14 2024-12-09             415.721649 2025-02-13 09:42:44.047262
+15 2024-12-10             418.902466 2025-02-13 09:42:44.047262
+16 2024-12-11             420.487976 2025-02-13 09:42:44.047262
+17 2024-12-12             429.568665 2025-02-13 09:42:44.047262
+18 2024-12-13             429.751282 2025-02-13 09:42:44.047262
+19 2024-12-14             430.908447 2025-02-13 09:42:44.047262
+20 2024-12-15             441.892517 2025-02-13 09:42:44.047262
+21 2024-12-16             415.721649 2025-02-13 09:42:44.047262
+22 2024-12-17             418.902466 2025-02-13 09:42:44.047262
+23 2024-12-18             420.487976 2025-02-13 09:42:44.047262
+24 2024-12-19             429.568665 2025-02-13 09:42:44.047262
+25 2024-12-20             429.751282 2025-02-13 09:42:44.047262
+26 2024-12-21             430.908447 2025-02-13 09:42:44.047262
+27 2024-12-22             441.892517 2025-02-13 09:42:44.047262
+28 2024-12-23             448.443176 2025-02-13 09:42:44.047262
+29 2024-12-24             451.623993 2025-02-13 09:42:44.047262
+30 2024-12-25             462.979095 2025-02-13 09:42:44.047262
+31 2024-12-26             458.213959 2025-02-13 09:42:44.047262
+32 2024-12-27             450.775787 2025-02-13 09:42:44.047262
+33 2024-12-28             454.657196 2025-02-13 09:42:44.047262
+34 2024-12-29             465.661285 2025-02-13 09:42:44.047262
+2025-02-13 09:42:45,481 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-24 00:00:00
+2025-02-13 09:42:45,486 - INFO - XGB model trained and saved successfully
+2025-02-13 09:42:47,396 - INFO -  Compared actual vs predicted of 2024-11-11 00:00:00 to 2024-11-17 00:00:00 is done
+2025-02-13 09:42:53,286 - INFO - --------------------------------------AGENT_INSIGHTS-------------------------------------
+2025-02-13 09:42:53,286 - INFO - Here's an insights report based on the provided data:
+
+**1. Actual vs. Predicted Volume (November 11th - November 17th, 2024):**
+
+*   **Underestimation:** The model consistently underestimated the call volume, especially on the weekend days (November 16th and 17th) where the actual call volume was significantly higher than predicted.
+*   **Consistent Underestimation:** The model consistently underestimated the call volume for the entire period.
+
+**2. 28-Day Forecast (December 2nd - December 29th, 2024):**
+
+*   **Repeating Pattern:** The forecast shows a repeating pattern of call volume, with a lower volume predicted for the beginning of the week (Monday and Tuesday) and a higher volume predicted for the weekend (Saturday and Sunday).
+*   **Increasing Volume Towards the End of December:** There's a noticeable increase in predicted call volume towards the end of December, starting around December 23rd. This could be due to seasonality or other factors.
+*   **Potential for Overfitting:** The repeating pattern suggests the model might be overfitting to the training data, especially if the training data also exhibits a similar weekly pattern.
+*   **Timestamp Consistency:** All forecast predictions share the same timestamp, indicating they were generated at the same time.
+
+**3. Last 100 Days of Actuals (August 17th - November 24th, 2024):**
+
+*   **Weekend Spike:** Call volume tends to be higher on weekends (Saturday and Sunday) compared to weekdays.
+*   **Consistent Weekday Volume:** Call volume appears relatively consistent on weekdays.
+*   **No Holiday Impact:** The data doesn't show any significant impact of U.S. holidays on call volume within this period.
+*   **Data Features:** The dataset includes various features like "Day of Week," "Day of Month," "Day of Year," "Week of Year," "Month," "Quarter," and "Is Weekend," which are likely used in the model to predict call volume.
+
+**4. Overall Insights and Recommendations:**
+
+*   **Model Accuracy:** The model needs improvement, as it consistently underestimates call volume.
+*   **Weekend Effect:** The model should be trained to better capture the weekend spike in call volume.
+*   **Seasonality:** The model seems to be capturing some seasonality, but it's important to validate if the increase in volume towards the end of December is accurate.
+*   **Data Quality:** Ensure the training data is representative of future call patterns.
+*   **Feature Engineering:** Consider adding more relevant features to the model, such as:
+    *   External factors (e.g., marketing campaigns, promotions, news events)
+    *   Historical trends (e.g., moving averages)
+*   **Model Evaluation:** Regularly evaluate the model's performance using appropriate metrics (e.g., Mean Absolute Error, Root Mean Squared Error) and consider retraining the model with updated data.
+*   **Model Selection:** Experiment with different time series models (e.g., ARIMA, Prophet, or more advanced machine learning models) to find the best fit for the data.
+*   **Investigate the cause of the underestimation:** Analyze the training data to understand why the model is underestimating the call volume. Are there any specific events or trends that the model is not capturing?
+
+In summary, the model shows potential but needs refinement to accurately predict call volume, especially on weekends and during periods of increasing volume. Regular monitoring, data quality checks, and model improvements are crucial for better performance.
+2025-02-13 09:42:59,217 - INFO - --------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------
+2025-02-13 09:42:59,227 - INFO - Okay, let's analyze the call volume data at the day-of-week level.
+
+**1. Data Preparation and Aggregation**
+
+First, I need to extract the day of the week from the 'Date' column in each of your datasets.  Then, I'll aggregate the data to calculate the average call volume for each day of the week.
+
+**2. Analysis of Actual vs. Predicted Volume (Past Week)**
+
+*   **Data:**  `actual vs predicted volume`
+*   **Period:** November 11, 2024 - November 17, 2024
+*   **Observations:**
+    *   The predicted call volume is consistently lower than the actual call volume on Friday and Saturday.
+    *   The model seems to be underestimating call volume, especially on weekends.
+
+**3. Analysis of Predicted Volume (Next 28 Days)**
+
+*   **Data:** `next 28 days forecast`
+*   **Period:** December 2, 2024 - December 29, 2024
+*   **Observations:**
+    *   The predicted call volume shows a repeating pattern, suggesting a weekly seasonality.
+    *   The predicted volume is relatively consistent throughout the week, with some slight increases towards the end of the month.
+    *   There's a noticeable increase in predicted volume around December 23rd-29th, likely due to holiday season.
+
+**4. Analysis of Last 100 Days of Actuals (Training Data)**
+
+*   **Data:** `last 100 days of actuals trained data`
+*   **Period:** August 17, 2024 - November 24, 2024
+*   **Observations:**
+    *   **Weekend vs. Weekday:** Call volume is consistently higher on weekends (Saturday and Sunday) compared to weekdays.
+    *   **Day of Week:** The data confirms the weekend effect.
+    *   **Consistency:** The call volume appears relatively stable within each day of the week, with some fluctuations.
+
+**5. Day-of-Week Breakdown and Analysis**
+
+To provide a more detailed day-of-week analysis, I'll combine the insights from all three datasets.
+
+*   **Monday:**
+    *   Predicted volume is relatively consistent.
+    *   Actual volume from the past week was around 547.
+    *   Historical data suggests a lower volume compared to weekends.
+*   **Tuesday:**
+    *   Predicted volume is relatively consistent.
+    *   Actual volume from the past week was around 547.
+    *   Historical data suggests a lower volume compared to weekends.
+*   **Wednesday:**
+    *   Predicted volume is relatively consistent.
+    *   Actual volume from the past week was around 547.
+    *   Historical data suggests a lower volume compared to weekends.
+*   **Thursday:**
+    *   Predicted volume is relatively consistent.
+    *   Actual volume from the past week was around 547.
+    *   Historical data suggests a lower volume compared to weekends.
+*   **Friday:**
+    *   Predicted volume is relatively consistent.
+    *   Actual volume from the past week was 656, significantly higher than predicted.
+    *   Historical data suggests a higher volume compared to weekdays, but lower than weekends.
+*   **Saturday:**
+    *   Predicted volume is relatively consistent.
+    *   Actual volume from the past week was 656, significantly higher than predicted.
+    *   Historical data confirms the highest volume on weekends.
+*   **Sunday:**
+    *   Predicted volume is relatively consistent.
+    *   Actual volume from the past week was 547.
+    *   Historical data confirms the highest volume on weekends.
+
+**6. Recommendations and Actionable Insights**
+
+*   **Model Improvement:** The model significantly underestimates call volume on Fridays and Saturdays.  This is a critical area for improvement. Consider:
+    *   **Feature Engineering:** Add a "Weekend" feature to the model.
+    *   **Seasonality:**  Ensure the model accurately captures the weekly seasonality.  Review the model's handling of weekend effects.
+    *   **Data:**  Provide more recent data to the model.
+*   **Resource Allocation:**
+    *   **Staffing:**  Adjust staffing levels to accommodate the higher call volumes expected on weekends.
+    *   **Training:**  Ensure agents are prepared for the higher call volumes and potentially different types of inquiries on weekends.
+*   **Monitoring:**
+    *   **Real-time Monitoring:** Continuously monitor actual call volumes against predictions, especially on Fridays and Saturdays.
+    *   **Model Retraining:** Regularly retrain the model with the most recent data to maintain accuracy.
+*   **Holiday Impact:** The forecast shows an increase in call volume towards the end of December. Plan for increased staffing and resources during the holiday period.
+
+**In summary:** The analysis reveals a clear weekly seasonality with significantly higher call volumes on weekends. The current model needs improvement to accurately predict these weekend peaks. Addressing this will lead to better resource allocation and improved customer service.
+2025-02-13 09:43:00,470 - INFO - --------------------------------------AGENT_ANOMALY-------------------------------------
+2025-02-13 09:43:00,470 - INFO - Here's the analysis of the provided data, focusing on anomalies in the last four weeks (which is just the provided data):
+
+*   **2024-11-15:** Call Volume of 656.0. Predicted Call Volume is 418.609741. This is an anomaly.
+*   **2024-11-16:** Call Volume of 656.0. Predicted Call Volume is 418.930939. This is an anomaly.
+
+**Note:** Without more data, I cannot calculate a standard deviation.
+2025-02-13 09:43:06,300 - INFO - --------------------------------------AGENT_REPORT-------------------------------------
+2025-02-13 09:43:06,300 - INFO - Okay, here's a summary report based on the provided data:
+
+**1. Actual vs. Predicted Volume (November 11th - November 17th, 2024):**
+
+*   The model generally *underestimated* the call volume.
+*   The actual call volume was consistently higher than the predicted volume, especially on November 15th, 16th, and 17th.
+*   The predicted volume was relatively stable during this period.
+
+**2. Next 28 Days Forecast (December 2nd - December 29th, 2024):**
+
+*   The forecast shows a repeating pattern of call volume.
+*   The predicted call volume is relatively consistent for the first two weeks of December.
+*   There is a slight increase in predicted volume towards the end of December, with the highest predicted volumes on December 25th and 29th.
+
+**3. Last 100 Days of Actuals (August 17th - November 24th, 2024):**
+
+*   The data includes the actual call volume, along with some potential influencing factors:
+    *   `U.S. Holiday Indicator`:  None (meaning no holidays were observed during this period)
+    *   `Call Volume Impact`: None (no impact)
+    *   `Day of Week`:  Provides the day of the week (0 = Sunday, 6 = Saturday).
+    *   `Day of Month`: The day of the month.
+    *   `Day of Year`: The day of the year.
+    *   `Week of Year`: The week of the year.
+    *   `Month`: The month (8 = August, 11 = November).
+    *   `Quarter`: The quarter of the year.
+    *   `Is Weekend`:  Indicates whether the day was a weekend (1) or not (0).
+*   The actual call volume appears to fluctuate, with higher volumes observed on weekends (as expected).
+*   The data shows a consistent call volume of 547.0 for most weekdays.
+*   The data shows a consistent call volume of 657.0 for most weekends.
+
+**Overall Observations and Potential Insights:**
+
+*   **Model Accuracy:** The model's predictions appear to be consistently lower than the actual call volume. This suggests a need to review and potentially retrain the model.
+*   **Weekend Effect:** The actual data clearly shows a higher call volume on weekends. The model should be incorporating this pattern.
+*   **Seasonality:** The forecast for December shows some potential seasonality, with a slight increase in call volume towards the end of the month.
+*   **Data Quality:** The "U.S. Holiday Indicator" and "Call Volume Impact" columns are all "None". This might be correct, but it's worth verifying that the model is correctly accounting for any potential holiday effects.
+*   **Further Analysis:**
+    *   Calculate the Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), or other relevant metrics to quantify the model's prediction accuracy.
+    *   Analyze the residuals (the difference between actual and predicted values) to identify any patterns or biases in the model's errors.
+    *   Investigate the features used in the model to understand why it is underestimating the call volume.
+    *   Consider adding more features to the model, such as external factors (e.g., marketing campaigns, economic indicators) that might influence call volume.
+    *   Retrain the model with the most recent data to improve its accuracy.

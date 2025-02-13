@@ -6,7 +6,7 @@ import joblib
 from datetime import datetime
 import warnings
 from sklearn.metrics import mean_absolute_percentage_error
-from llm import llm_call2
+from llm import llm_call
 warnings.filterwarnings("ignore")
 
 
@@ -184,8 +184,26 @@ def retrain_actuals(forecast_days):
     df_actual_latest = read_data_db(df_actual_latest_q) 
 
     llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me insights report"
-    response = llm_call2(llm_input)
+    response = llm_call(llm_input,"AGENT_INSIGHTS")
+    logger.info(f"--------------------------------------AGENT_INSIGHTS-------------------------------------")
     logger.info(f"{response}")
+
+
+    llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me day of week level breakdown and alalysis"
+    response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
+    logger.info(f"--------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------")
+    logger.info(f"{response}")
+
+    llm_input = f"This is my actual  volume {df_actual_retrain} check for last 4 weeks and give date and call volume if its an anomaly not on an USA holiday along with its standard deviation *Dont generate python code just give dates and anomlay*"
+    response = llm_call(llm_input,"AGENT_ANOMALY")
+    logger.info(f"--------------------------------------AGENT_ANOMALY-------------------------------------")
+    logger.info(f"{response}")
+
+    llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me summary report"
+    response = llm_call(llm_input,"AGENT_REPORT")
+    logger.info(f"--------------------------------------AGENT_REPORT-------------------------------------")
+    logger.info(f"{response}")
+
     return None
 
 if __name__ == "__main__":
