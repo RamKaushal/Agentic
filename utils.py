@@ -4,7 +4,8 @@ import logging
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
+import requests
 
 def write_data_db(df,table_name,type):
     conn = sqlite3.connect("calls.db")
@@ -134,3 +135,52 @@ def plot_weekday_call_volume_distribution(df, day_column, volume_column):
 
     plt.tight_layout()
     plt.show()
+
+
+
+def get_news(start_date,end_date):
+   
+    API_KEY = "2a65a97a01a449ca94aef7ac07ee8fc3"
+
+    END_DATE = end_date
+    START_DATE = start_date
+
+    # Updated Query: Searching for banking call volume-related events
+    QUERY = "interest rates OR banking fraud OR regulatory changes"
+
+    # Financial News Sources (Filter to include only these)
+    FINANCIAL_SOURCES = [
+        "bloomberg", "cnbc", "forbes", "business-insider", "financial-times",
+        "the-wall-street-journal", "reuters", "the-economic-times"
+    ]
+
+    # API Endpoint
+    URL = f"https://newsapi.org/v2/everything?q={QUERY}&from={START_DATE}&to={END_DATE}&language=en&sortBy=publishedAt&apiKey={API_KEY}"
+
+    # Make request
+    response = requests.get(URL)
+
+    if response.status_code == 200:
+        articles = response.json().get("articles", [])
+        
+        # Extract relevant details and filter by financial sources
+        data = []
+        for article in articles:
+            if article["source"]["name"].lower().replace(" ", "-") in FINANCIAL_SOURCES:
+                data.append({
+                    "title": article["title"],
+                    "source": article["source"]["name"],
+                    "published_at": article["publishedAt"],
+                    "url": article["url"],  # Include URL for reference
+                    "content": article["content"]
+                })
+        
+        # Convert to DataFrame
+        df = pd.DataFrame(data)
+        df =df[['content']]
+        # Display DataFrame
+        print(df)
+    else:
+        print("Error:", response.json())
+
+    return df
