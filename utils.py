@@ -136,7 +136,7 @@ def plot_weekday_call_volume_distribution(df, day_column, volume_column):
     plt.tight_layout()
     plt.show()
 
-
+  
 
 def get_news(start_date,end_date):
    
@@ -177,9 +177,8 @@ def get_news(start_date,end_date):
         
         # Convert to DataFrame
         df = pd.DataFrame(data)
-        df =df[['content']]
+        df =df[['title']]
         # Display DataFrame
-        print(df)
     else:
         print("Error:", response.json())
 

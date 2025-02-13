@@ -39,6 +39,10 @@ You are a highly experienced data scientist specializing in banking analytics, t
 Prepare a report highlighting these anomalies, including details such as the date, call volume, and the extent of deviation from the normal volume, *DOnt generate python code just give dates and anomlay*
 '''
 
+    AGENT_NEWS = '''
+Analyze the provided news data and identify any news that could impact the call volume forecast for a bank like Citi. Exclude news that has no impact. For relevant news, determine whether the impact is positive or negative.
+'''
+
     AGENT_REPORT = '''
 You are a highly experienced data analyst specializing in banking analytics, report summary generation
 Determine any key insights I might be missing, such as seasonality, sudden spikes, or trends that may impact future performance. 

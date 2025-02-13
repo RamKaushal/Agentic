@@ -1,5 +1,5 @@
 import pandas as pd
-from utils import write_data_db, read_data_db, get_logger,plot_line_chart,plot_weekday_call_volume_distribution
+from utils import write_data_db, read_data_db, get_logger,plot_line_chart,get_news
 import yaml
 from models import ForecastingModels  
 import joblib
@@ -182,6 +182,27 @@ def retrain_actuals(forecast_days):
     SELECT * FROM ACD_VOLUME_TRAIN WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) order by DATE DESC limit 100
     '''
     df_actual_latest = read_data_db(df_actual_latest_q) 
+
+
+    news_df = get_news('2025-01-14','2025-02-11')
+
+    llm_input = f'''Analyze the provided news dataset {news_df} from the last 14 days and identify events or trends that could impact the 28-day call volume forecast {df_forecast_latest} for a bank.
+
+                Instructions:
+
+                Extract only the relevant news articles that have a potential impact on call volumes.
+                Ignore any news that does not affect call volumes.
+                For each relevant news article, provide:
+                News Headline or Event
+                Summary of the News
+                Predicted Impact on Call Volume (Increase or Decrease)
+                Output Format:
+                News || Summary || Impact on Call Volume (Increase/Decrease)
+                '''
+    
+    response = llm_call(llm_input,"AGENT_NEWS")
+    logger.info(f"--------------------------------------AGENT_NEWS-------------------------------------")
+    logger.info(f"{response}")
 
     llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me insights report"
     response = llm_call(llm_input,"AGENT_INSIGHTS")
