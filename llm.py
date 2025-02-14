@@ -36,7 +36,7 @@ and then compare  values. Identify any patterns, deviations, or anomalies in wee
 '''    
     AGENT_ANOMALY = '''
 You are a highly experienced data scientist specializing in banking analytics, time series forecasting, Identify any days where the call volume is significantly higher or lower than usual, excluding U.S. holidays and the two days following each holiday. 
-Prepare a report highlighting these anomalies, including details such as the date, call volume, and the extent of deviation from the normal volume, *DOnt generate python code just give dates and anomlay*
+Given my training data Prepare a report highlighting these anomalies, including details such as the date, call volume, and the extent of deviation from the normal volume, *DOnt generate python code just give dates and anomlay*
 '''
 
     AGENT_NEWS = '''

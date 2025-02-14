@@ -87,7 +87,7 @@ class ForecastingModels:
             param_grid['subsample']
         ))
 
-        mlflow.set_experiment("BASE_NEW6")
+        mlflow.set_experiment("BASE_SCENARIO15")
         
         for params in param_combinations:
             n_estimators, learning_rate, max_depth, subsample = params
@@ -138,10 +138,18 @@ class ForecastingModels:
             mlflow.xgboost.log_model(self.best_model, "best_xgb_model")
             mlflow.set_tag("Best Model", "True")
             model_uri = "runs:/{}/best_xgb_model".format(mlflow.active_run().info.run_id)
-            client.create_registered_model("Best_XGB_Model")
-            client.create_model_version(name="Best_XGB_Model", source=model_uri, run_id=mlflow.active_run().info.run_id)
-            mlflow.end_run()
-
+            try:
+                latest_versions = client.get_latest_versions("Best_XGB_Model")
+                latest_version = max([int(v.version) for v in latest_versions]) + 1
+                client.create_model_version(name="Best_XGB_Model", source=model_uri, run_id=mlflow.active_run().info.run_id)
+                print(f"Registered Best_XGB_Model as version {latest_version}")
+                mlflow.end_run()
+            except:
+                
+                client.create_registered_model("Best_XGB_Model")
+                client.create_model_version(name="Best_XGB_Model", source=model_uri, run_id=mlflow.active_run().info.run_id)
+                mlflow.end_run()
+              
         return None
 
 
