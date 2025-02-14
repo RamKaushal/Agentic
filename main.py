@@ -7,6 +7,8 @@ from datetime import datetime
 import warnings
 from sklearn.metrics import mean_absolute_percentage_error
 from llm import llm_call
+import mlflow
+import mlflow.xgboost
 warnings.filterwarnings("ignore")
 
 
@@ -44,43 +46,44 @@ def total_data_push(train_date,forecast_days,lag_days):
     #SCENARIO BASE: CREATING AN XGB MODEL AND SAVING ITS WEIGHTS, This model gets trained will Nov 3
     try:
         forecast_obj = ForecastingModels(df_read, forecast_days) #creating an object from the forecasting models class, passing the df_read which have data till nov3
-        trained_model = forecast_obj.train_xgb_model("BASE") #This will train our XGB model till NOv 3
-        joblib.dump(trained_model, "xgb_model.pkl") #Dumping our model so that we can pull on monday and forecast it
+        forecast_obj.train_xgb_model("BASE") #This will train our XGB model till NOv 3
         logger.info(f"XGB model trained and saved successfully")
     except Exception as e:
         logger.error(f"Model training or saving failed because of {e}")
 
     # #SCENARIO 1: Loading the XGB Model on Monday to make predicitons for next 14 days
-    # try:
-    #     XGB_LOADED = joblib.load("xgb_model.pkl") #pulling the model weights that we saved previously
-    #     logger.info(f"XGB model successfully loaded")
+    try:
+        model_name = "Best_XGB_Model"
+        model_version = "latest"
 
-    #     # Use the trained model to make future predictions
-    #     #  #creating an object from the forecasting models class, passing the df_read which have data till nov3
-    #     forecast_df = forecast_obj.forecast_xgb_model(XGB_LOADED) #passing the model to the class
-    #     forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y") #converting to datetime
-    #     forecast_df = forecast_df.iloc[lag_days:]
-    #     max_date = forecast_df['Date'].max() #getting max of date for logs
-    #     min_date = forecast_df['Date'].min() #getting min of date for logs
-    #     forecast_df['Timestamp'] = datetime.now() #creating the timestamp column this will help us if we rerun model on same day to pick the latest forecast
-    #     df_read['Timestamp'] = datetime.now() #creating the timestamp column this will help us if we rerun model on same day to pick the latest forecast
-    #     df_read['Date'] = pd.to_datetime(df_read['Date'], format="%d-%m-%Y") #converting to datetime
-    #     max_date_r = df_read['Date'].max()  #getting max of date for logs
-    #     min_date_r = df_read['Date'].min() #getting min of date for logs
-    #     write_data_db(df_read, "ACD_VOLUME_TRAIN","append") #wring the train data back to DB
-    #     write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append") #writng the forecast data back to DB
-    #     plot_line_chart(df_read,x='Date',y='Call Volume',label1="Call Volume Train",df1 = forecast_df,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted") #linechart of train and predicted
-    #     logger.info(f"Forecasting for next {forecast_days-lag_days} days completed from {min_date} to {max_date}")
-    #     logger.info(f"FORECAST Data is pushed into DB and forecast is {forecast_df}")
-    #     logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r}")
-    #     joblib.dump(trained_model, "xgb_model.pkl") #Dumping our model so that we can pull on monday and forecast it
-    #     logger.info(f"XGB model trained and saved successfully")
-    # except Exception as e:
-    #     logger.error(f"Prediction failed: {e}")
+# Load from MLflow registry
+        XGB_LOADED = mlflow.xgboost.load_model(model_uri=f"models:/{model_name}/{model_version}")
+        logger.info(f"XGB model successfully loaded")
+
+        # Use the trained model to make future predictions
+        #  #creating an object from the forecasting models class, passing the df_read which have data till nov3
+        forecast_df = forecast_obj.forecast_xgb_model(XGB_LOADED) #passing the model to the class
+        forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y") #converting to datetime
+        forecast_df = forecast_df.iloc[lag_days:]
+        max_date = forecast_df['Date'].max() #getting max of date for logs
+        min_date = forecast_df['Date'].min() #getting min of date for logs
+        forecast_df['Timestamp'] = datetime.now() #creating the timestamp column this will help us if we rerun model on same day to pick the latest forecast
+        df_read['Timestamp'] = datetime.now() #creating the timestamp column this will help us if we rerun model on same day to pick the latest forecast
+        df_read['Date'] = pd.to_datetime(df_read['Date'], format="%d-%m-%Y") #converting to datetime
+        max_date_r = df_read['Date'].max()  #getting max of date for logs
+        min_date_r = df_read['Date'].min() #getting min of date for logs
+        write_data_db(df_read, "ACD_VOLUME_TRAIN","append") #wring the train data back to DB
+        write_data_db(forecast_df, "ACD_VOLUME_FORECAST","append") #writng the forecast data back to DB
+        plot_line_chart(df_read,x='Date',y='Call Volume',label1="Call Volume Train",df1 = forecast_df,x1='Date',x2='Predicted_Call_Volume',label2="Call Volume Forecasted") #linechart of train and predicted
+        logger.info(f"Forecasting for next {forecast_days-lag_days} days completed from {min_date} to {max_date}")
+        logger.info(f"FORECAST Data is pushed into DB and forecast is {forecast_df}")
+        logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r}")
+    except Exception as e:
+        logger.error(f"Prediction failed: {e}")
     return None
      
 #SCenario 2: 1 week later re-train on last 7 days
-def scenario2(forecast_days,name):
+def scenario2(forecast_days):
     try:   
         logger.info(f"SCENARIO 2 of retraining last 7 days started")
         query = f"""
@@ -112,8 +115,10 @@ def scenario2(forecast_days,name):
         df_retrain = pd.concat([df_train, df_actual_retrain], ignore_index=True)
         df_retrain['Date'] = pd.to_datetime(df_retrain['Date'], format="%d-%m-%Y") #converting to datetime
         forecast_obj = ForecastingModels(df_retrain, forecast_days) #creating an object from the forecasting models class, passing the df_read which have data till nov3
-        trained_model = forecast_obj.train_xgb_model(name) #This will train our XGB model till NOv 3
-        forecast_df = forecast_obj.forecast_xgb_model(trained_model) #passing the model to the class
+        model_name = "Best_XGB_Model"
+        model_version = "latest"
+        XGB_LOADED = mlflow.xgboost.load_model(model_uri=f"models:/{model_name}/{model_version}")
+        forecast_df = forecast_obj.forecast_xgb_model(XGB_LOADED) #passing the model to the class
         forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y") #converting to datetime
         df_retrain['Date'] = pd.to_datetime(df_retrain['Date'], format="%d-%m-%Y") #converting to datetime
         forecast_df = forecast_df.iloc[lag_days:]
@@ -132,7 +137,6 @@ def scenario2(forecast_days,name):
         logger.info(f"Forecasting for next {forecast_days-lag_days} days completed from {min_date} to {max_date}")
         logger.info(f"FORECAST Data is pushed into DB and forecast is {forecast_df}")
         logger.info(f"TRAIN Data is pushed into DB from {min_date_r} to {max_date_r}")
-        joblib.dump(trained_model, "xgb_model.pkl") #Dumping our model so that we can pull on monday and forecast it
         logger.info(f"XGB model trained and saved successfully")
     except Exception as e:
         logger.error(f"Prediction failed: {e}")
@@ -142,7 +146,7 @@ def scenario2(forecast_days,name):
 
 
 def retrain_actuals(forecast_days):
-    scenario2(forecast_days,"4thweek")
+    scenario2(forecast_days)
     actuals_query = '''
     with cte1 as(
     SELECT * FROM ACD_VOLUME_TRAIN 
@@ -240,7 +244,7 @@ if __name__ == "__main__":
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
     total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
-    # scenario2(forecast_days,"2ndweek")
-    # scenario2(forecast_days,"3rdweek")
-    # retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
+    scenario2(forecast_days)
+    scenario2(forecast_days)
+    retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
     

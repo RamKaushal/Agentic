@@ -87,7 +87,7 @@ class ForecastingModels:
             param_grid['subsample']
         ))
 
-        mlflow.set_experiment("BASE_NEW3")
+        mlflow.set_experiment("BASE_NEW6")
         
         for params in param_combinations:
             n_estimators, learning_rate, max_depth, subsample = params
@@ -142,7 +142,7 @@ class ForecastingModels:
             client.create_model_version(name="Best_XGB_Model", source=model_uri, run_id=mlflow.active_run().info.run_id)
             mlflow.end_run()
 
-        return self.best_model
+        return None
 
 
     def forecast_xgb_model(self, trained_model):
