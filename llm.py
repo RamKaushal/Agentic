@@ -35,12 +35,15 @@ Analyze the call distribution of training data,forecasted data across weekdays a
 and then compare  values. Identify any patterns, deviations, or anomalies in weekday trends and highlight any unexpected variations.
 '''    
     AGENT_ANOMALY = '''
-You are a highly experienced data scientist specializing in banking analytics, time series forecasting, Identify any days where the call volume is significantly higher or lower than usual, excluding U.S. holidays and the two days following each holiday. 
-Given my training data Prepare a report highlighting these anomalies, including details such as the date, call volume, and the extent of deviation from the normal volume, *DOnt generate python code just give dates and anomlay*
+You are a highly experienced data scientist specializing in banking analytics, time series forecasting, Identify any days where the call volume 
+is significantly higher or lower than usual, excluding U.S. holidays and the two days following each holiday. 
+Given my training data Prepare a report highlighting these anomalies, including details such as the date, call volume,
+ and the extent of deviation from the normal volume, *DOnt generate python code just give dates and anomlay*
 '''
 
     AGENT_NEWS = '''
-Analyze the provided news data and identify any news that could impact the call volume forecast for a bank like Citi. Exclude news that has no impact. For relevant news, determine whether the impact is positive or negative.
+Analyze the provided news data and identify any news that could impact the call volume forecast for a bank like Citi. 
+b  Exclude news that has no impact. For relevant news, determine whether the impact is positive or negative.
 '''
 
     AGENT_REPORT = '''

@@ -10,6 +10,7 @@ from sklearn.metrics import mean_absolute_percentage_error
 from llm import llm_call
 import mlflow
 import mlflow.xgboost
+from mlflow.tracking import MlflowClient
 from sklearn.metrics import mean_absolute_percentage_error
 warnings.filterwarnings("ignore")
 
@@ -116,11 +117,17 @@ def scenario2(forecast_days):
         logger.info(f"values of  {min_date} to {max_date} are added and are being retrained")
         df_retrain = pd.concat([df_train, df_actual_retrain], ignore_index=True)
         df_retrain['Date'] = pd.to_datetime(df_retrain['Date'], format="%d-%m-%Y") #converting to datetime
-        forecast_obj = ForecastingModels(df_retrain, forecast_days) #creating an object from the forecasting models class, passing the df_read which have data till nov3
-        model_name = "Best_XGB_Model"
-        model_version = "latest"
-        XGB_LOADED = mlflow.xgboost.load_model(model_uri=f"models:/{model_name}/{model_version}")
-        forecast_df = forecast_obj.forecast_xgb_model(XGB_LOADED) #passing the model to the class
+        ###########
+        model_name = "Best_XGB_Model"  
+        client = MlflowClient()
+        latest_version = max([int(v.version) for v in client.get_latest_versions(model_name)])
+        model_version_details = client.get_model_version(model_name, str(latest_version))
+        run_id = model_version_details.run_id  
+        run_details = client.get_run(run_id)
+        logged_params = run_details.data.params 
+        forecast_obj = ForecastingModels(df_retrain, forecast_days)
+        XGB_TRAINED = forecast_obj.train_xgb_model_same_param(logged_params)
+        forecast_df = forecast_obj.forecast_xgb_model(XGB_TRAINED) #passing the model to the class
         forecast_df['Date'] = pd.to_datetime(forecast_df['Date'], format="%d-%m-%Y") #converting to datetime
         df_retrain['Date'] = pd.to_datetime(df_retrain['Date'], format="%d-%m-%Y") #converting to datetime
         forecast_df = forecast_df.iloc[lag_days:]
@@ -235,26 +242,26 @@ def retrain_actuals(forecast_days):
     # logger.info(f"--------------------------------------AGENT_NEWS-------------------------------------")
     # logger.info(f"{response}")
 
-    llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me insights report"
-    response = llm_call(llm_input,"AGENT_INSIGHTS")
-    logger.info(f"--------------------------------------AGENT_INSIGHTS-------------------------------------")
-    logger.info(f"{response}")
+    # llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me insights report"
+    # response = llm_call(llm_input,"AGENT_INSIGHTS")
+    # logger.info(f"--------------------------------------AGENT_INSIGHTS-------------------------------------")
+    # logger.info(f"{response}")
 
 
-    llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me day of week level breakdown and alalysis"
-    response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
-    logger.info(f"--------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------")
-    logger.info(f"{response}")
+    # llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me day of week level breakdown and alalysis"
+    # response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
+    # logger.info(f"--------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------")
+    # logger.info(f"{response}")
 
-    llm_input = f"This is my actual  volume {df_actual_retrain} check for last 4 weeks and give date and call volume if its an anomaly not on an USA holiday along with its standard deviation,generate usa holidays by urself *Dont generate python code just give dates and anomlay*"
-    response = llm_call(llm_input,"AGENT_ANOMALY")
-    logger.info(f"--------------------------------------AGENT_ANOMALY-------------------------------------")
-    logger.info(f"{response}")
+    # llm_input = f"This is my actual  volume {df_actual_retrain} check for last 4 weeks and give date and call volume if its an anomaly not on an USA holiday along with its standard deviation,generate usa holidays by urself *Dont generate python code just give dates and anomlay*"
+    # response = llm_call(llm_input,"AGENT_ANOMALY")
+    # logger.info(f"--------------------------------------AGENT_ANOMALY-------------------------------------")
+    # logger.info(f"{response}")
 
-    llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me summary report"
-    response = llm_call(llm_input,"AGENT_REPORT")
-    logger.info(f"--------------------------------------AGENT_REPORT-------------------------------------")
-    logger.info(f"{response}")
+    # llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me summary report"
+    # response = llm_call(llm_input,"AGENT_REPORT")
+    # logger.info(f"--------------------------------------AGENT_REPORT-------------------------------------")
+    # logger.info(f"{response}")
 
     return None
 
@@ -270,8 +277,8 @@ if __name__ == "__main__":
     train_date = config['train_date'] #gets train param from config file,change in train date is we want to train base model from a diff date
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    # total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
-    # scenario2(forecast_days)
-    # scenario2(forecast_days)
+    total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
+    scenario2(forecast_days)
+    scenario2(forecast_days)
     retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
     

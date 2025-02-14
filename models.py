@@ -87,7 +87,7 @@ class ForecastingModels:
             param_grid['subsample']
         ))
 
-        mlflow.set_experiment("BASE_SCENARIO15")
+        mlflow.set_experiment("BASE_SCENARIO101")
         
         for params in param_combinations:
             n_estimators, learning_rate, max_depth, subsample = params
@@ -151,6 +151,44 @@ class ForecastingModels:
                 mlflow.end_run()
               
         return None
+    
+    def train_xgb_model_same_param(self,logged_params):
+        """ Train an XGBoost model on the provided data and return the trained model. """
+
+        # Preprocess training data
+        train_data = self.preprocess_data(self.train_df)
+
+        # Define feature columns
+        features = [col for col in train_data.columns if col not in ['Date', 'Call Volume']]
+        target = 'Call Volume'
+
+        # Prepare training data
+        X_train = train_data[features].apply(pd.to_numeric, errors='coerce')
+        X_train.fillna(0, inplace=True)  # Handle missing values
+        y_train = train_data[target]
+
+        # Train the XGBoost model
+        # Convert string parameters to appropriate types
+        def convert_params(params):
+            converted_params = {}
+            for key, value in params.items():
+                try:
+                    # Convert to integer if it's a whole number
+                    if value.isdigit():
+                        converted_params[key] = int(value)
+                    else:
+                        converted_params[key] = float(value)  # Convert to float otherwise
+                except ValueError:
+                    converted_params[key] = value  # Keep it as string if conversion fails
+            return converted_params
+        numeric_params = convert_params(logged_params)
+
+
+
+        self.model = XGBRegressor(n_estimators=numeric_params['n_estimators'], learning_rate=numeric_params['learning_rate'], max_depth=numeric_params['max_depth'], random_state=42)
+        self.model.fit(X_train, y_train)
+
+        return self.model  # Returning trained model
 
 
     def forecast_xgb_model(self, trained_model):
