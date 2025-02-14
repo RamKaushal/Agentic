@@ -238,5 +238,6 @@ class ForecastingModels:
 
         # Predict call volume for the next forecast_days
         future_data['Predicted_Call_Volume'] = trained_model.predict(X_future)
+        future_data['Predicted_Call_Volume'] = future_data['Predicted_Call_Volume'].astype('int')
 
         return future_data[['Date', 'Predicted_Call_Volume']]

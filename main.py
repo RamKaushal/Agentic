@@ -242,16 +242,16 @@ def retrain_actuals(forecast_days):
     # logger.info(f"--------------------------------------AGENT_NEWS-------------------------------------")
     # logger.info(f"{response}")
 
-    # llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me insights report"
-    # response = llm_call(llm_input,"AGENT_INSIGHTS")
-    # logger.info(f"--------------------------------------AGENT_INSIGHTS-------------------------------------")
-    # logger.info(f"{response}")
+    llm_input = f"Last 100 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} "
+    response = llm_call(llm_input,"AGENT_INSIGHTS")
+    logger.info(f"--------------------------------------AGENT_INSIGHTS-------------------------------------")
+    logger.info(f"{response}")
 
 
-    # llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me day of week level breakdown and alalysis"
-    # response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
-    # logger.info(f"--------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------")
-    # logger.info(f"{response}")
+    llm_input = f"Last 100 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} Give week day analysis of each in table format"
+    response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
+    logger.info(f"--------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------")
+    logger.info(f"{response}")
 
     # llm_input = f"This is my actual  volume {df_actual_retrain} check for last 4 weeks and give date and call volume if its an anomaly not on an USA holiday along with its standard deviation,generate usa holidays by urself *Dont generate python code just give dates and anomlay*"
     # response = llm_call(llm_input,"AGENT_ANOMALY")
@@ -277,8 +277,8 @@ if __name__ == "__main__":
     train_date = config['train_date'] #gets train param from config file,change in train date is we want to train base model from a diff date
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
-    scenario2(forecast_days)
-    scenario2(forecast_days)
+    # total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
+    # scenario2(forecast_days)
+    # scenario2(forecast_days)
     retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
     
