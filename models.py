@@ -1,6 +1,9 @@
 from xgboost import XGBRegressor
 import pandas as pd
 import numpy as np
+import mlflow
+import mlflow.xgboost
+from sklearn.metrics import mean_absolute_percentage_error
 
 class ForecastingModels:
     def __init__(self, train_df, forecast_days):
@@ -45,8 +48,8 @@ class ForecastingModels:
 
         return data
 
-    def train_xgb_model(self):
-        """ Train an XGBoost model on the provided data and return the trained model. """
+    def train_xgb_model(self,name):
+        """ Train an XGBoost model and log results in MLflow. """
 
         # Preprocess training data
         train_data = self.preprocess_data(self.train_df)
@@ -55,16 +58,37 @@ class ForecastingModels:
         features = [col for col in train_data.columns if col not in ['Date', 'Call Volume']]
         target = 'Call Volume'
 
-        # Prepare training data
-        X_train = train_data[features].apply(pd.to_numeric, errors='coerce')
-        X_train.fillna(0, inplace=True)  # Handle missing values
-        y_train = train_data[target]
+        # Split data into train (except last 14 days) and test (last 14 days)
+        test_size = 14
+        train_data = train_data.sort_values("Date")
+        train_set = train_data.iloc[:-test_size]
+        test_set = train_data.iloc[-test_size:]
+
+        X_train, y_train = train_set[features], train_set[target]
+        X_test, y_test = test_set[features], test_set[target]
 
         # Train the XGBoost model
         self.model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=5, random_state=42)
-        self.model.fit(X_train, y_train)
+        mlflow.set_experiment("Call_Volume_Forecasting")
+        with mlflow.start_run(run_name=name):
+            self.model.fit(X_train, y_train)
 
-        return self.model  # Returning trained model
+            # Predictions and metrics
+            y_pred = self.model.predict(X_test)
+            mape = mean_absolute_percentage_error(y_test, y_pred) * 100
+           
+            # Log parameters and metrics in MLflow
+            mlflow.xgboost.log_model(self.model, "xgb_model")
+            mlflow.log_params({
+                "n_estimators": 100,
+                "learning_rate": 0.1,
+                "max_depth": 5
+            })
+            mlflow.log_metrics({
+                "MAPE": mape
+            })
+        mlflow.end_run()
+        return self.model
 
     def forecast_xgb_model(self, trained_model):
         """ Forecast next `forecast_days` call volume using a trained XGBoost model. """
@@ -105,8 +129,7 @@ class ForecastingModels:
         # Fill categorical columns with most frequent value from training data
         for col in ['U.S. Holiday Indicator', 'Call Volume Impact']:
             if col in train_data.columns:
-                # future_data[col] = train_data[col].mode()[0]
-                future_data[col] = train_data.iloc[0] if not train_data.empty else 0
+                future_data[col] = train_data[col].mode()[0] if not train_data.empty else 0
 
         # Prepare test data
         X_future = future_data[feature_columns].apply(pd.to_numeric, errors='coerce')
