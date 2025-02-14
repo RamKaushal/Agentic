@@ -1,15 +1,19 @@
+from itertools import product
 from xgboost import XGBRegressor
 import pandas as pd
-import numpy as np
 import mlflow
 import mlflow.xgboost
+from mlflow.tracking import MlflowClient
 from sklearn.metrics import mean_absolute_percentage_error
+import numpy as np
 
 class ForecastingModels:
     def __init__(self, train_df, forecast_days):
         self.train_df = train_df
         self.forecast_days = forecast_days
-        self.model = None  # Model will be assigned after training
+        self.best_model = None
+        self.best_params = None
+        self.best_mape = float('inf')
 
     def preprocess_data(self, data):
         """ Preprocess train data by adding lag and time-based features. """
@@ -48,9 +52,9 @@ class ForecastingModels:
 
         return data
 
-    def train_xgb_model(self,name):
-        """ Train an XGBoost model and log results in MLflow. """
-
+    def train_xgb_model(self, experiment_name):
+        """ Train an XGBoost model with hyperparameter tuning and log results in MLflow. """
+        
         # Preprocess training data
         train_data = self.preprocess_data(self.train_df)
 
@@ -67,28 +71,79 @@ class ForecastingModels:
         X_train, y_train = train_set[features], train_set[target]
         X_test, y_test = test_set[features], test_set[target]
 
-        # Train the XGBoost model
-        self.model = XGBRegressor(n_estimators=100, learning_rate=0.1, max_depth=5, random_state=42)
-        mlflow.set_experiment("Call_Volume_Forecasting")
-        with mlflow.start_run(run_name=name):
-            self.model.fit(X_train, y_train)
+        # Define hyperparameter grid
+        param_grid = {
+            'n_estimators': [100, 200],
+            'learning_rate': [0.01],
+            'max_depth': [3],
+            'subsample': [0.7]
+        }
 
-            # Predictions and metrics
-            y_pred = self.model.predict(X_test)
-            mape = mean_absolute_percentage_error(y_test, y_pred) * 100
-           
-            # Log parameters and metrics in MLflow
-            mlflow.xgboost.log_model(self.model, "xgb_model")
-            mlflow.log_params({
-                "n_estimators": 100,
-                "learning_rate": 0.1,
-                "max_depth": 5
-            })
-            mlflow.log_metrics({
-                "MAPE": mape
-            })
-        mlflow.end_run()
-        return self.model
+        # Create all combinations of hyperparameters
+        param_combinations = list(product(
+            param_grid['n_estimators'], 
+            param_grid['learning_rate'], 
+            param_grid['max_depth'],
+            param_grid['subsample']
+        ))
+
+        mlflow.set_experiment("BASE_NEW3")
+        
+        for params in param_combinations:
+            n_estimators, learning_rate, max_depth, subsample = params
+
+            with mlflow.start_run(run_name=experiment_name):
+                model = XGBRegressor(
+                    n_estimators=n_estimators, 
+                    learning_rate=learning_rate, 
+                    max_depth=max_depth,
+                    subsample=subsample,
+                    random_state=42
+                )
+
+                model.fit(X_train, y_train)
+
+                # Predictions and metrics
+                y_pred = model.predict(X_test)
+                mape = mean_absolute_percentage_error(y_test, y_pred) * 100
+
+                # Log parameters and metrics in MLflow
+                mlflow.log_params({
+                    "n_estimators": n_estimators,
+                    "learning_rate": learning_rate,
+                    "max_depth": max_depth,
+                    "subsample": subsample
+                })
+                mlflow.log_metric("MAPE", mape)
+                mlflow.xgboost.log_model(model, artifact_path="xgb_model")
+
+                # Select the best model
+                if mape < self.best_mape:
+                    self.best_mape = mape
+                    self.best_model = model
+                    self.best_params = {
+                        "n_estimators": n_estimators,
+                        "learning_rate": learning_rate,
+                        "max_depth": max_depth,
+                        "subsample": subsample
+                    }
+
+            mlflow.end_run()
+
+        # Register the best model
+        with mlflow.start_run(run_name="BEST_MODEL"):
+            client = MlflowClient()
+            mlflow.log_params(self.best_params)
+            mlflow.log_metric("Best MAPE", self.best_mape)
+            mlflow.xgboost.log_model(self.best_model, "best_xgb_model")
+            mlflow.set_tag("Best Model", "True")
+            model_uri = "runs:/{}/best_xgb_model".format(mlflow.active_run().info.run_id)
+            client.create_registered_model("Best_XGB_Model")
+            client.create_model_version(name="Best_XGB_Model", source=model_uri, run_id=mlflow.active_run().info.run_id)
+            mlflow.end_run()
+
+        return self.best_model
+
 
     def forecast_xgb_model(self, trained_model):
         """ Forecast next `forecast_days` call volume using a trained XGBoost model. """
