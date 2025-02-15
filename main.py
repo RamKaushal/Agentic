@@ -4,6 +4,7 @@ from utils import write_data_db, read_data_db, get_logger,plot_line_chart,get_ne
 import yaml
 from models import ForecastingModels  
 import joblib
+import time
 from datetime import datetime
 import warnings
 from sklearn.metrics import mean_absolute_percentage_error
@@ -19,7 +20,7 @@ warnings.filterwarnings("ignore")
 def total_data_push(train_date,forecast_days,lag_days):
     # Write data into DB
     try:
-        df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv") #reading entire data
+        df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv") #reading entire data        
         df['Date'] = pd.to_datetime(df['Date'], format="%d-%m-%Y") #converting it to date month year format to push to sql lite db
         max_date = df['Date'].max() #getting date max to maintain log
         min_date = df['Date'].min() #getting date min to maintain log
@@ -220,48 +221,50 @@ def retrain_actuals(forecast_days):
     SELECT * FROM ACD_VOLUME_TRAIN WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) order by DATE DESC limit 100
     '''
     df_actual_latest = read_data_db(df_actual_latest_q) 
+    llm_response_append = ''
 
+    news_df = get_news()
 
-    # news_df = get_news('2025-01-14','2025-02-11')
+    llm_input = f'''Analyze the provided news dataset {news_df} from the last 14 days of {df_actual_latest} and identify events or trends that could impact the 28-day call volume forecast {df_forecast_latest} for citi bank and make sure you use news of the date present in df_actual_latest only.
+                '''
+    response = llm_call(llm_input,"AGENT_NEWS")
+    logger.info(f"--------------------------------------AGENT_NEWS-------------------------------------")
+    logger.info(f"{response}")
+    llm_response_append += "--------------------------------------AGENT_NEWS-------------------------------------"
+    llm_response_append += response
+    time.sleep(5)
 
-    # llm_input = f'''Analyze the provided news dataset {news_df} from the last 14 days and identify events or trends that could impact the 28-day call volume forecast {df_forecast_latest} for a bank.
-
-    #             Instructions:
-
-    #             Extract only the relevant news articles that have a potential impact on call volumes.
-    #             Ignore any news that does not affect call volumes.
-    #             For each relevant news article, provide:
-    #             News Headline or Event
-    #             Summary of the News
-    #             Predicted Impact on Call Volume (Increase or Decrease)
-    #             Output Format:
-    #             News || Summary || Impact on Call Volume (Increase/Decrease)
-    #             '''
-    
-    # response = llm_call(llm_input,"AGENT_NEWS")
-    # logger.info(f"--------------------------------------AGENT_NEWS-------------------------------------")
-    # logger.info(f"{response}")
-
-    llm_input = f"Last 100 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} "
+    llm_input = f"Last 100 Days of Training Data: {df_actual_latest[['Date','Call Volume']]}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} "
     response = llm_call(llm_input,"AGENT_INSIGHTS")
     logger.info(f"--------------------------------------AGENT_INSIGHTS-------------------------------------")
     logger.info(f"{response}")
+    llm_response_append += "--------------------------------------AGENT_INSIGHTS-------------------------------------"
+    llm_response_append += response
+    time.sleep(5)
+
 
 
     llm_input = f"Last 100 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} Give week day analysis of each in table format"
     response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
     logger.info(f"--------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------")
     logger.info(f"{response}")
+    llm_response_append += "--------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------"
+    llm_response_append += response
+    time.sleep(5)
 
-    # llm_input = f"This is my actual  volume {df_actual_retrain} check for last 4 weeks and give date and call volume if its an anomaly not on an USA holiday along with its standard deviation,generate usa holidays by urself *Dont generate python code just give dates and anomlay*"
-    # response = llm_call(llm_input,"AGENT_ANOMALY")
-    # logger.info(f"--------------------------------------AGENT_ANOMALY-------------------------------------")
-    # logger.info(f"{response}")
+    llm_input = f"This is my actual  volume {df_actual_retrain} check for last 4 weeks and give date and call volume if its an anomaly not on an USA holiday along with its standard deviation,generate usa holidays by urself *Dont generate python code just give dates and anomlay*"
+    response = llm_call(llm_input,"AGENT_ANOMALY")
+    logger.info(f"--------------------------------------AGENT_ANOMALY-------------------------------------")
+    logger.info(f"{response}")
+    llm_response_append += "--------------------------------------AGENT_ANOMALY-------------------------------------"
+    llm_response_append += response
+    time.sleep(5)
 
-    # llm_input = f"This is my actual vs predicted volume {df_actual_retrain} and this is my next 28 days forecast {df_forecast_latest} and this is my last 100 days of actuals trained data{df_actual_latest} give me summary report"
-    # response = llm_call(llm_input,"AGENT_REPORT")
-    # logger.info(f"--------------------------------------AGENT_REPORT-------------------------------------")
-    # logger.info(f"{response}")
+    llm_input = f" This is the output generated by diff LLM agents can you make a good summarized report of it {llm_response_append}, Get news agents summary, Insights agent summary, Weekly analysis agent summary and dont forget to include day of week tables,agent anomaly as last and add anonamly dates and their deviation in table"
+    response = llm_call(llm_input,"AGENT_REPORT")
+    logger.info(f"--------------------------------------AGENT_SUMMARY-------------------------------------")
+    logger.info(f"{response}")
+    time.sleep(5)
 
     return None
 

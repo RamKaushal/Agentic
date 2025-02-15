@@ -87,7 +87,7 @@ class ForecastingModels:
             param_grid['subsample']
         ))
 
-        mlflow.set_experiment("BASE_SCENARIO101")
+        mlflow.set_experiment("BASE_SCENARIO103")
         
         for params in param_combinations:
             n_estimators, learning_rate, max_depth, subsample = params
