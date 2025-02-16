@@ -57,11 +57,11 @@ def total_data_push(train_date,forecast_days,lag_days):
 
     # #SCENARIO 1: Loading the XGB Model on Monday to make predicitons for next 14 days
     try:
-        model_name = "Best_XGB_Model"
+        model_name = "Best_XGB_Model" 
         model_version = "latest"
 
         # Load from MLflow registry
-        XGB_LOADED = mlflow.xgboost.load_model(model_uri=f"models:/{model_name}/{model_version}")
+        XGB_LOADED = mlflow.xgboost.load_model(model_uri=f"models:/{model_name}/{model_version}") #Pulling the latest and best version of model from MLFLOW
         logger.info(f"XGB model successfully loaded from ML_FLOW")
 
         # Use the trained model to make future predictions
@@ -164,7 +164,7 @@ def retrain_actuals(forecast_days):
             df_mape_pull['Flag'] = np.where(df_mape_pull['MAPE'] > 15, 1, 0)
             if df_mape_pull['Flag'].sum() ==4:
                 df_latest_data_q = '''
-                SELECT * FROM ACD_VOLUME_TRAIN WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) order by DATE DESC limit 100
+                SELECT * FROM ACD_VOLUME_TRAIN WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) order by DATE DESC 
                 '''
                 df_latest_data_df = read_data_db(df_latest_data_q) 
                 forecast_obj = ForecastingModels(df_latest_data_df, forecast_days) #creating an object from the forecasting models class, passing the df_read which have data till nov3
@@ -218,7 +218,7 @@ def retrain_actuals(forecast_days):
     df_forecast_latest = read_data_db(df_forecast_latest_q) 
 
     df_actual_latest_q = '''
-    SELECT * FROM ACD_VOLUME_TRAIN WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) order by DATE DESC limit 100
+    SELECT * FROM ACD_VOLUME_TRAIN WHERE Timestamp = (SELECT MAX(Timestamp) FROM ACD_VOLUME_TRAIN) order by DATE DESC limit 60
     '''
     df_actual_latest = read_data_db(df_actual_latest_q) 
     llm_response_append = ''
@@ -226,6 +226,8 @@ def retrain_actuals(forecast_days):
     news_df = get_news()
 
     llm_input = f'''Analyze the provided news dataset {news_df} from the last 14 days of {df_actual_latest} and identify events or trends that could impact the 28-day call volume forecast {df_forecast_latest} for citi bank and make sure you use news of the date present in df_actual_latest only.
+                Output format: 
+                Date||News||impact on the forecast
                 '''
     response = llm_call(llm_input,"AGENT_NEWS")
     logger.info(f"--------------------------------------AGENT_NEWS-------------------------------------")
@@ -234,7 +236,15 @@ def retrain_actuals(forecast_days):
     llm_response_append += response
     time.sleep(5)
 
-    llm_input = f"Last 100 Days of Training Data: {df_actual_latest[['Date','Call Volume']]}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} "
+    llm_input = f'''Last 60 Days of Training Data: {df_actual_latest[['Date','Call Volume']]}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} 
+     Output format: 
+     df_actual_latest:          ||Call Volume||Mean||Median||Variance||deviation
+     df_actual_retrain:         ||Call Volume||MAPE||MAE||UNDERFOREASTING or OVERFORECAST||
+     df_forecast_latest:        ||Call Volume||Mean||Median||USA holidays in forecast||
+     df_actual_latest vs df_forecast_latest : How is model forecast based on last 60 days actuals
+     *DONT PRINT PYTHON CODE IN OUTPUT*
+
+    '''
     response = llm_call(llm_input,"AGENT_INSIGHTS")
     logger.info(f"--------------------------------------AGENT_INSIGHTS-------------------------------------")
     logger.info(f"{response}")
@@ -243,8 +253,13 @@ def retrain_actuals(forecast_days):
     time.sleep(5)
 
 
-
-    llm_input = f"Last 100 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} Give week day analysis of each in table format"
+    llm_input = f'''Last 100 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} Give week day analysis of each in table format
+     df_actual_latest: Date of week ||Call Volume||
+     df_actual_retrain: Date of week||Actual Call Volume||predicted Call Volume||MAPE
+     df_forecast_latest: Date of week||Call Volume||Deviation from df_actual_latest day of week Call Volume
+     Combined table: Date of week||df_actual_latest Call Volume AVG||df_actual_retrain Call voume Actual||df_actual_retrain Call voume predicted||df_forecast_latest Call volumne (Week1)||df_forecast_latest Call volumne (Week2)||df_forecast_latest Call volumne (Week3)||df_forecast_latest Call volumne (Week4)
+     *DONT PRINT PYTHON CODE IN OUTPUT*
+    '''
     response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
     logger.info(f"--------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------")
     logger.info(f"{response}")
@@ -252,7 +267,7 @@ def retrain_actuals(forecast_days):
     llm_response_append += response
     time.sleep(5)
 
-    llm_input = f"This is my actual  volume {df_actual_retrain} check for last 4 weeks and give date and call volume if its an anomaly not on an USA holiday along with its standard deviation,generate usa holidays by urself *Dont generate python code just give dates and anomlay*"
+    llm_input = f"This is my actual  volume {df_actual_retrain} of last 100 days,check for last 4 weeks and give date and call volume if its an anomaly not on an USA holiday along with its standard deviation,generate usa holidays by urself *Dont generate python code just give dates and anomlay*"
     response = llm_call(llm_input,"AGENT_ANOMALY")
     logger.info(f"--------------------------------------AGENT_ANOMALY-------------------------------------")
     logger.info(f"{response}")
@@ -280,8 +295,8 @@ if __name__ == "__main__":
     train_date = config['train_date'] #gets train param from config file,change in train date is we want to train base model from a diff date
     logger.info(f"Forecast days are read and set to {forecast_days}")
     logger.info(f"Training data till {train_date}")
-    # total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
-    # scenario2(forecast_days)
-    # scenario2(forecast_days)
+    total_data_push(train_date,forecast_days,lag_days) #this function needs to run one time (create XGB model and trains it and generates forecast for 14 days)
+    scenario2(forecast_days)
+    scenario2(forecast_days)
     retrain_actuals(forecast_days) #This function needs to run in loop to simulates sub sequent weeks
     
