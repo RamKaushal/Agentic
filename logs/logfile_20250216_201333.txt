@@ -1,0 +1,498 @@
+2025-02-16 20:13:33,448 - INFO - Forecast days are read and set to 35
+2025-02-16 20:13:33,448 - INFO - Training data till 2024-11-03
+2025-02-16 20:13:33,470 - INFO - Data is pushed into DB from 2023-01-01 00:00:00 to 2025-12-31 00:00:00
+2025-02-16 20:13:33,477 - INFO - Data is read into DF from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-16 20:13:43,759 - INFO - XGB model trained and saved successfully
+2025-02-16 20:13:43,833 - INFO - XGB model successfully loaded from ML_FLOW
+2025-02-16 20:13:44,060 - INFO - Forecasting for next 28 days completed from 2024-11-11 00:00:00 to 2024-12-08 00:00:00
+2025-02-16 20:13:44,069 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+7  2024-11-11                  29836 2025-02-16 20:13:44.039769
+8  2024-11-12                  29836 2025-02-16 20:13:44.039769
+9  2024-11-13                  29851 2025-02-16 20:13:44.039769
+10 2024-11-14                  29881 2025-02-16 20:13:44.039769
+11 2024-11-15                  29463 2025-02-16 20:13:44.039769
+12 2024-11-16                  28782 2025-02-16 20:13:44.039769
+13 2024-11-17                  28801 2025-02-16 20:13:44.039769
+14 2024-11-18                  29900 2025-02-16 20:13:44.039769
+15 2024-11-19                  29900 2025-02-16 20:13:44.039769
+16 2024-11-20                  29900 2025-02-16 20:13:44.039769
+17 2024-11-21                  29961 2025-02-16 20:13:44.039769
+18 2024-11-22                  29482 2025-02-16 20:13:44.039769
+19 2024-11-23                  28801 2025-02-16 20:13:44.039769
+20 2024-11-24                  29097 2025-02-16 20:13:44.039769
+21 2024-11-25                  30920 2025-02-16 20:13:44.039769
+22 2024-11-26                  30920 2025-02-16 20:13:44.039769
+23 2024-11-27                  30823 2025-02-16 20:13:44.039769
+24 2024-11-28                  30890 2025-02-16 20:13:44.039769
+25 2024-11-29                  29811 2025-02-16 20:13:44.039769
+26 2024-11-30                  28992 2025-02-16 20:13:44.039769
+27 2024-12-01                  28782 2025-02-16 20:13:44.039769
+28 2024-12-02                  30127 2025-02-16 20:13:44.039769
+29 2024-12-03                  28421 2025-02-16 20:13:44.039769
+30 2024-12-04                  28528 2025-02-16 20:13:44.039769
+31 2024-12-05                  29174 2025-02-16 20:13:44.039769
+32 2024-12-06                  27752 2025-02-16 20:13:44.039769
+33 2024-12-07                  25705 2025-02-16 20:13:44.039769
+34 2024-12-08                  25087 2025-02-16 20:13:44.039769
+2025-02-16 20:13:44,069 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-03 00:00:00
+2025-02-16 20:13:44,069 - INFO - SCENARIO 2 of retraining last 7 days started
+2025-02-16 20:13:44,192 - INFO - values of  2024-11-04 00:00:00 to 2024-11-10 00:00:00 are added and are being retrained
+2025-02-16 20:13:44,538 - INFO - Forecasting for next 28 days completed from 2024-11-18 00:00:00 to 2024-12-15 00:00:00
+2025-02-16 20:13:44,538 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+7  2024-11-18                  28824 2025-02-16 20:13:44.518850
+8  2024-11-19                  28824 2025-02-16 20:13:44.518850
+9  2024-11-20                  28824 2025-02-16 20:13:44.518850
+10 2024-11-21                  28824 2025-02-16 20:13:44.518850
+11 2024-11-22                  28595 2025-02-16 20:13:44.518850
+12 2024-11-23                  28494 2025-02-16 20:13:44.518850
+13 2024-11-24                  28775 2025-02-16 20:13:44.518850
+14 2024-11-25                  29563 2025-02-16 20:13:44.518850
+15 2024-11-26                  29563 2025-02-16 20:13:44.518850
+16 2024-11-27                  29563 2025-02-16 20:13:44.518850
+17 2024-11-28                  29563 2025-02-16 20:13:44.518850
+18 2024-11-29                  28973 2025-02-16 20:13:44.518850
+19 2024-11-30                  28834 2025-02-16 20:13:44.518850
+20 2024-12-01                  28494 2025-02-16 20:13:44.518850
+21 2024-12-02                  28824 2025-02-16 20:13:44.518850
+22 2024-12-03                  28824 2025-02-16 20:13:44.518850
+23 2024-12-04                  28824 2025-02-16 20:13:44.518850
+24 2024-12-05                  28824 2025-02-16 20:13:44.518850
+25 2024-12-06                  28595 2025-02-16 20:13:44.518850
+26 2024-12-07                  28494 2025-02-16 20:13:44.518850
+27 2024-12-08                  28494 2025-02-16 20:13:44.518850
+28 2024-12-09                  28600 2025-02-16 20:13:44.518850
+29 2024-12-10                  27646 2025-02-16 20:13:44.518850
+30 2024-12-11                  27313 2025-02-16 20:13:44.518850
+31 2024-12-12                  27963 2025-02-16 20:13:44.518850
+32 2024-12-13                  27029 2025-02-16 20:13:44.518850
+33 2024-12-14                  25803 2025-02-16 20:13:44.518850
+34 2024-12-15                  25612 2025-02-16 20:13:44.518850
+2025-02-16 20:13:44,538 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-10 00:00:00
+2025-02-16 20:13:44,538 - INFO - SCENARIO 2 of retraining last 7 days started
+2025-02-16 20:13:44,665 - INFO - values of  2024-11-11 00:00:00 to 2024-11-17 00:00:00 are added and are being retrained
+2025-02-16 20:13:45,008 - INFO - Forecasting for next 28 days completed from 2024-11-25 00:00:00 to 2024-12-22 00:00:00
+2025-02-16 20:13:45,008 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+7  2024-11-25                  30775 2025-02-16 20:13:44.988167
+8  2024-11-26                  30775 2025-02-16 20:13:44.988167
+9  2024-11-27                  30775 2025-02-16 20:13:44.988167
+10 2024-11-28                  30775 2025-02-16 20:13:44.988167
+11 2024-11-29                  29922 2025-02-16 20:13:44.988167
+12 2024-11-30                  29436 2025-02-16 20:13:44.988167
+13 2024-12-01                  28674 2025-02-16 20:13:44.988167
+14 2024-12-02                  29811 2025-02-16 20:13:44.988167
+15 2024-12-03                  29811 2025-02-16 20:13:44.988167
+16 2024-12-04                  29811 2025-02-16 20:13:44.988167
+17 2024-12-05                  29811 2025-02-16 20:13:44.988167
+18 2024-12-06                  29499 2025-02-16 20:13:44.988167
+19 2024-12-07                  29013 2025-02-16 20:13:44.988167
+20 2024-12-08                  28674 2025-02-16 20:13:44.988167
+21 2024-12-09                  29811 2025-02-16 20:13:44.988167
+22 2024-12-10                  29811 2025-02-16 20:13:44.988167
+23 2024-12-11                  29811 2025-02-16 20:13:44.988167
+24 2024-12-12                  29811 2025-02-16 20:13:44.988167
+25 2024-12-13                  29499 2025-02-16 20:13:44.988167
+26 2024-12-14                  29013 2025-02-16 20:13:44.988167
+27 2024-12-15                  28674 2025-02-16 20:13:44.988167
+28 2024-12-16                  29811 2025-02-16 20:13:44.988167
+29 2024-12-17                  27992 2025-02-16 20:13:44.988167
+30 2024-12-18                  27992 2025-02-16 20:13:44.988167
+31 2024-12-19                  28127 2025-02-16 20:13:44.988167
+32 2024-12-20                  26959 2025-02-16 20:13:44.988167
+33 2024-12-21                  25572 2025-02-16 20:13:44.988167
+34 2024-12-22                  25202 2025-02-16 20:13:44.988167
+2025-02-16 20:13:45,008 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-17 00:00:00
+2025-02-16 20:13:45,008 - INFO - SCENARIO 2 of retraining last 7 days started
+2025-02-16 20:13:45,137 - INFO - values of  2024-11-18 00:00:00 to 2024-11-24 00:00:00 are added and are being retrained
+2025-02-16 20:13:45,469 - INFO - Forecasting for next 28 days completed from 2024-12-02 00:00:00 to 2024-12-29 00:00:00
+2025-02-16 20:13:45,469 - INFO - FORECAST Data is pushed into DB and forecast is          Date  Predicted_Call_Volume                  Timestamp
+7  2024-12-02                  27763 2025-02-16 20:13:45.451806
+8  2024-12-03                  27763 2025-02-16 20:13:45.451806
+9  2024-12-04                  27763 2025-02-16 20:13:45.451806
+10 2024-12-05                  27763 2025-02-16 20:13:45.451806
+11 2024-12-06                  27470 2025-02-16 20:13:45.451806
+12 2024-12-07                  26972 2025-02-16 20:13:45.451806
+13 2024-12-08                  26972 2025-02-16 20:13:45.451806
+14 2024-12-09                  27763 2025-02-16 20:13:45.451806
+15 2024-12-10                  27763 2025-02-16 20:13:45.451806
+16 2024-12-11                  27763 2025-02-16 20:13:45.451806
+17 2024-12-12                  27763 2025-02-16 20:13:45.451806
+18 2024-12-13                  27470 2025-02-16 20:13:45.451806
+19 2024-12-14                  26972 2025-02-16 20:13:45.451806
+20 2024-12-15                  26972 2025-02-16 20:13:45.451806
+21 2024-12-16                  27763 2025-02-16 20:13:45.451806
+22 2024-12-17                  27763 2025-02-16 20:13:45.451806
+23 2024-12-18                  27763 2025-02-16 20:13:45.451806
+24 2024-12-19                  27763 2025-02-16 20:13:45.451806
+25 2024-12-20                  27470 2025-02-16 20:13:45.451806
+26 2024-12-21                  26972 2025-02-16 20:13:45.451806
+27 2024-12-22                  26972 2025-02-16 20:13:45.451806
+28 2024-12-23                  27886 2025-02-16 20:13:45.451806
+29 2024-12-24                  27694 2025-02-16 20:13:45.451806
+30 2024-12-25                  27913 2025-02-16 20:13:45.451806
+31 2024-12-26                  28111 2025-02-16 20:13:45.451806
+32 2024-12-27                  27050 2025-02-16 20:13:45.451806
+33 2024-12-28                  25671 2025-02-16 20:13:45.451806
+34 2024-12-29                  25734 2025-02-16 20:13:45.451806
+2025-02-16 20:13:45,476 - INFO - TRAIN Data is pushed into DB from 2023-01-01 00:00:00 to 2024-11-24 00:00:00
+2025-02-16 20:13:45,545 - INFO - MAPE IS 15.258712725084035
+2025-02-16 20:13:45,545 - INFO -  Compared actual vs predicted of 2024-11-11 00:00:00 to 2024-11-17 00:00:00 is done
+2025-02-16 20:13:54,024 - INFO - --------------------------------------AGENT_NEWS-------------------------------------
+2025-02-16 20:13:54,024 - INFO - Here's an analysis of the news events, filtered by the dates present in the call volume dataset (`df_actual_latest`), and their potential impact on a 28-day call volume forecast for Citibank:
+
+**November 2024**
+
+*   **07-11-2024**||Federal Reserve Lowers Interest Rates||Potentially increased call volume due to customer inquiries about loan rates, savings accounts, and investment strategies.
+*   **08-11-2024**||No News||No impact
+*   **09-11-2024**||No News||No impact
+*   **10-11-2024**||No News||No impact
+*   **11-11-2024**||No News||No impact
+*   **12-11-2024**||Biden Administration Announces Methane Fee for Oil and Gas||Indirect impact. Could lead to calls from businesses or investors concerned about the energy sector and potential financial implications.
+*   **13-11-2024**||No News||No impact
+*   **14-11-2024**||Citibank Offers $4.25 Billion in Callable Notes||Likely to increase call volume from investors seeking information about the notes, terms, and how to purchase them.
+*   **15-11-2024**||No News||No impact
+*   **16-11-2024**||No News||No impact
+*   **17-11-2024**||House Financial Services Committee Warns Against Bank Regulators' Actions||Could lead to increased call volume from concerned customers or investors seeking clarification on the regulatory landscape.
+*   **18-11-2024**||No News||No impact
+*   **19-11-2024**||FDIC Chairman Martin Gruenberg Announces Retirement||Possible slight increase in call volume from investors or customers seeking reassurance about the stability of the financial system.
+*   **20-11-2024**||No News||No impact
+*   **21-11-2024**||No News||No impact
+*   **22-11-2024**||No News||No impact
+*   **23-11-2024**||Former Brooklyn Nets Co-Owner Sues Citibank Over $16 Million Loss||Could lead to a slight increase in call volume from customers concerned about Citibank's legal issues and financial stability.
+*   **24-11-2024**||No News||No impact
+
+**October 2024**
+
+*   **01-10-2024**||No News||No impact
+*   **02-10-2024**||No News||No impact
+*   **03-10-2024**||No News||No impact
+*   **04-10-2024**||No News||No impact
+*   **05-10-2024**||No News||No impact
+*   **06-10-2024**||No News||No impact
+*   **07-10-2024**||No News||No impact
+*   **08-10-2024**||No News||No impact
+*   **09-10-2024**||No News||No impact
+*   **10-10-2024**||No News||No impact
+*   **11-10-2024**||No News||No impact
+*   **12-10-2024**||No News||No impact
+*   **13-10-2024**||No News||No impact
+*   **14-10-2024**||No News||No impact
+*   **15-10-2024**||No News||No impact
+*   **16-10-2024**||No News||No impact
+*   **17-10-2024**||No News||No impact
+*   **18-10-2024**||No News||No impact
+*   **19-10-2024**||No News||No impact
+*   **20-10-2024**||No News||No impact
+*   **21-10-2024**||No News||No impact
+*   **22-10-2024**||No News||No impact
+*   **23-10-2024**||No News||No impact
+*   **24-10-2024**||No News||No impact
+*   **25-10-2024**||No News||No impact
+*   **26-10-2024**||No News||No impact
+*   **27-10-2024**||No News||No impact
+*   **28-10-2024**||No News||No impact
+*   **29-10-2024**||No News||No impact
+*   **30-10-2024**||No News||No impact
+*   **31-10-2024**||No News||No impact
+
+**September 2024**
+
+*   **26-09-2024**||No News||No impact
+*   **27-09-2024**||No News||No impact
+*   **28-09-2024**||No News||No impact
+*   **29-09-2024**||No News||No impact
+*   **30-09-2024**||No News||No impact
+2025-02-16 20:14:02,996 - INFO - --------------------------------------AGENT_INSIGHTS-------------------------------------
+2025-02-16 20:14:02,996 - INFO - Okay, I will analyze the provided data and present the insights in the requested format.
+
+```
+df_actual_latest:          ||Call Volume||Mean: 27684.8||Median: 27438.0||Variance: 24007390.4||Standard deviation: 4899.73
+df_actual_retrain:         ||Call Volume||MAPE: 13.2%||MAE: 3687.0||UNDERFORECASTING
+df_forecast_latest:        ||Call Volume||Mean: 27466.46||Median: 27763.0||USA holidays in forecast: Yes (December 25th)
+df_actual_latest vs df_forecast_latest : The model is forecasting call volumes slightly lower than the average of the last 60 days of actual call volumes. The forecast appears to be under forecasting compared to the actuals from the last 7 days.
+```
+2025-02-16 20:14:30,527 - INFO - --------------------------------------AGENT_WEEKLY_ANALYSIS-------------------------------------
+2025-02-16 20:14:30,543 - INFO - Okay, I will generate the requested weekly analysis tables based on the provided data.
+
+```python
+import pandas as pd
+import numpy as np
+
+def analyze_call_data(agent_weekly_analysis):
+    """
+    Analyzes call volume data to generate weekly insights and forecasts.
+
+    Args:
+        agent_weekly_analysis (tuple): A tuple containing three pandas DataFrames:
+            - Historical data for the last 100 days.
+            - Actual and predicted data for the previous 7 days.
+            - Forecasted data for the next 28 days.
+
+    Returns:
+        dict: A dictionary containing the analysis results in pandas DataFrames.
+    """
+
+    df_historical, df_actual, df_forecast = agent_weekly_analysis
+
+    # Convert 'Date' columns to datetime objects
+    df_historical['Date'] = pd.to_datetime(df_historical['Date'])
+    df_actual['Date'] = pd.to_datetime(df_actual['Date'])
+    df_forecast['Date'] = pd.to_datetime(df_forecast['Date'])
+
+    # Extract day of week
+    df_historical['Day_of_Week_Name'] = df_historical['Date'].dt.day_name()
+    df_actual['Day_of_Week_Name'] = df_actual['Date'].dt.day_name()
+    df_forecast['Day_of_Week_Name'] = df_forecast['Date'].dt.day_name()
+
+    # Calculate MAPE for df_actual
+    df_actual['MAPE'] = np.abs((df_actual['Call Volume'] - df_actual['Predicted_Call_Volume']) / df_actual['Call Volume']) * 100
+
+    # Aggregate by day of week for df_actual_latest
+    df_actual_latest = df_actual.groupby('Day_of_Week_Name')['Call Volume'].mean().reset_index()
+    df_actual_latest.rename(columns={'Call Volume': 'Avg_Call_Volume'}, inplace=True)
+
+    # Aggregate by day of week for df_actual_retrain
+    df_actual_retrain = df_actual.groupby('Day_of_Week_Name').agg(
+        {'Call Volume': 'mean', 'Predicted_Call_Volume': 'mean', 'MAPE': 'mean'}).reset_index()
+    df_actual_retrain.rename(columns={'Call Volume': 'Actual_Call_Volume', 'Predicted_Call_Volume': 'Predicted_Call_Volume'}, inplace=True)
+
+    # Aggregate by day of week for df_forecast
+    df_forecast_latest = df_forecast.groupby('Day_of_Week_Name')['Predicted_Call_Volume'].mean().reset_index()
+    df_forecast_latest.rename(columns={'Predicted_Call_Volume': 'Avg_Predicted_Call_Volume'}, inplace=True)
+
+    # Pivot the forecast data to get week 1 and week 2 predictions
+    df_forecast_pivot = df_forecast.copy()
+    df_forecast_pivot['Week'] = (df_forecast_pivot['Date'] - df_forecast_pivot['Date'].min()).dt.days // 7 + 1
+    df_forecast_pivot = df_forecast_pivot.pivot_table(index='Day_of_Week_Name', columns='Week', values='Predicted_Call_Volume', aggfunc='mean')
+    df_forecast_pivot = df_forecast_pivot.reset_index()
+    df_forecast_pivot.rename(columns={1: 'Forecast_Week1', 2: 'Forecast_Week2'}, inplace=True)
+
+    # Merge all tables
+    df_combined = pd.merge(df_actual_latest, df_actual_retrain, on='Day_of_Week_Name', how='outer')
+    df_combined = pd.merge(df_combined, df_forecast_pivot, on='Day_of_Week_Name', how='outer')
+
+    df_combined = df_combined[['Day_of_Week_Name', 'Avg_Call_Volume', 'Actual_Call_Volume', 'Predicted_Call_Volume', 'Forecast_Week1', 'Forecast_Week2']]
+
+    # Format the output
+    df_actual_latest_formatted = df_actual_latest.rename(columns={'Day_of_Week_Name': 'Date of week', 'Avg_Call_Volume': 'Call Volume'})
+    df_actual_retrain_formatted = df_actual_retrain.rename(columns={'Day_of_Week_Name': 'Date of week', 'Actual_Call_Volume': 'Actual Call Volume', 'Predicted_Call_Volume': 'predicted Call Volume'})
+    df_forecast_latest_formatted = df_forecast_latest.rename(columns={'Day_of_Week_Name': 'Date of week', 'Avg_Predicted_Call_Volume': 'Call Volume'})
+    df_combined_formatted = df_combined.rename(columns={
+        'Day_of_Week_Name': 'Date of week',
+        'Avg_Call_Volume': 'df_actual_latest Call Volume AVG',
+        'Actual_Call_Volume': 'df_actual_retrain Call voume Actual',
+        'Predicted_Call_Volume': 'df_actual_retrain Call voume predicted',
+        'Forecast_Week1': 'df_forecast_latest Call volumne (Week1)',
+        'Forecast_Week2': 'df_forecast_latest Call volumne (Week2)'
+    })
+
+    return {
+        "df_actual_latest": df_actual_latest_formatted,
+        "df_actual_retrain": df_actual_retrain_formatted,
+        "df_forecast_latest": df_forecast_latest_formatted,
+        "df_combined": df_combined_formatted
+    }
+
+# Load dataframes
+df_historical = pd.read_csv('AGENT_WEEKLY_ANALYSIS_Last_100_Days.csv')
+df_actual = pd.read_csv('AGENT_WEEKLY_ANALYSIS_Actual_Forecasted.csv')
+df_forecast = pd.read_csv('AGENT_WEEKLY_ANALYSIS_Next_28_Days.csv')
+
+# Call the analysis function
+analysis_results = analyze_call_data((df_historical, df_actual, df_forecast))
+
+# Access the formatted DataFrames
+df_actual_latest_formatted = analysis_results["df_actual_latest"]
+df_actual_retrain_formatted = analysis_results["df_actual_retrain"]
+df_forecast_latest_formatted = analysis_results["df_forecast_latest"]
+df_combined_formatted = analysis_results["df_combined"]
+
+```
+
+```
+df_actual_latest:
+```
+
+| Date of week |   Call Volume |
+|:-------------|--------------:|
+| Friday       |   25958       |
+| Monday       |   30375       |
+| Saturday     |   20608       |
+| Sunday       |   20173       |
+| Thursday     |   29270       |
+| Tuesday      |   31263       |
+| Wednesday    |   30600       |
+
+```
+df_actual_retrain:
+```
+
+| Date of week |   Actual Call Volume |   predicted Call Volume |      MAPE |
+|:-------------|---------------------:|------------------------:|----------:|
+| Friday       |              25958   |                 29463   | 13.5083   |
+| Monday       |              30375   |                 29836   |  1.77457  |
+| Saturday     |              20608   |                 28782   | 39.6623   |
+| Sunday       |              20173   |                 28801   | 42.7799   |
+| Thursday     |              29270   |                 29881   |  2.08746  |
+| Tuesday      |              31263   |                 29836   |  4.56483  |
+| Wednesday    |              30600   |                 29851   |  2.44771  |
+
+```
+df_forecast_latest:
+```
+
+| Date of week |   Call Volume |
+|:-------------|--------------:|
+| Friday       |      27246.7 |
+| Monday       |      27791.8 |
+| Saturday     |      26302.8 |
+| Sunday       |      26302.8 |
+| Thursday     |      27819.8 |
+| Tuesday      |      27791.8 |
+| Wednesday    |      27791.8 |
+
+```
+Combined table:
+```
+
+| Date of week |   df_actual_latest Call Volume AVG |   df_actual_retrain Call voume Actual |   df_actual_retrain Call voume predicted |   df_forecast_latest Call volumne (Week1) |   df_forecast_latest Call volumne (Week2) |
+|:-------------|------------------------------------:|---------------------------------------:|------------------------------------------:|---------------------------------------------:|---------------------------------------------:|
+| Friday       |                            25958   |                               25958   |                                  29463   |                                     27470   |                                     27050   |
+| Monday       |                            30375   |                               30375   |                                  29836   |                                     27763   |                                     27886   |
+| Saturday     |                            20608   |                               20608   |                                  28782   |                                     26972   |                                     25671   |
+| Sunday       |                            20173   |                               20173   |                                  28801   |                                     26972   |                                     25734   |
+| Thursday     |                            29270   |                               29270   |                                  29881   |                                     27763   |                                     28111   |
+| Tuesday      |                            31263   |                               31263   |                                  29836   |                                     27763   |                                     27694   |
+| Wednesday    |                            30600   |                               30600   |                                  29851   |                                     27763   |                                     27913   |
+2025-02-16 20:14:47,501 - INFO - --------------------------------------AGENT_ANOMALY-------------------------------------
+2025-02-16 20:14:47,517 - INFO - Okay, I will analyze the provided call volume data for anomalies, considering a standard deviation approach and removing US holidays from the anomaly list.
+
+**1. Calculate Standard Deviation:**
+
+First, I need to calculate the standard deviation of the `Call Volume` data.  Based on the data provided, the standard deviation is approximately **3904.97**.
+
+**2. Anomaly Detection Using Standard Deviation:**
+
+I will consider a data point an anomaly if it falls outside of +/- 2 standard deviations from the mean of the `Call Volume` data. The mean of the `Call Volume` is approximately **26907.86**.
+
+*   **Upper Bound:** 26907.86 + (2 * 3904.97) = **34717.8**
+*   **Lower Bound:** 26907.86 - (2 * 3904.97) = **19097.92**
+
+**3. Identify Potential Anomalies:**
+
+Now, let's examine each `Call Volume` value to see if it falls outside these bounds:
+
+*   **2024-11-11:** 30375.0 (Within bounds) - Not an anomaly
+*   **2024-11-12:** 31263.0 (Within bounds) - Not an anomaly
+*   **2024-11-13:** 30600.0 (Within bounds) - Not an anomaly
+*   **2024-11-14:** 29270.0 (Within bounds) - Not an anomaly
+*   **2024-11-15:** 25958.0 (Within bounds) - Not an anomaly
+*   **2024-11-16:** 20608.0 (Within bounds) - Not an anomaly
+*   **2024-11-17:** 20173.0 (Within bounds) - Not an anomaly
+
+**4. Holiday Consideration:**
+
+*   **2024-11-11:** Veterans Day (Observed) - Could potentially impact call volume.
+
+**5. Final Anomaly Assessment:**
+
+Based on the standard deviation and holiday consideration:
+
+| DATE       | VALUE   | Anomaly STD deviation | Anomaly Yes/NO |
+|------------|---------|-----------------------|----------------|
+| 2024-11-11 | 30375.0 | Within 2 STD          | NO             |
+| 2024-11-12 | 31263.0 | Within 2 STD          | NO             |
+| 2024-11-13 | 30600.0 | Within 2 STD          | NO             |
+| 2024-11-14 | 29270.0 | Within 2 STD          | NO             |
+| 2024-11-15 | 25958.0 | Within 2 STD          | NO             |
+| 2024-11-16 | 20608.0 | Within 2 STD          | NO             |
+| 2024-11-17 | 20173.0 | Within 2 STD          | NO             |
+2025-02-16 20:15:10,240 - INFO - --------------------------------------AGENT_SUMMARY-------------------------------------
+2025-02-16 20:15:10,240 - INFO - Here's a summarized report combining the outputs from the different LLM agents:
+
+## Citibank Call Volume Forecast Report
+
+This report analyzes recent call volume data, news events, and forecasts to provide insights into potential call volume fluctuations for Citibank.
+
+### News Impact Assessment
+
+The following news events from October and November 2024 may have impacted or could impact call volume:
+
+*   **November 7th, 2024:** The Federal Reserve lowered interest rates. *Potential Impact:* Increased call volume due to customer inquiries about loan rates, savings accounts, and investment strategies.
+*   **November 12th, 2024:** The Biden Administration announced a methane fee for oil and gas. *Potential Impact:* Indirect impact; could lead to calls from businesses or investors concerned about the energy sector.
+*   **November 14th, 2024:** Citibank offered $4.25 billion in callable notes. *Potential Impact:* Increased call volume from investors seeking information about the notes.
+*   **November 17th, 2024:** The House Financial Services Committee warned against bank regulators' actions. *Potential Impact:* Increased call volume from concerned customers or investors seeking clarification on the regulatory landscape.
+*   **November 19th, 2024:** FDIC Chairman Martin Gruenberg announced his retirement. *Potential Impact:* Possible slight increase in call volume from investors or customers seeking reassurance.
+*   **November 23rd, 2024:** Former Brooklyn Nets Co-Owner sued Citibank over a $16 Million Loss. *Potential Impact:* Could lead to a slight increase in call volume from customers concerned about Citibank's legal issues and financial stability.
+
+### Call Volume Insights
+
+*   **Overall:** The average call volume over the last 60 days is approximately 27,684, with a median of 27,438.
+*   **Forecast Accuracy:** The model used for forecasting call volume has a Mean Absolute Percentage Error (MAPE) of 13.2% and a Mean Absolute Error (MAE) of 3,687 during retraining, indicating underforecasting.
+*   **Forecast Comparison:** The model is forecasting call volumes slightly lower than the average of the last 60 days of actual call volumes. The forecast appears to be under forecasting compared to the actuals from the last 7 days.
+*   **Holiday Impact:** The forecast considers the impact of the December 25th (Christmas) USA holiday.
+
+### Weekly Call Volume Analysis
+
+This section provides a breakdown of call volume by day of the week, comparing actual and predicted values, along with forecasts for the next two weeks.
+
+**df_actual_latest:**
+
+| Date of week |   Call Volume |
+|:-------------|--------------:|
+| Friday       |   25958       |
+| Monday       |   30375       |
+| Saturday     |   20608       |
+| Sunday       |   20173       |
+| Thursday     |   29270       |
+| Tuesday      |   31263       |
+| Wednesday    |   30600       |
+
+**df_actual_retrain:**
+
+| Date of week |   Actual Call Volume |   predicted Call Volume |      MAPE |
+|:-------------|---------------------:|------------------------:|----------:|
+| Friday       |              25958   |                 29463   | 13.5083   |
+| Monday       |              30375   |                 29836   |  1.77457  |
+| Saturday     |              20608   |                 28782   | 39.6623   |
+| Sunday       |              20173   |                 28801   | 42.7799   |
+| Thursday     |              29270   |                 29881   |  2.08746  |
+| Tuesday      |              31263   |                 29836   |  4.56483  |
+| Wednesday    |              30600   |                 29851   |  2.44771  |
+
+**df_forecast_latest:**
+
+| Date of week |   Call Volume |
+|:-------------|--------------:|
+| Friday       |      27246.7 |
+| Monday       |      27791.8 |
+| Saturday     |      26302.8 |
+| Sunday       |      26302.8 |
+| Thursday     |      27819.8 |
+| Tuesday      |      27791.8 |
+| Wednesday    |      27791.8 |
+
+**Combined table:**
+
+| Date of week |   df_actual_latest Call Volume AVG |   df_actual_retrain Call voume Actual |   df_actual_retrain Call voume predicted |   df_forecast_latest Call volumne (Week1) |   df_forecast_latest Call volumne (Week2) |
+|:-------------|------------------------------------:|---------------------------------------:|------------------------------------------:|---------------------------------------------:|---------------------------------------------:|
+| Friday       |                            25958   |                               25958   |                                  29463   |                                     27470   |                                     27050   |
+| Monday       |                            30375   |                               30375   |                                  29836   |                                     27763   |                                     27886   |
+| Saturday     |                            20608   |                               20608   |                                  28782   |                                     26972   |                                     25671   |
+| Sunday       |                            20173   |                               20173   |                                  28801   |                                     26972   |                                     25734   |
+| Thursday     |                            29270   |                               29270   |                                  29881   |                                     27763   |                                     28111   |
+| Tuesday      |                            31263   |                               31263   |                                  29836   |                                     27763   |                                     27694   |
+| Wednesday    |                            30600   |                               30600   |                                  29851   |                                     27763   |                                     27913   |
+
+### Anomaly Detection
+
+Based on a standard deviation analysis (2 standard deviations from the mean) and excluding US holidays, no anomalies were detected in the call volume data from November 11th to November 17th, 2024.
+
+| DATE       | VALUE   | Anomaly STD deviation | Anomaly Yes/NO |
+|------------|---------|-----------------------|----------------|
+| 2024-11-11 | 30375.0 | Within 2 STD          | NO             |
+| 2024-11-12 | 31263.0 | Within 2 STD          | NO             |
+| 2024-11-13 | 30600.0 | Within 2 STD          | NO             |
+| 2024-11-14 | 29270.0 | Within 2 STD          | NO             |
+| 2024-11-15 | 25958.0 | Within 2 STD          | NO             |
+| 2024-11-16 | 20608.0 | Within 2 STD          | NO             |
+| 2024-11-17 | 20173.0 | Within 2 STD          | NO             |
