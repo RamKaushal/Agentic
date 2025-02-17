@@ -259,15 +259,15 @@ def retrain_actuals(forecast_days):
     time.sleep(10)
 
 
-    llm_input = f'''Last 100 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} Give week day analysis of each in table format
+    llm_input = f'''Last 60 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} Give week day analysis of each in table format
      Output format: 
      *DONT PRINT PYTHON CODE IN OUTPUT*
-     df_actual_latest: Day of week ||Call Volume||
-     df_actual_retrain: Day of week||Actual Call Volume||predicted Call Volume||MAPE
+     df_actual_latest: Day of week (Mon-Sat)||Call Volume||
+     df_actual_retrain: Day of week  (Mon-Sat)||Actual Call Volume||predicted Call Volume||MAPE
      df_forecast_latest: Day of week(agg)||Call Volume||
-     df_forecast_latest filter for 1st 7 ROWS: Day of week||Call Volume||
-     df_forecast_latest filter for 7 ROWS TO 14 ROWS: Day of week||Call Volume||
-     Combined table: Day of week(AGG)||df_actual_latest Call Volume AVG||df_actual_retrain Call voume Actual||df_actual_retrain Call voume predicted||df_forecast_latest filter for 1st week (Week1)||df_forecast_latest filter for 2nd week (Week2)
+     df_forecast_latest filter for 1st 7 ROWS: Day of week  (Mon-Sat)||Call Volume||
+     df_forecast_latest filter for 7 ROWS TO 14 ROWS: Day of week  (Mon-Sat)||Call Volume||
+     Combined table: Day of week(AGG)||df_actual_latest Call Volume AVG  (Mon-Sat)||df_actual_retrain Call voume Actual||df_actual_retrain Call voume predicted||df_forecast_latest filter for 1st week (Week1)||df_forecast_latest filter for 2nd week (Week2)
      *DONT PRINT PYTHON CODE IN OUTPUT*
     '''
     response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
@@ -277,11 +277,14 @@ def retrain_actuals(forecast_days):
     llm_response_append += response
     time.sleep(10)
 
-    llm_input = f'''This is my actual volume {df_actual_retrain} of last 60 days,check for last 2 weeks and tell of Call volume is an anomaly  or not,generate USA holiday list and remvove those days from anomaly list
-    Calculate Population (df_actual_retrain) standard deviation and check Call volume each value to tell if its a anomaly or not based on standard deviation
-    DATE||VALUE||Anomaly STD deviation||Anomaly Yes/NO
+    llm_input = f'''This is my actual volume {df_actual_retrain} of last 60 days
+    Output format: 
+    from {df_actual_retrain} calculate population standard deviation by removing USA holidays by generating usa holidays for 1st 46 days
+    from {df_actual_retrain} compare the last 14 days with 1st 46 days  standard deviation *2 and tell if there is any anomaly in last 14 days but exclude US holidays from list
+    Do the calculations and give output
+    DATE||VALUE||Anomaly Yes/NO
     
-    *Dont generate python code just give dates and anomlay*'''
+    *Dont generate python code*'''
     response = llm_call(llm_input,"AGENT_ANOMALY")
     logger.info(f"--------------------------------------AGENT_ANOMALY-------------------------------------")
     logger.info(f"{response}")
