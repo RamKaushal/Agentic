@@ -20,7 +20,7 @@ warnings.filterwarnings("ignore")
 def total_data_push(train_date,forecast_days,lag_days):
     # Write data into DB
     try:
-        df = pd.read_csv(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\ACD call volume.csv") #reading entire data        
+        df = pd.read_csv(r"/content/Agentic/ACD call volume.csv") #reading entire data        
         df['Date'] = pd.to_datetime(df['Date'], format="%d-%m-%Y") #converting it to date month year format to push to sql lite db
         max_date = df['Date'].max() #getting date max to maintain log
         min_date = df['Date'].min() #getting date min to maintain log
@@ -223,24 +223,25 @@ def retrain_actuals(forecast_days):
     df_actual_latest = read_data_db(df_actual_latest_q) 
     llm_response_append = ''
 
-    news_df = get_news()
+    # news_df = get_news()
 
-    llm_input = f'''Analyze the provided news dataset {news_df} by filtering the dates from this {df_actual_latest} and identify events or trends that could impact the 28-day call volume forecast for citi bank and make sure you use news of the date present in df_actual_latest only.
-                Output format: 
-                Only output the news dates that are present in df_actual_latest
-                Date||News||impact on the forecast
+    # llm_input = f'''Analyze the provided news dataset {news_df} by filtering the dates from this {df_actual_latest} and identify events or trends that could impact the 28-day call volume forecast for citi bank and make sure you use news of the date present in df_actual_latest only.
+    #             Output format: 
+    #             Only output the news dates that are present in df_actual_latest
+    #             Date||News||impact on the forecast
                 
-                *DONT PRINT PYTHON CODE IN OUTPUT*
-                '''
-    response = llm_call(llm_input,"AGENT_NEWS")
-    logger.info(f"--------------------------------------AGENT_NEWS-------------------------------------")
-    logger.info(f"{response}")
-    llm_response_append += "--------------------------------------AGENT_NEWS-------------------------------------"
-    llm_response_append += response
-    time.sleep(5)
+    #             *DONT PRINT PYTHON CODE IN OUTPUT*
+    #             '''
+    # response = llm_call(llm_input,"AGENT_NEWS")
+    # logger.info(f"--------------------------------------AGENT_NEWS-------------------------------------")
+    # logger.info(f"{response}")
+    # llm_response_append += "--------------------------------------AGENT_NEWS-------------------------------------"
+    # llm_response_append += response
+    # time.sleep(5)
 
     llm_input = f'''Last 60 Days of Training Data: {df_actual_latest[['Date','Call Volume']]}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} 
     *DONT PRINT PYTHON CODE IN OUTPUT*
+
      Output format: 
      df_actual_latest:          ||Call Volume||Mean||Median||Variance||deviation
      df_actual_retrain:         ||Call Volume||MAPE||MAE||UNDERFOREASTING or OVERFORECAST||
@@ -260,11 +261,13 @@ def retrain_actuals(forecast_days):
 
     llm_input = f'''Last 100 Days of Training Data: {df_actual_latest}, Actual and Forecasted Data for previous 7 Days: {df_actual_retrain}, Next 28 Days Forecast {df_forecast_latest} Give week day analysis of each in table format
      Output format: 
-     df_actual_latest: Date of week ||Call Volume||
-     df_actual_retrain: Date of week||Actual Call Volume||predicted Call Volume||MAPE
-     df_forecast_latest: Date of week||Call Volume||
-     Combined table: Date of week||df_actual_latest Call Volume AVG||df_actual_retrain Call voume Actual||df_actual_retrain Call voume predicted||df_forecast_latest Call volumne (Week1)||df_forecast_latest Call volumne (Week2)
-     
+     *DONT PRINT PYTHON CODE IN OUTPUT*
+     df_actual_latest: Day of week ||Call Volume||
+     df_actual_retrain: Day of week||Actual Call Volume||predicted Call Volume||MAPE
+     df_forecast_latest: Day of week(agg)||Call Volume||
+     df_forecast_latest filter for 1st 7 ROWS: Day of week||Call Volume||
+     df_forecast_latest filter for 7 ROWS TO 14 ROWS: Day of week||Call Volume||
+     Combined table: Day of week(AGG)||df_actual_latest Call Volume AVG||df_actual_retrain Call voume Actual||df_actual_retrain Call voume predicted||df_forecast_latest filter for 1st week (Week1)||df_forecast_latest filter for 2nd week (Week2)
      *DONT PRINT PYTHON CODE IN OUTPUT*
     '''
     response = llm_call(llm_input,"AGENT_WEEKLY_ANALYSIS")
@@ -305,7 +308,7 @@ def retrain_actuals(forecast_days):
 if __name__ == "__main__":
     logger = get_logger()
     # Load config
-    with open(r"C:\Users\ramka\Downloads\Agentic-main\Agentic\config.yaml", "r") as f: #opeining config file to pull params
+    with open(r"/content/Agentic/config.yaml", "r") as f: #opeining config file to pull params
         config = yaml.safe_load(f)
 
     lag_days = config['lag_days'] #No of days to leave before starting the forecsat
