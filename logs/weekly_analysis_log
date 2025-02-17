@@ -1,0 +1,74 @@
+**Weekly Analysis Agent Summary:**
+
+The following tables provide a detailed breakdown of call volumes, predictions, and error metrics on a daily and weekly basis.
+
+**df_actual_latest:**
+
+| Day of Week | Call Volume |
+|---|---|
+| Sunday | 26562 |
+| Saturday | 29092 |
+| Friday | 29861 |
+| Thursday | 31511 |
+| Wednesday | 34303 |
+| Tuesday | 31277 |
+| Monday | 26161 |
+
+**df_actual_retrain:**
+
+| Day of Week | Call Volume | Predicted_Call_Volume |
+|---|---|---|---|
+| Monday | 30375 | 27575 |
+| Tuesday | 31263 | 27727 | 
+| Wednesday | 30600 | 27823 | 
+| Thursday | 29270 | 27863 | 
+| Friday | 25958 | 27842 |
+| Saturday | 20608 | 27401 |
+| Sunday | 20173 | 27471 |
+
+**df_forecast_latest:**
+
+| Day of Week | Predicted_Call_Volume |
+|---|---|
+| Friday | 22801.666667 |
+| Monday | 22116.333333 |
+| Saturday | 21799.000000 |
+| Sunday | 22084.000000 |
+| Thursday | 22821.000000 |
+| Tuesday | 22504.666667 |
+| Wednesday | 22324.000000 |
+
+**df_forecast_latest filter for 1st 7 ROWS:**
+
+| Day of Week | Predicted_Call_Volume |
+|---|---|
+| Monday | 21868 |
+| Tuesday | 22299 |
+| Wednesday | 22299 |
+| Thursday | 22312 |
+| Friday | 22366 |
+| Saturday | 21904 |
+| Sunday | 22189 |
+
+**df_forecast_latest filter for 7 ROWS TO 14 ROWS:**
+
+| Day of Week | Predicted_Call_Volume |
+|---|---|
+| Monday | 22010 |
+| Tuesday | 22332 |
+| Wednesday | 22279 |
+| Thursday | 22328 |
+| Friday | 22537 |
+| Saturday | 22092 |
+| Sunday | 22377 |
+
+**Combined table:**
+
+| Day of Week | Actual Call Volume AVG | Call Volume Actual | Call Volume Predicted | Week1 | Week2 |
+| Friday | 29861.0 | 25958.0 | 27842.0  | 22366.0 | 22537.0 |
+| Monday | 26161.0 | 30375.0 | 27575.0  | 21868.0 | 22010.0 |
+| Saturday| 29092.0| 20608.0 | 27401.0  | 21904.0 | 22092.0 |
+| Sunday | 26562.0 | 20173.0 | 27471.0  | 22189.0 | 22377.0 |
+| Thursday| 31511.0 | 29270.0| 27863.0  | 22312.0 | 22328.0 |
+| Tuesday | 31277.0 | 31263.0| 27727.0  | 22299.0 | 22332.0 |
+| Wednesday| 34303.0 | 30600.0| 27823.0 | 22299.0 | 22279.0 |
