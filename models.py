@@ -73,10 +73,10 @@ class ForecastingModels:
 
         # Define hyperparameter grid
         param_grid = {
-            'n_estimators': [100, 200],
+            'n_estimators': [1200],
             'learning_rate': [0.01],
-            'max_depth': [3],
-            'subsample': [0.7]
+            'max_depth': [5],
+            'subsample': [0.8]
         }
 
         # Create all combinations of hyperparameters
