@@ -279,8 +279,8 @@ def retrain_actuals(forecast_days):
 
     llm_input = f'''This is my actual volume {df_actual_latest} of last 60 days
     Output format: 
-    from {df_actual_retrain} calculate population standard deviation by removing USA holidays by generating usa holidays for 1st 46 days
-    from {df_actual_retrain} compare the last 14 days with 1st 46 days  standard deviation *2 and tell if there is any anomaly in last 14 days but exclude US holidays from list
+    from {df_actual_latest} calculate population standard deviation by removing USA holidays by generating usa holidays for 1st 46 days
+    from {df_actual_latest} compare the last 14 days with 1st 46 days  standard deviation *2 and tell if there is any anomaly in last 14 days but exclude US holidays from list
     Do the calculations and give output
     DATE||VALUE||Anomaly Yes/NO
     
